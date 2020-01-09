@@ -1,2 +1,2 @@
 <?php
-echo 'bbbb';
+echo 'ทำไงดี';
