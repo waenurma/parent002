@@ -1,19 +1,15 @@
 <?php
 
-
 $API_URL = 'https://api.line.me/v2/bot/message';
-$ACCESS_TOKEN = 'ouhqskdRP/sUP8uwpjAadPDJz6rj1Y3IR0/ZznmHBgsPmYq6Q+hzdEJ4OXgyw/8NaLy6GLAZYYbLhF/7S6i8K07k3yxT0sWcMEa6ixgJ2c0XIOEKRfUEQAsHVi4PbQU4HEk9GOq/cmdR3iRkQE9e5gdB04t89/1O/w1cDnyilFU='; 
-$channelSecret = 'ba6e01c3eb0671a32e7d9fb3dbabd67d';
-
+$ACCESS_TOKEN = 'exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU=';
+$channelSecret = 'aa79f5f6f04e775f836bf54644526aed';
 
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
-$request = file_get_contents('php://input');   // Get request content
-$request_array = json_decode($request, true);   // Decode JSON to Array
+$request = file_get_contents('php://input'); // Get request content
+$request_array = json_decode($request, true); // Decode JSON to Array
 
-
-
-if ( sizeof($request_array['events']) > 0 ) {
+if (sizeof($request_array['events']) > 0) {
 
     foreach ($request_array['events'] as $event) {
 
@@ -24,20 +20,17 @@ if ( sizeof($request_array['events']) > 0 ) {
         $data = [
             'replyToken' => $reply_token,
             // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
-            'messages' => [['type' => 'text', 'text' => $text ]]
+            'messages' => [['type' => 'text', 'text' => $text]],
         ];
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
-        $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+        $send_result = send_reply_message($API_URL . '/reply', $POST_HEADER, $post_body);
 
-        echo "Result: ".$send_result."\r\n";
+        echo "Result: " . $send_result . "\r\n";
     }
 }
 
 echo "OK";
-
-
-
 
 function send_reply_message($url, $post_header, $post_body)
 {
@@ -52,5 +45,3 @@ function send_reply_message($url, $post_header, $post_body)
 
     return $result;
 }
-
-?>
