@@ -1,7 +1,5 @@
 <?php
 
-//echo 'ทำไงดี โว้ยยยยยยยยยยยยย';
-
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = 'exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU=';
 $channelSecret = 'aa79f5f6f04e775f836bf54644526aed';
@@ -14,8 +12,9 @@ $request_array = json_decode($request, true);
 
 $arrPostData = array();
 
-
 function send_reply_message($url, $post_header, $post_body)
+
+
 //request ไปถึง Line API
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $API_URL);
