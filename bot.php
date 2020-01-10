@@ -1,65 +1,22 @@
 <?php
+
 //echo 'ทำไงดี โว้ยยยยยยยยยยยยย';
+
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = 'exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU=';
 $channelSecret = 'aa79f5f6f04e775f836bf54644526aed';
-$content = file_get_contents('php://input'); // Get request content
-$arrJson = json_decode($content, true);
+// Set HEADER
+$POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
+// Get request content
+$request = file_get_contents('php://input');
+// Decode JSON to Array
+$request_array = json_decode($request, true);
 
 $arrPostData = array();
 
-$POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
-//ส่งidผู้ใช้
-if ($arrJson['events'][0]['message']['text'] == "สวัสดี") {
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ" . $arrJson['events'][0]['source']['userId'];
-
-//ส่งบัตรปชช
-} else if ($arrJson['events'][0]['message']['text'] == "1951234567890") {
-    $arrPostData = array();
-    $data = $arrJson['events'][0]['message']['text'];
-
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = strlen($data); //เป็นการนับ
-
-//เลขสมาชิก
-} else if ($arrJson['events'][0]['message']['text'] == "1234567890") {
-    $arrPostData = array();
-    $data = $arrJson['events'][0]['message']['text'];
-    $cutstring = substr($data, 5, 10); //เป็นการตัดข้อความ
-
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = $cutstring;
-
-//ตอบตรงคำถาม
-} else if ($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง") {
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-
-//ตอบกลับที่เราพิมพ์
-} else if ($arrJson['events'][0]['message']['text'] == "เหมืนเดิม") {
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['message']['text'];
-
-//ถ้าข้อความไม่ตรงเงือนไขทั้งหมดจะตอบเงือนไขสุดท้าย
-} else {
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้องกรุณา กรอกข้อมูลใหม่!!!";
-
-}
-
-// -----------------------------------------------------------------------------------------------------
+function send_reply_message($url, $post_header, $post_body)
+//request ไปถึง Line API
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $API_URL);
 curl_setopt($ch, CURLOPT_HEADER, false);
@@ -70,3 +27,23 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close($ch);
+
+//Get ข้อมูลที่ได้จากการที่ User ที่มีการกระทำใน Channel ตัวอย่างเช่น การพิมพ์ข้อความ การส่งสติกเกอร์
+if ( sizeof($request_array['events']) > 0 ) {
+    foreach ($request_array['events'] as $event) {
+    
+    $reply_message = '';
+    $reply_token = $event['replyToken'];
+    $data = [
+       'replyToken' => $reply_token,
+       'messages' => [
+          ['type' => 'text', 
+           'text' => json_encode($request_array)]
+       ]
+    ];
+    $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+    $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+    echo "Result: ".$send_result."\r\n";
+ }
+}
+echo "OK";
