@@ -73,6 +73,10 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
 
 
+//rich-menu
+
+
+
 // ส่วนของการส่งการแจ้งเตือนผ่านฟังก์ชั่น cURL
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
