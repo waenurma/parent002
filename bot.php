@@ -71,6 +71,64 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้องกรุณา กรอกข้อมูลใหม่!!!";
 }
 
+  // สร้างตัวแปรเก็ยค่าประเภทของ Message จากทั้งหมด 7 ประเภท
+  $typeMessage = $eventObj->getMessageType();  
+  //  text | image | sticker | location | audio | video | file  
+  // เก็บค่า id ของข้อความ
+  $idMessage = $eventObj->getMessageId();          
+  // ถ้าเป็นข้อความ
+  if($typeMessage=='text'){
+      $userMessage = $eventObj->getText(); // เก็บค่าข้อความที่ผู้ใช้พิมพ์
+  }
+  // ถ้าเป็น image
+  if($typeMessage=='image'){
+
+  }               
+  // ถ้าเป็น audio
+
+  if($typeMessage=='audio'){
+
+  }       
+  // ถ้าเป็น video
+  if($typeMessage=='video'){
+
+  }   
+  // ถ้าเป็น file
+  if($typeMessage=='file'){
+      $FileName = $eventObj->getFileName();
+      $FileSize = $eventObj->getFileSize();
+  }               
+  // ถ้าเป็น image หรือ audio หรือ video หรือ file และต้องการบันทึกไฟล์
+  if(preg_match('/image|audio|video|file/',$typeMessage)){            
+      $responseMedia = $bot->getMessageContent($idMessage);
+      if ($responseMedia->isSucceeded()) {
+          // คำสั่ง getRawBody() ในกรณีนี้ จะได้ข้อมูลส่งกลับมาเป็น binary 
+          // เราสามารถเอาข้อมูลไปบันทึกเป็นไฟล์ได้
+          $dataBinary = $responseMedia->getRawBody(); // return binary
+          // ดึงข้อมูลประเภทของไฟล์ จาก header
+          $fileType = $responseMedia->getHeader('Content-Type');    
+          switch ($fileType){
+              case (preg_match('/^application/',$fileType) ? true : false):
+//                      $fileNameSave = $FileName; // ถ้าต้องการบันทึกเป็นชื่อไฟล์เดิม
+                  $arr_ext = explode(".",$FileName);
+                  $ext = array_pop($arr_ext);
+                  $fileNameSave = time().".".$ext;                            
+                  break;                  
+              case (preg_match('/^image/',$fileType) ? true : false):
+                  list($typeFile,$ext) = explode("/",$fileType);
+                  $ext = ($ext=='jpeg' || $ext=='jpg')?"jpg":$ext;
+                  $fileNameSave = time().".".$ext;
+                  break;
+              case (preg_match('/^audio/',$fileType) ? true : false):
+                  list($typeFile,$ext) = explode("/",$fileType);
+                  $fileNameSave = time().".".$ext;                        
+                  break;
+              case (preg_match('/^video/',$fileType) ? true : false):
+                  list($typeFile,$ext) = explode("/",$fileType);
+                  $fileNameSave = time().".".$ext;                                
+                  break;                                                      
+          }
+
 // ส่วนของการส่งการแจ้งเตือนผ่านฟังก์ชั่น cURL
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
