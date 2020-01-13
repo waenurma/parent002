@@ -58,8 +58,8 @@
     if($message == "video"){
       $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
       $arrayPostData['messages'][0]['type'] = "video";
-      $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/watch?v=xtjDFuCCN7g&list=RDILU9NbWn4t0&index=23";//ใส่ url ของ video ที่ต้องการส่ง
-      //$arrayPostData['messages'][0]['previewImageUrl'] = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";//ใส่รูป preview ของ video
+      $arrayPostData['messages'][0]['originalContentUrl'] = "https://mokmoon.com/videos/Brown.mp4";//ใส่ url ของ video ที่ต้องการส่ง
+      $arrayPostData['messages'][0]['previewImageUrl'] = "https://linefriends.com/img/bangolufsen/img_og.jpg";//ใส่รูป preview ของ video
       replyMsg($arrayHeader,$arrayPostData);
 
       
