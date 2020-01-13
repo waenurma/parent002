@@ -71,32 +71,61 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้องกรุณา กรอกข้อมูลใหม่!!!";
 }
 
+//rich menu
+$moreResult = "";
+        // ส่วนทำงานสำหรับเชื่อม Rich Menu ไปยังผู้ใช้นั้นๆ
+        if(isset($dataPostback['action']) && $dataPostback['action']=="more_richmenu"){
+            $respRichMenu = $bot->linkRichMenu($userId,$dataPostback['richmenuid']);
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }       
+        // ส่วนทำงานสำหรับยกเลิกการเชื่อมกับ Rich Menu ของ ผู้ใช้
+        if(isset($dataPostback['action']) && $dataPostback['action']=="back_richmenu"){
+            $respRichMenu = $bot->unlinkRichMenu($userId);
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }               
+        // ส่วนทำงานสำหรับลบ Rich Menu
+        if(isset($dataPostback['action']) && $dataPostback['action']=="delete_richmenu"){
+            $respRichMenu = $bot->deleteRichMenu($dataPostback['richMenuId']);
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }
+        // ส่วนทำงานสำหรับดูข้อมูลของ Rich Menu นั้นๆ
+        if(isset($dataPostback['action']) && $dataPostback['action']=="get_richmenu"){
+            $respRichMenu = $bot->getRichMenu($dataPostback['richMenuId']);
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }
+        // ส่วนทำงานสำหรับกำหนดเป็น เมนูหลัก
+        if(isset($dataPostback['action']) && $dataPostback['action']=="s_default_richmenu"){
+            $respRichMenu = $httpClient->post("https://api.line.me/v2/bot/user/all/richmenu/".$dataPostback['richMenuId'],array());
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }   
+        // ส่วนทำงานสำหรับยกเลิกเมนูหลัก    
+        if(isset($dataPostback['action']) && $dataPostback['action']=="c_default_richmenu"){
+            $respRichMenu = $httpClient->delete("https://api.line.me/v2/bot/user/all/richmenu");
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }           
+        // ส่วนทำงานดึงข้อมูลเมนูหลัก หรือ Rich Menu ที่เป็นเมนูหลัก ถ้ามี
+        if(isset($dataPostback['action']) && $dataPostback['action']=="g_default_richmenu"){
+            $respRichMenu = $httpClient->get("https://api.line.me/v2/bot/user/all/richmenu");
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }       
+        // ส่วนทำงานอัพโหลดรูปให้กับ Rich Menu  
+        if(isset($dataPostback['action']) && $dataPostback['action']=="upload_richmenu"){
+            $richMenuImg = str_replace('Rich Menu ','',$dataPostback['richMenuName']);
+            if(!file_exists("rich-menu/rich-menu-0".$richMenuImg.".png")){
+                $richMenuImg = substr(str_replace('Rich Menu ','',$dataPostback['richMenuName']),0,1);
+            }
+            $respRichMenu = $bot->uploadRichMenuImage($dataPostback['richMenuId'],"rich-menu/rich-menu-0".$richMenuImg.".png","image/png");
+            $moreResult = $respRichMenu->getRawBody();
+            $result = json_decode($respRichMenu->getRawBody(),TRUE); 
+        }                   
 
-
-//rich-menu
-case (preg_match('/^create-/',$userMessage) ? true : false): // เมื่อพิมพ์คำว่า create- เข้ามา
-  $respRichMenu = $bot->createRichMenu(
-      new RichMenuBuilder(
-          new RichMenuSizeBuilder(1686,2500), // ขนาด rich menu ปกติจะไม่เปลี่ยน แปลง
-          true, // เปิดให้แสดง * จะไม่แสดงทันที 
-          "Rich Menu 1", // ชื่อ rich menu
-          "เมนู", // ข้อความที่จะแสดงที่แถบเมนู
-          array( // array ของ action แต่ละบริเวณ
-              new RichMenuAreaBuilder( // action ที่ 1
-                  new RichMenuAreaBoundsBuilder(0,0,1250,1686),// พื้นที่ A (x,y,width,height)
-                  new MessageTemplateActionBuilder('m','Area A') // เปลี่ยนเฉพาะตัวที่ 2 ตามต้องการ 'Area A'
-              ),
-              new RichMenuAreaBuilder( // action ที่ 2
-                  new RichMenuAreaBoundsBuilder(1250,0,1250,1686), // พื้นที่ B (x,y,width,height)
-                  new UriTemplateActionBuilder('u','http://niik.in') // เปลี่ยนเฉพาะตัวที่ 2 ตามต้องการ 'http://niik.in'
-              ),                                                                                  
-          )
-      )
-  );          
-  // ให้ bot แจ้งกลับเกี่ยวกับ สถานะการสร้าง
-  $textReplyMessage = " การสร้าง Rich Menu ".$respRichMenu->getRawBody();
-  $replyData = new TextMessageBuilder($textReplyMessage);                                                     
-  break;
 
 
 
