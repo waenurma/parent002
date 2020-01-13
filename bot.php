@@ -73,10 +73,13 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
 //rich menu
 
-//location
-$outputText = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder("Eiffel Tower", "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France", 48.858328, 2.294750);
+$actions = array (
+  New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans=y"),
+  New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("no", "ans=N")
+);
+$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("confim message", $actions);
+$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("confim message", $button);
 $response = $bot->replyMessage($event->getReplyToken(), $outputText);
-
 
 
 // ส่วนของการส่งการแจ้งเตือนผ่านฟังก์ชั่น cURL
