@@ -20,7 +20,7 @@
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "sticker";
+        $arrayPostData['messages'][0]['type'] = "sticker";//ตอบกลับข้อความ
         $arrayPostData['messages'][0]['packageId'] = "2";
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
@@ -45,8 +45,19 @@
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
+
+     #ตัวอย่าง Message Type "Location"
+     else if($message == "พิกัดสยามพารากอน"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "location";
+        $arrayPostData['messages'][0]['title'] = "สยามพารากอน";
+        $arrayPostData['messages'][0]['address'] =   "13.7465354,100.532752";
+        $arrayPostData['messages'][0]['latitude'] = "13.7465354";
+        $arrayPostData['messages'][0]['longitude'] = "100.532752";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
     #ตัวอย่าง Message Type "Video"
-    if($message == "video"){
+     else  if($message == "video"){
       $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
       $arrayPostData['messages'][0]['type'] = "video";
       $arrayPostData['messages'][0]['text'] = "อย่าทิ้งกันไป";
