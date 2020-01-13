@@ -55,7 +55,7 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Video"
-    if($message == "video"){
+    else  if($message == "video"){
       $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
       $arrayPostData['messages'][0]['type'] = "video";
       $arrayPostData['messages'][0]['originalContentUrl'] = "https://mokmoon.com/videos/Brown.mp4";//ใส่ url ของ video ที่ต้องการส่ง
