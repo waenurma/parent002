@@ -61,7 +61,6 @@
      else if($message == "video"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
-        $arrayPostData['messages'][0]['title'] = "video";
         $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/watch?v=8xeqzvFtw3g";//ใส่ url ของ video ที่ต้องการส่ง
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
