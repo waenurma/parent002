@@ -34,16 +34,7 @@
         $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
         replyMsg($arrayHeader,$arrayPostData);
     }
-    #ตัวอย่าง Message Type "Location"
-    else if($message == "พิกัดสยามพารากอน"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "location";
-        $arrayPostData['messages'][0]['title'] = "สยามพารากอน";
-        $arrayPostData['messages'][0]['address'] =   "13.7465354,100.532752";
-        $arrayPostData['messages'][0]['latitude'] = "13.7465354";
-        $arrayPostData['messages'][0]['longitude'] = "100.532752";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
+
     #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
     else if($message == "ลาก่อน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -55,11 +46,12 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Video"
-    else  if($message == "video"){
+    if($message == "video"){
       $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
       $arrayPostData['messages'][0]['type'] = "video";
-      $arrayPostData['messages'][0]['originalContentUrl'] = "https://mokmoon.com/videos/Brown.mp4";//ใส่ url ของ video ที่ต้องการส่ง
-      $arrayPostData['messages'][0]['previewImageUrl'] = "https://linefriends.com/img/bangolufsen/img_og.jpg";//ใส่รูป preview ของ video
+      $arrayPostData['messages'][0]['text'] = "อย่าทิ้งกันไป";
+      $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/watch?v=xtjDFuCCN7g&list=RDILU9NbWn4t0&index=23";//ใส่ url ของ video ที่ต้องการส่ง
+      $arrayPostData['messages'][0]['previewImageUrl'] = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";//ใส่รูป preview ของ video
       replyMsg($arrayHeader,$arrayPostData);
 
       
