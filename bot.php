@@ -48,7 +48,7 @@ $arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['te
       $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
       $arrPostData['messages'][0]['type'] = "text";
       $arrPostData['messages'][0]['text'] ="กรุณากรอกข้อมูลเลขสมาชิก 10 หลัก 
-      หรือข้อมูลเลขบัตรประชาชน 13 หลัก ค่ะ";
+      หรือข้อมูลเลขบัตรประชาชน  หลัก ค่ะ";
     
         
     // ---------------------------------------------ลูบสุดท้าย---------------------------------------------
