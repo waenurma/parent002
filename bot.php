@@ -8,78 +8,15 @@
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
-    $host = 'ec2-54-235-180-123.compute-1.amazonaws.com';
-    $dbname = 'dejm5cvd928n89'; 
-    $user = 'wammqrjxsobuvm'; 
-    $pass = '817d802129e8aebb1a07b4d7ba1b59f84d01696ed5eddbe84b51ea4d998f8df5'; 
-    $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
-    $result = $connection->query("SELECT * FROM polls"); if($result !== null) { echo $result->rowCount(); }
+    // $host = 'ec2-54-235-180-123.compute-1.amazonaws.com';
+    // $dbname = 'dejm5cvd928n89'; 
+    // $user = 'wammqrjxsobuvm'; 
+    // $pass = '817d802129e8aebb1a07b4d7ba1b59f84d01696ed5eddbe84b51ea4d998f8df5'; 
+    // $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
+    // $result = $connection->query("SELECT * FROM polls"); if($result !== null) { echo $result->rowCount(); }
     
     /*Return HTTP Request 200*/
     http_response_code(200);
-
-// --------------------------------------------ส่ง user id--------------------------------------------
-if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-    replyMsg($arrayHeader,$arrayPostData);
-
-    
-// ---------------------------------------------บัตรประชาชน---------------------------------------------
-}else if($arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']  && strlen($arrJson['events'][0]['message']['text'])== "13"){
-    $data=$arrJson['events'][0]['message']['text'];   
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "รหัสบัตรประชาชน คือ".  $data; 
-    // $arrPostData['messages'][1]['type'] = "text";
-    // $arrPostData['messages'][1]['text'] = "123456789";
-    // strlen($data); การนับจำนวน
-   
-
-// ---------------------------------------------เลขสมาชิก---------------------------------------------
-}else if($arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']   && strlen($arrJson['events'][0]['message']['text'])== "10"){
-    $data=$arrJson['events'][0]['message']['text'];
-    $T_data=substr($data, 0 ,3 ); //เป็นการตัดข้อความ เลือกใช้ตำเเหน่งไหนที่ต้องการ
-    $F_data=substr($data, 5 ,10 ); 
-    
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เลขสมาชิกของคุณ คือ".  $T_data.$F_data;
-
-
-// ---------------------------------------------ลงทะเบียน---------------------------------------------
-}else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){
-    $arrPostData = array();
-    $data=$arrJson['events'][0]['message']['text'];
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] ="กรุณากรอกข้อมูลเลขสมาชิก 10 หลัก 
-    หรือข้อมูลเลขบัตรประชาชน 13 หลัก ค่ะ";
-  
- 
-
-// ---------------------------------------------ลูบสุดท้าย---------------------------------------------
-}else{
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!! 
-  กรุณากรอกข้อมูลกรอกข้อมูลเลขสมาชิกหรือเลขบัตรประชาชนอีกครั้ง";
-  }
-
-  
-
-
-
-
-
-
-
-
 
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
@@ -138,31 +75,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
     }
-
-    function createNewRichmenu($channelAccessToken) {
-        $sh = <<< EOF
-        curl -X POST \
-        -H 'Authorization: Bearer $channelAccessToken' \
-        -H 'Content-Type:application/json' \
-        -d '{"size": {"width": 2500,"height": 1686},"selected": false,"name": "Controller","chatBarText": "Controller","areas": [{"bounds": {"x": 551,"y": 325,"width": 321,"height": 321},"action": {"type": "message","text": "up"}},{"bounds": {"x": 876,"y": 651,"width": 321,"height": 321},"action": {"type": "message","text": "right"}},{"bounds": {"x": 551,"y": 972,"width": 321,"height": 321},"action": {"type": "message","text": "down"}},{"bounds": {"x": 225,"y": 651,"width": 321,"height": 321},"action": {"type": "message","text": "left"}},{"bounds": {"x": 1433,"y": 657,"width": 367,"height": 367},"action": {"type": "message","text": "btn b"}},{"bounds": {"x": 1907,"y": 657,"width": 367,"height": 367},"action": {"type": "message","text": "btn a"}}]}' https://api.line.me/v2/bot/richmenu;
-      EOF;
-        $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
-        if(isset($result['richMenuId'])) {
-          return $result['richMenuId'];
-        }
-        else {
-          return $result['message'];
-        }
-      }
-      function getListOfRichmenu($channelAccessToken) {
-        $sh = <<< EOF
-        curl \
-        -H 'Authorization: Bearer $channelAccessToken' \
-        https://api.line.me/v2/bot/richmenu/list;
-      EOF;
-        $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
-        return $result;
-      }
+    //ดัก
+    else{
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!! 
+  กรุณากรอกข้อมูลกรอกข้อมูลเลขสมาชิกหรือเลขบัตรประชาชนอีกครั้ง";
+  }
 
  function replyMsg($arrayHeader,$arrayPostData){
          $strUrl = "https://api.line.me/v2/bot/message/reply";
