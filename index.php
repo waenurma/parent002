@@ -61,7 +61,7 @@ width:100%;
           <div class="col-sm-12">
             <button type="submit" name="insert" class="btn btn-success" id="btn">
             <span class="glyphicon glyphicon-log-in"> </span>
-             ลงทะเบียน </button>
+             ลงทะเบียน  </button>
           </div>
         </div>
       </form>
