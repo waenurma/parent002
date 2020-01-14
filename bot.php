@@ -18,7 +18,8 @@
       $arrPostData['messages'][0]['type'] = "text";
       $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
     // ---------------------------------------------บัตรประชาชน---------------------------------------------
-    }else if($arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']  && strlen($arrJson['events'][0]['message']['text'])== "13"){
+    }else if(
+$arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']  && strlen($arrJson['events'][0]['message']['text'])== "13"){
       $data=$arrJson['events'][0]['message']['text'];   
       $arrPostData = array();
       $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
