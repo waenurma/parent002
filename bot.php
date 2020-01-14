@@ -8,164 +8,98 @@
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
+    $host = 'ec2-54-235-180-123.compute-1.amazonaws.com';
+    $dbname = 'dejm5cvd928n89'; 
+    $user = 'wammqrjxsobuvm'; 
+    $pass = '817d802129e8aebb1a07b4d7ba1b59f84d01696ed5eddbe84b51ea4d998f8df5'; 
+    $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
+    $result = $connection->query("SELECT * FROM polls"); if($result !== null) { echo $result->rowCount(); }
     
     /*Return HTTP Request 200*/
     http_response_code(200);
-    // --------------------------------------------ส่ง user id--------------------------------------------
-    if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
-      $arrPostData = array();
-      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-      $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-    // ---------------------------------------------บัตรประชาชน---------------------------------------------
-    }else if(
-      $arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']  && strlen($arrJson['events'][0]['message']['text'])== "13"){
-      $data=$arrJson['events'][0]['message']['text'];   
-      $arrPostData = array();
-      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-      $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] = "รหัสบัตรประชาชน คือ".  $data; 
-      // $arrPostData['messages'][1]['type'] = "text";
-      // $arrPostData['messages'][1]['text'] = "123456789";
-      // strlen($data); การนับจำนวน
-      
-    // ---------------------------------------------เลขสมาชิก---------------------------------------------
-    }else if($arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']   && strlen($arrJson['events'][0]['message']['text'])== "10"){
-      $data=$arrJson['events'][0]['message']['text'];
-      $T_data=substr($data, 0 ,3 ); //เป็นการตัดข้อความ เลือกใช้ตำเเหน่งไหนที่ต้องการ
-      $F_data=substr($data, 5 ,10 ); 
-      
-      $arrPostData = array();
-      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-      $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] = "เลขสมาชิกของคุณ คือ".  $T_data.$F_data;
-      
-      
-    // ---------------------------------------------ลงทะเบียน---------------------------------------------
-    }else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){
-      $arrPostData = array();
-      $data=$arrJson['events'][0]['message']['text'];
-      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-      $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] ="กรุณากรอกข้อมูลเลขสมาชิก 10 หลัก 
-      หรือข้อมูลเลขบัตรประชาชน 13 หลัก ค่ะ";
-    
-        
-    // ---------------------------------------------ลูบสุดท้าย---------------------------------------------
-    }else{
-      $arrPostData = array();
-      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-      $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!! 
-    กรุณากรอกข้อมูลกรอกข้อมูลเลขสมาชิกหรือเลขบัตรประชาชนอีกครั้ง";
-    }
-    // ----------------------------------------------------------------------------------------------------
-     
-    // $ch = curl_init();
-    // curl_setopt($ch, CURLOPT_URL,$strUrl);
-    // curl_setopt($ch, CURLOPT_HEADER, false);
-    // curl_setopt($ch, CURLOPT_POST, true);
-    // curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
-    // curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    // $result = curl_exec($ch);
-    // curl_close ($ch);
-     
-  
 
-
-
-
-//     //รับข้อความจากผู้ใช้
-//     $message = $arrayJson['events'][0]['message']['text'];
+    //รับข้อความจากผู้ใช้
+    $message = $arrayJson['events'][0]['message']['text'];
  
-//  #ตัวอย่าง Message Type "Text"
-//      if($message == "สวัสดี"){
-//          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//          $arrayPostData['messages'][0]['type'] = "text";
-//          $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-//          replyMsg($arrayHeader,$arrayPostData);
-//      }
-//      #ตัวอย่าง Message Type "Sticker"
-//      else if($message == "ฝันดี"){
-//          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//          $arrayPostData['messages'][0]['type'] = "sticker";
-//          $arrayPostData['messages'][0]['packageId'] = "2";
-//          $arrayPostData['messages'][0]['stickerId'] = "46";
-//          replyMsg($arrayHeader,$arrayPostData);
-//      }
-//      #ตัวอย่าง Message Type "Image"
-//      else if($message == "รูปน้องแมว"){
-//          $image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
-//          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//          $arrayPostData['messages'][0]['type'] = "image";
-//          $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
-//          $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
-//          replyMsg($arrayHeader,$arrayPostData);
-//      }
-//      #ตัวอย่าง Message Type "Location"
-//      else if($message == "พิกัดสยามพารากอน"){
-//          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//          $arrayPostData['messages'][0]['type'] = "location";
-//          $arrayPostData['messages'][0]['title'] = "สยามพารากอน";
-//          $arrayPostData['messages'][0]['address'] =   "13.7465354,100.532752";
-//          $arrayPostData['messages'][0]['latitude'] = "13.7465354";
-//          $arrayPostData['messages'][0]['longitude'] = "100.532752";
-//          replyMsg($arrayHeader,$arrayPostData);
-//      }
-//      #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
-//      else if($message == "ลาก่อน"){
-//          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//          $arrayPostData['messages'][0]['type'] = "text";
-//          $arrayPostData['messages'][0]['text'] = "อย่าทิ้งกันไป";
-//          $arrayPostData['messages'][1]['type'] = "sticker";
-//          $arrayPostData['messages'][1]['packageId'] = "1";
-//          $arrayPostData['messages'][1]['stickerId'] = "131";
-//          replyMsg($arrayHeader,$arrayPostData);
+ #ตัวอย่าง Message Type "Text"
+     if($message == "สวัสดี"){
+         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+         $arrayPostData['messages'][0]['type'] = "text";
+         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+         replyMsg($arrayHeader,$arrayPostData);
+     }
+     #ตัวอย่าง Message Type "Sticker"
+     else if($message == "ฝันดี"){
+         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+         $arrayPostData['messages'][0]['type'] = "sticker";
+         $arrayPostData['messages'][0]['packageId'] = "2";
+         $arrayPostData['messages'][0]['stickerId'] = "46";
+         replyMsg($arrayHeader,$arrayPostData);
+     }
+     #ตัวอย่าง Message Type "Image"
+     else if($message == "รูปน้องแมว"){
+         $image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
+         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+         $arrayPostData['messages'][0]['type'] = "image";
+         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
+         $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
+         replyMsg($arrayHeader,$arrayPostData);
+     }
+     #ตัวอย่าง Message Type "Location"
+     else if($message == "พิกัดสยามพารากอน"){
+         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+         $arrayPostData['messages'][0]['type'] = "location";
+         $arrayPostData['messages'][0]['title'] = "สยามพารากอน";
+         $arrayPostData['messages'][0]['address'] =   "13.7465354,100.532752";
+         $arrayPostData['messages'][0]['latitude'] = "13.7465354";
+         $arrayPostData['messages'][0]['longitude'] = "100.532752";
+         replyMsg($arrayHeader,$arrayPostData);
+     }
+     #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
+     else if($message == "ลาก่อน"){
+         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+         $arrayPostData['messages'][0]['type'] = "text";
+         $arrayPostData['messages'][0]['text'] = "อย่าทิ้งกันไป";
+         $arrayPostData['messages'][1]['type'] = "sticker";
+         $arrayPostData['messages'][1]['packageId'] = "1";
+         $arrayPostData['messages'][1]['stickerId'] = "131";
+         replyMsg($arrayHeader,$arrayPostData);
         
-//      }
+     }
 
-//      #ตัวอย่าง Message Type "Video"
-//      else if($message == "video"){
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "video";
-//         $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/watch?v=8xeqzvFtw3g";//ใส่ url ของ video ที่ต้องการส่ง
-//         $arrayPostData['messages'][0]['previewImageUrl'] = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";//ใส่รูป preview ของ video
-//         replyMsg($arrayHeader,$arrayPostData);
-//     }
+     #ตัวอย่าง Message Type "Video"
+     else if($message == "video"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "video";
+        $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/watch?v=8xeqzvFtw3g";//ใส่ url ของ video ที่ต้องการส่ง
+        $arrayPostData['messages'][0]['previewImageUrl'] = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";//ใส่รูป preview ของ video
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 
-//     function createNewRichmenu($channelAccessToken) {
-//         $sh = <<< EOF
-//         curl -X POST \
-//         -H 'Authorization: Bearer $channelAccessToken' \
-//         -H 'Content-Type:application/json' \
-//         -d '{"size": {"width": 2500,"height": 1686},"selected": false,"name": "Controller","chatBarText": "Controller","areas": [{"bounds": {"x": 551,"y": 325,"width": 321,"height": 321},"action": {"type": "message","text": "up"}},{"bounds": {"x": 876,"y": 651,"width": 321,"height": 321},"action": {"type": "message","text": "right"}},{"bounds": {"x": 551,"y": 972,"width": 321,"height": 321},"action": {"type": "message","text": "down"}},{"bounds": {"x": 225,"y": 651,"width": 321,"height": 321},"action": {"type": "message","text": "left"}},{"bounds": {"x": 1433,"y": 657,"width": 367,"height": 367},"action": {"type": "message","text": "btn b"}},{"bounds": {"x": 1907,"y": 657,"width": 367,"height": 367},"action": {"type": "message","text": "btn a"}}]}' https://api.line.me/v2/bot/richmenu;
-//       EOF;
-//         $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
-//         if(isset($result['richMenuId'])) {
-//           return $result['richMenuId'];
-//         }
-//         else {
-//           return $result['message'];
-//         }
-//       }
-//       function getListOfRichmenu($channelAccessToken) {
-//         $sh = <<< EOF
-//         curl \
-//         -H 'Authorization: Bearer $channelAccessToken' \
-//         https://api.line.me/v2/bot/richmenu/list;
-//       EOF;
-//         $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
-//         return $result;
-//       }
-
-
-
-
-
-
-
+    function createNewRichmenu($channelAccessToken) {
+        $sh = <<< EOF
+        curl -X POST \
+        -H 'Authorization: Bearer $channelAccessToken' \
+        -H 'Content-Type:application/json' \
+        -d '{"size": {"width": 2500,"height": 1686},"selected": false,"name": "Controller","chatBarText": "Controller","areas": [{"bounds": {"x": 551,"y": 325,"width": 321,"height": 321},"action": {"type": "message","text": "up"}},{"bounds": {"x": 876,"y": 651,"width": 321,"height": 321},"action": {"type": "message","text": "right"}},{"bounds": {"x": 551,"y": 972,"width": 321,"height": 321},"action": {"type": "message","text": "down"}},{"bounds": {"x": 225,"y": 651,"width": 321,"height": 321},"action": {"type": "message","text": "left"}},{"bounds": {"x": 1433,"y": 657,"width": 367,"height": 367},"action": {"type": "message","text": "btn b"}},{"bounds": {"x": 1907,"y": 657,"width": 367,"height": 367},"action": {"type": "message","text": "btn a"}}]}' https://api.line.me/v2/bot/richmenu;
+      EOF;
+        $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
+        if(isset($result['richMenuId'])) {
+          return $result['richMenuId'];
+        }
+        else {
+          return $result['message'];
+        }
+      }
+      function getListOfRichmenu($channelAccessToken) {
+        $sh = <<< EOF
+        curl \
+        -H 'Authorization: Bearer $channelAccessToken' \
+        https://api.line.me/v2/bot/richmenu/list;
+      EOF;
+        $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
+        return $result;
+      }
 
  function replyMsg($arrayHeader,$arrayPostData){
          $strUrl = "https://api.line.me/v2/bot/message/reply";
