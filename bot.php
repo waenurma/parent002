@@ -8,6 +8,9 @@
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
+
+
+    //เชื่อมdb
     // $host = 'ec2-54-235-180-123.compute-1.amazonaws.com';
     // $dbname = 'dejm5cvd928n89'; 
     // $user = 'wammqrjxsobuvm'; 
