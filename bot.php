@@ -65,7 +65,7 @@
 
 
 
-    
+
      #ตัวอย่าง Message Type "Sticker"
      else if($message == "ฝันดี"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -121,23 +121,18 @@
     $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!";
   }
 
-  function sendMessage($replyJson, $sendInfo){
-    $ch = curl_init($sendInfo["URL"]);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json',
-        'Authorization: Bearer ' . $sendInfo["AccessToken"])
-        );
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $replyJson);
-    $result = curl_exec($ch);
-    curl_close($ch);
-return $result;
-}
-
-
-
-
-
- ?> 
+ function replyMsg($arrayHeader,$arrayPostData){
+        $strUrl = "https://api.line.me/v2/bot/message/reply";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$strUrl);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);    
+        curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($arrayPostData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $result = curl_exec($ch);
+        curl_close ($ch);
+    }
+exit;
+?>
