@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     $accessToken = "exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
     
     $content = file_get_contents('php://input');
@@ -16,7 +16,10 @@
     // $user = 'wammqrjxsobuvm'; 
     // $pass = '817d802129e8aebb1a07b4d7ba1b59f84d01696ed5eddbe84b51ea4d998f8df5'; 
     // $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
-    // $result = $connection->query("SELECT * FROM polls"); if($result !== null) { echo $result->rowCount(); }
+    // $result = $connection->query("SELECT * FROM `subjaect`"); 
+    // if($result !== null) { 
+    //     echo $result->rowCount(); 
+    // }
     
     /*Return HTTP Request 200*/
     http_response_code(200);
@@ -28,9 +31,41 @@
      if($message == "สวัสดี"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
          $arrayPostData['messages'][0]['type'] = "text";
-         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
          replyMsg($arrayHeader,$arrayPostData);
      }
+
+     else if($message == "สวัสดีคับ"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+
+    else if($message == "สวัสดีครับ"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+
+    else if($message == "สวัสดีค่ะ"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+
+    else if($message == "สวัสดีคะ"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+
+
+
+    
      #ตัวอย่าง Message Type "Sticker"
      else if($message == "ฝันดี"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -83,22 +118,26 @@
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!! 
-  กรุณากรอกข้อมูลกรอกข้อมูลเลขสมาชิกหรือเลขบัตรประชาชนอีกครั้ง";
+    $arrPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!";
   }
 
- function replyMsg($arrayHeader,$arrayPostData){
-         $strUrl = "https://api.line.me/v2/bot/message/reply";
-         $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL,$strUrl);
-         curl_setopt($ch, CURLOPT_HEADER, false);
-         curl_setopt($ch, CURLOPT_POST, true);
-         curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);    
-         curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($arrayPostData));
-         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-         $result = curl_exec($ch);
-         curl_close ($ch);
-     }
-    exit;
- ?>
+  function sendMessage($replyJson, $sendInfo){
+    $ch = curl_init($sendInfo["URL"]);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . $sendInfo["AccessToken"])
+        );
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $replyJson);
+    $result = curl_exec($ch);
+    curl_close($ch);
+return $result;
+}
+
+
+
+
+
+ ?> 
