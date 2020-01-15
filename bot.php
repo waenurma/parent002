@@ -121,7 +121,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-    
+
 
 //      #ตัวอย่าง Message Type "Sticker"
 //      else if($message == "ฝันดี"){
