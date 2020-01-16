@@ -126,10 +126,7 @@
     else if($message == "ผลการเรียน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-        $arrayPostData['messages'][1]['type'] = "sticker";
-        $arrayPostData['messages'][1]['packageId'] = "1";
-        $arrayPostData['messages'][1]['stickerId'] = "4";
+        $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียน";
         replyMsg($arrayHeader,$arrayPostData);
        
     }
