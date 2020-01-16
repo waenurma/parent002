@@ -126,12 +126,43 @@
     else if($message == "ผลการเรียน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียน";
+        $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียนตรงนี้จะเป็นแบบ Button";
+        replyMsg($arrayHeader,$arrayPostData);
+       
+    }
+
+    else if($message == "การเรียนกรสอน"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "การเรียนการสอนตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูเนื้อหาที่เรียน";
         replyMsg($arrayHeader,$arrayPostData);
        
     }
 
 
+    else if($message == "การบ้าน"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าว็บสามารถดูการบ้าน";
+        replyMsg($arrayHeader,$arrayPostData);
+       
+    }
+
+    else if($message == "ค่าใช้จ่าย"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
+        replyMsg($arrayHeader,$arrayPostData);
+       
+    }
+
+    else if($message == "กิจกรรม"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
+        replyMsg($arrayHeader,$arrayPostData);
+       
+    }
 
 //      #ตัวอย่าง Message Type "Sticker"
 //      else if($message == "ฝันดี"){
