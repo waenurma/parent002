@@ -1,4 +1,4 @@
-<?php session_start();?>
+<!-- <?php session_start();?>
 <?php
 include 'h.php';
 ?>
@@ -67,4 +67,75 @@ width:100%;
       </form>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<table>
+     <br>
+<tr>
+        <td><FONT COLOR=#FFFFFF>วัน / เวลา</font></td>
+	<td><FONT COLOR=#FFFFFF>08:00 - 09:00</font></td>
+	<td><FONT COLOR=#FFFFFF>09:00 - 10:00</font></td>
+	<td><FONT COLOR=#FFFFFF>10:00 - 11:00</font></td>
+	<td><FONT COLOR=#FFFFFF>11:00 - 12:00</font></td>
+	<td><FONT COLOR=#FFFFFF>12:00 - 13:00</font></td>
+	<td><FONT COLOR=#FFFFFF>13:00 - 14:00</font></td>
+	<td><FONT COLOR=#FFFFFF>14:00 - 15:00</font></td>
+        <td><FONT COLOR=#FFFFFF>15:00 - 16:00</font></td>
+</tr>
+<tr>
+	<td><FONT COLOR=#FFFFFF>จันทร์</font></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+        <td></td>
+</tr>
+<tr>
+	<td><FONT COLOR=#FFFFFF>อังคาร</font></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+        <td></td>
+</tr>
+<tr>
+	<td><FONT COLOR=#FFFFFF>พุธ</font></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+        <td></td>
+</tr>
+<tr>
+	<td><FONT COLOR=#FFFFFF>พฤหัสบดี</font></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+        <td></td>
+</tr>
+<tr>
+	<td><FONT COLOR=#FFFFFF>ศุกร์</font></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+        <td></td>
+</tr>
+</table>

@@ -164,6 +164,7 @@
        
     }
 
+
 //      #ตัวอย่าง Message Type "Sticker"
 //      else if($message == "ฝันดี"){
 //          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
