@@ -187,7 +187,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-    // message ดักจับคำ
+    // message ดักจับคำที่แปลกๆ
     else{
         $arrayPostData = array();
         $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
