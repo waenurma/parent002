@@ -27,6 +27,7 @@
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
     $arrPostData= array();
+    $arrPostData['messages'][0]['type'] = "text";
  #ตัวอย่าง Message Type "Text"
      if($message == "สวัสดี"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -168,7 +169,9 @@
         $arrayPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
         replyMsg($arrayHeader,$arrayPostData);
        
-    }else{
+    }
+    
+    else{
     $arrPostData= array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
