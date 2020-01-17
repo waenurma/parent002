@@ -28,11 +28,11 @@
     $message = $arrayJson['events'][0]['message']['text'];
  
  #ตัวอย่าง Message Type "Text"
- if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+     if($message == "สวัสดี"){
+         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+         $arrayPostData['messages'][0]['type'] = "text";
+         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+         replyMsg($arrayHeader,$arrayPostData);
      }
 
      else if($message == "สวัสดีคับ"){
@@ -163,7 +163,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }else{
-    $arrPostData = array();
+    $arrayHeader = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
