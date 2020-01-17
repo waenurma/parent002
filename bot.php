@@ -26,9 +26,17 @@
 
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
- 
+        
  #ตัวอย่าง Message Type "Text"
-     if($message == "สวัสดี"){
+     if ($message == ""){
+    $arrPostData= array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+
+    }
+
+    else if($message == "สวัสดี"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
          $arrayPostData['messages'][0]['type'] = "text";
          $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
@@ -139,7 +147,6 @@
        
     }
 
-
     else if($message == "การบ้าน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
@@ -163,7 +170,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }else{
-    $arrayHeader = array();
+    $arrPostData= array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
