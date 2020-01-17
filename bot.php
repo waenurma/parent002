@@ -192,7 +192,7 @@
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+        $arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";
     }
 
 
