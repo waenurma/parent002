@@ -26,7 +26,6 @@
 
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    $arrayPostData = array();
     
  #ตัวอย่าง Message Type "Text"
      if($message == "สวัสดี"){
@@ -77,6 +76,7 @@
     }
 
     #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
+    // message  "ขอบคุณ"
     else if($message == "ขอบคุณ"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -133,7 +133,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
+    //message  "ตารางเรียน"
     else if($message == "ตารางเรียน"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -142,7 +142,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
+    // message  "ผลการเรียน"
     else if($message == "ผลการเรียน"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -151,7 +151,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
+    // message  "การเรียนการสอน"
     else if($message == "การเรียนการสอน"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -160,7 +160,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
+    // message  "การบ้าน"
     else if($message == "การบ้าน"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -169,7 +169,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
+    // message  "ค่าใช้จ่าย"
     else if($message == "ค่าใช้จ่าย"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -178,7 +178,7 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
+    // message  "กิจกรรม"
     else if($message == "กิจกรรม"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -187,13 +187,22 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
+    // message ดักจับคำ
     else{
         $arrayPostData = array();
         $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!";
+        replyMsg($arrayHeader,$arrayPostData);
     }
+
+
+
+
+
+
+
+
 
 //      #ตัวอย่าง Message Type "Sticker"
 //      else if($message == "ฝันดี"){
