@@ -51,7 +51,7 @@
 
     else if($message == "สวัสดีค่ะ"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['type'] = "Button";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
         replyMsg($arrayHeader,$arrayPostData);
     }
@@ -161,10 +161,10 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }else{
-    $arrPostData= array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+        $arrPostData= array();
+        $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+        $arrPostData['messages'][0]['type'] = "text";
+        $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
     }
 
 
@@ -226,5 +226,5 @@
         $result = curl_exec($ch);
         curl_close ($ch);
     }
-exit;
+
 ?>
