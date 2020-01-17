@@ -30,7 +30,7 @@
     
  #ตัวอย่าง Message Type "Text"
      if($message == "สวัสดี"){
-        $arrPostData= array();
+         $arrayPostData= array();
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
          $arrayPostData['messages'][0]['type'] = "text";
          $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
@@ -38,7 +38,7 @@
      }
 
      else if($message == "สวัสดีคับ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
@@ -46,7 +46,7 @@
     }
 
     else if($message == "สวัสดีครับ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
@@ -54,7 +54,7 @@
     }
 
     else if($message == "สวัสดีค่ะ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
@@ -62,14 +62,14 @@
     }
 
     else if($message == "สวัสดีคะ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($message == "หวัดดี"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
@@ -78,7 +78,7 @@
 
     #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
     else if($message == "ขอบคุณ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
@@ -89,7 +89,7 @@
     }
 
     else if($message == "ขอบคุณคะ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
@@ -101,7 +101,7 @@
     }
 
     else if($message == "ขอบคุณค่ะ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
@@ -112,7 +112,7 @@
        
     }
     else if($message == "ขอบคุณคับ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
@@ -123,7 +123,7 @@
        
     }
     else if($message == "ขอบคุณครับ"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
@@ -135,7 +135,7 @@
     }
 
     else if($message == "ตารางเรียน"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
@@ -144,7 +144,7 @@
     }
 
     else if($message == "ผลการเรียน"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียนตรงนี้จะเป็นแบบ Button";
@@ -153,7 +153,7 @@
     }
 
     else if($message == "การเรียนการสอน"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "การเรียนการสอนตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูเนื้อหาที่เรียน";
@@ -162,7 +162,7 @@
     }
 
     else if($message == "การบ้าน"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
@@ -171,7 +171,7 @@
     }
 
     else if($message == "ค่าใช้จ่าย"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
@@ -180,7 +180,7 @@
     }
 
     else if($message == "กิจกรรม"){
-        $arrPostData= array();
+        $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
@@ -189,11 +189,10 @@
     }
     
     else{
-    $arrPostData= array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
-    replyMsg($arrayHeader,$arrayPostData);
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
     }
 
 
