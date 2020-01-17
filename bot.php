@@ -188,7 +188,8 @@
        
     }
     
-    else{
+    else
+        $message = $arrayJson['events'][0]['message']['text'];{
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
