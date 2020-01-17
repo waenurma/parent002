@@ -29,6 +29,7 @@
  
  #ตัวอย่าง Message Type "Text"
      if($message == "สวัสดี"){
+        $arrPostData = array();
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
          $arrayPostData['messages'][0]['type'] = "text";
          $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
@@ -36,6 +37,7 @@
      }
 
      else if($message == "สวัสดีคับ"){
+        $arrPostData = array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
