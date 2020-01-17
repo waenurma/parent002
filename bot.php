@@ -122,6 +122,14 @@
        
     }
 
+    else if($message == "ตารางเรียน"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
+        replyMsg($arrayHeader,$arrayPostData);
+       
+    }
+
     else if($message == "ผลการเรียน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
