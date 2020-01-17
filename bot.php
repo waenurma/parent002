@@ -122,7 +122,6 @@
        
     }
 
-
     else if($message == "ผลการเรียน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
