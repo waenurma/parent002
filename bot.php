@@ -26,7 +26,7 @@
 
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-   
+    $arrayPostData = array();
     
  #ตัวอย่าง Message Type "Text"
      if($message == "สวัสดี"){
@@ -187,14 +187,13 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-    
-    else if ($message == "()"){
-        $arrayPostData= array();
+
+    else{
+        $arrayPostData = array();
         $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";
+        $arrayPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!";
     }
-
 
 //      #ตัวอย่าง Message Type "Sticker"
 //      else if($message == "ฝันดี"){
