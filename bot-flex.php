@@ -1,13 +1,16 @@
 <?php
-$API_URL = 'https://api.line.me/v2/bot/message';
-$ACCESS_TOKEN = 'exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU='; 
-$channelSecret = 'aa79f5f6f04e775f836bf54644526aed';
-$POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
-$request = file_get_contents('php://input');   // Get request content
-$request_array = json_decode($request, true);   // Decode JSON to Array
+    
+    $accessToken = "exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+    $content = file_get_contents('php://input');
+    $arrayJson = json_decode($content, true);
+    
+    $arrayHeader = array();
+    $arrayHeader[] = "Content-Type: application/json";
+    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+
 $jsonFlex = [
     "type" => "flex",
-    "altText" => "ผลการเรียน",
+    "altText" => "Hello Flex Message",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -25,7 +28,7 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => "ผลการเรียน",
+            "text" => "฿ 100.00",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
@@ -123,23 +126,27 @@ $jsonFlex = [
       ]
     ]
   ];
-if ( sizeof($request_array['events']) > ผลการเรียน) {
+  if ( sizeof($request_array['events']) > 0 ) {
+
     foreach ($request_array['events'] as $event) {
-        error_log(json_encode($event));
-        // $reply_message = '';
-        //$reply_token = $event['replyToken'];
+
+        $reply_message = '';
+        $reply_token = $event['replyToken'];
+
+        $text = $event['message']['ผลการเรียน'];
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [['type' => 'text', 'ผลการเรียน' => $jsonFlex ]]
-           
+            // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
+            'messages' => [['type' => 'text', 'ผลการเรียน' =>$jsonFlex ]]
         ];
-        print_r($data);
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+
         echo "Result: ".$send_result."\r\n";
-        
     }
 }
+
 echo "OK";
 function send_reply_message($url, $post_header, $post_body)
 {
@@ -151,6 +158,8 @@ function send_reply_message($url, $post_header, $post_body)
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     $result = curl_exec($ch);
     curl_close($ch);
+
     return $result;
 }
+
 ?>
