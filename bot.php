@@ -7,9 +7,29 @@
     $arrayHeader = array();
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+   
+
+    //เชื่อมdb
+    // $host = 'ec2-54-235-180-123.compute-1.amazonaws.com';
+    // $dbname = 'dejm5cvd928n89'; 
+    // $user = 'wammqrjxsobuvm'; 
+    // $pass = '817d802129e8aebb1a07b4d7ba1b59f84d01696ed5eddbe84b51ea4d998f8df5'; 
+    // $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
+    // $result = $connection->query("SELECT * FROM `subjaect`"); 
+    // if($result !== null) { 
+    //     echo $result->rowCount(); 
+    // }
+    
+    /*Return HTTP Request 200*/
+    http_response_code(200);
+
+    //รับข้อความจากผู้ใช้
+    $message = $arrayJson['events'][0]['message']['text'];
+    $arrayPostData= array();
+
     $jsonFlex = [
         "type" => "flex",
-        "altText" => "Hello Flex Message",
+        "altText" => "ผลการเรียน",
         "contents" => [
           "type" => "bubble",
           "direction" => "ltr",
@@ -125,25 +145,25 @@
           ]
         ]
       ];
-   
+    if ( sizeof($arrayJson['events']) > $message == "ผลการเรียน" ) {
+        foreach ($arrayJson['events'] as $event) {
+            error_log(json_encode($event));
+            $reply_message = '';
+            $reply_token = $event['replyToken'];
+            $data = [
+                'replyToken' => $reply_token,
+                'messages' => [$jsonFlex]
+            ];
+            print_r($data);
+            $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+            $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+            echo "Result: ".$send_result."\r\n";
+            
+        }
+    }
+    echo "OK";
 
-    //เชื่อมdb
-    // $host = 'ec2-54-235-180-123.compute-1.amazonaws.com';
-    // $dbname = 'dejm5cvd928n89'; 
-    // $user = 'wammqrjxsobuvm'; 
-    // $pass = '817d802129e8aebb1a07b4d7ba1b59f84d01696ed5eddbe84b51ea4d998f8df5'; 
-    // $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
-    // $result = $connection->query("SELECT * FROM `subjaect`"); 
-    // if($result !== null) { 
-    //     echo $result->rowCount(); 
-    // }
-    
-    /*Return HTTP Request 200*/
-    http_response_code(200);
 
-    //รับข้อความจากผู้ใช้
-    $message = $arrayJson['events'][0]['message']['text'];
-    $arrayPostData= array();
  #ตัวอย่าง Message Type "Text"
      if($message == "สวัสดี"){
          $arrayPostData= array();
@@ -264,7 +284,7 @@
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = [$jsonFlex];
-        $arrayPostData['messages'][0]['flex'] = [$jsonFlex];
+        $arrayPostData['messages'][0][$jsonFlex] = [$jsonFlex];
         replyMsg($arrayHeader,$arrayPostData);
        
     }
