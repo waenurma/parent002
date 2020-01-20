@@ -50,7 +50,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
   $arrPostData['messages'][1]['type'] = "sticker";
   $arrPostData['messages'][1]['packageId'] = "1";
-  $arพPostData['messages'][1]['stickerId'] = "4";
+  $arrPostData['messages'][1]['stickerId'] = "4";
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณค่ะ"){
     $arrPostData = array();
@@ -59,7 +59,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";
+    $arrPostData['messages'][1]['stickerId'] = "4";
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณคะ"){
     $arrPostData = array();
@@ -68,7 +68,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";
+    $arrPostData['messages'][1]['stickerId'] = "4";
 
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณจ่ะ"){
@@ -78,7 +78,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";
+    $arrPostData['messages'][1]['stickerId'] = "4";
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณครับ"){
     $arrPostData = array();
@@ -87,7 +87,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";    
+    $arrPostData['messages'][1]['stickerId'] = "4";    
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณคับ"){
     $arrPostData = array();
@@ -96,7 +96,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";    
+    $arrPostData['messages'][1]['stickerId'] = "4";    
 
 }else if($arrJson['events'][0]['message']['text'] == "ใจจ่ะ"){
     $arrPostData = array();
@@ -105,7 +105,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";
+    $arrPostData['messages'][1]['stickerId'] = "4";
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบใจคับ"){
     $arrPostData = array();
@@ -114,7 +114,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";    
+    $arrPostData['messages'][1]['stickerId'] = "4";    
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบใจครับ"){
     $arrPostData = array();
@@ -123,7 +123,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arพPostData['messages'][1]['stickerId'] = "4";     
+    $arrPostData['messages'][1]['stickerId'] = "4";     
 
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
