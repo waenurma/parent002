@@ -123,14 +123,15 @@ $jsonFlex = [
       ]
     ]
   ];
-if ( sizeof($request_array['events']) > 0) {
+if ( sizeof($request_array['events']) > ผลการเรียน) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
         // $reply_message = '';
         $reply_token = $event['replyToken'];
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonFlex]
+            'messages' => [['type' => 'text', 'ผลการเรียน' => $jsonFlex ]]
+           
         ];
         print_r($data);
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
