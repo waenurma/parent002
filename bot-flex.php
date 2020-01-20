@@ -8,7 +8,7 @@ $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 $jsonFlex = [
     "type" => "flex",
-    "altText" => "Hello Flex Message",
+    "altText" => "ผลการเรียน",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -16,21 +16,21 @@ $jsonFlex = [
         "type" => "box",
         "layout" => "vertical",
         "contents" => [
-          [
-            "type" => "text",
-            "text" => "Purchase",
-            "size" => "lg",
-            "align" => "start",
-            "weight" => "bold",
-            "color" => "#009813"
-          ],
           // [
           //   "type" => "text",
-          //   "text" => "฿ 100.00",
-          //   "size" => "3xl",
+          //   "text" => "Purchase",
+          //   "size" => "lg",
+          //   "align" => "start",
           //   "weight" => "bold",
-          //   "color" => "#000000"
+          //   "color" => "#009813"
           // ],
+          [
+            "type" => "text",
+            "text" => "ผลการเรียน",
+            "size" => "3xl",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
           // [
           //   "type" => "text",
           //   "text" => "Rabbit Line Pay",
@@ -44,15 +44,15 @@ $jsonFlex = [
           //   "size" => "xs",
           //   "color" => "#B2B2B2"
           // ],
-          [
-            "type" => "text",
-            "text" => "Payment complete.",
-            "margin" => "lg",
-            "size" => "lg",
-            "color" => "#000000"
-          ]
-        ]
-      ],
+      //     // [
+      //     //   "type" => "text",
+      //     //   "text" => "Payment complete.",
+      //     //   "margin" => "lg",
+      //     //   "size" => "lg",
+      //     //   "color" => "#000000"
+      //     // ]
+      //   ]
+      // ],
       "body" => [
         "type" => "box",
         "layout" => "vertical",
@@ -66,20 +66,20 @@ $jsonFlex = [
             "layout" => "baseline",
             "margin" => "lg",
             "contents" => [
-              [
-                "type" => "text",
-                "text" => "Merchant",
-                "align" => "start",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "BTS 01",
-                "align" => "end",
-                "color" => "#000000"
-              ]
-            ]
-          ],
+              // [
+              //   "type" => "text",
+              //   "text" => "Merchant",
+              //   "align" => "start",
+              //   "color" => "#C3C3C3"
+              // ],
+          //     [
+          //       "type" => "text",
+          //       "text" => "BTS 01",
+          //       "align" => "end",
+          //       "color" => "#000000"
+          //     ]
+          //   ]
+          // ],
           [
             "type" => "box",
             "layout" => "baseline",
