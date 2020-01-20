@@ -282,26 +282,10 @@
     else if($message == "ผลการเรียน"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = [$jsonFlex];
-        $arrayPostData['messages'][0][$jsonFlex] = [$jsonFlex];
-        if ( sizeof($request_array['events']) > 0 ) {
-            foreach ($request_array['events'] as $event) {
-                error_log(json_encode($event));
-                $reply_message = '';
-                $reply_token = $event['replyToken'];
-                $data = [
-                    'replyToken' => $reply_token,
-                    'messages' => [$jsonFlex]
-                ];
-                print_r($data);
-                $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-                $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
-                echo "Result: ".$send_result."\r\n";
-                
-            }
-        }
-        echo "OK";
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
         replyMsg($arrayHeader,$arrayPostData);
+       
        
     }
     // message  "การเรียนการสอน"
