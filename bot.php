@@ -145,8 +145,8 @@
           ]
         ]
       ];
-    if ( sizeof($arrayJson['events']) > $message == "ผลการเรียน" ) {
-        foreach ($arrayJson['events'] as $event) {
+    if ( sizeof( $arrayPostData['events']) > $message == "ผลการเรียน" ) {
+        foreach ( $arrayPostData['events'] as $event) {
             error_log(json_encode($event));
             $reply_message = '';
             $reply_token = $event['replyToken'];
@@ -156,7 +156,7 @@
             ];
             print_r($data);
             $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-            $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+            $arrayPostData = send_reply_message($API_URL.'/reply',  $arrayPostData, $post_body);
             echo "Result: ".$send_result."\r\n";
             
         }
