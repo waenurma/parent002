@@ -146,8 +146,8 @@
     else if($message == "ผลการเรียน"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "button";
-        $arrayPostData['messages'][0]['button'] = "button.json";
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียนตรงนี้จะเป็นแบบ Button";
         replyMsg($arrayHeader,$arrayPostData);
        
     }
