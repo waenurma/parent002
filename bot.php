@@ -4,9 +4,9 @@
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
     
-    $arrayHeader = array();
-    $arrayHeader[] = "Content-Type: application/json";
-    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+    // $arrayHeader = array();
+    // $arrayHeader[] = "Content-Type: application/json";
+    // $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
 
 
@@ -199,7 +199,7 @@
 
     //  }
     
-     actions
+    
      $actions = array (
         // general message action
         New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("button 1", "text 1"),
