@@ -4,9 +4,9 @@
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
     
-    // $arrayHeader = array();
-    // $arrayHeader[] = "Content-Type: application/json";
-    // $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+    $arrayHeader = array();
+    $arrayHeader[] = "Content-Type: application/json";
+    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
 
 
@@ -25,195 +25,181 @@
     http_response_code(200);
 
     //รับข้อความจากผู้ใช้
-//     $message = $arrayJson['events'][0]['message']['text'];
-//     $arrayPostData= array();
-//  #ตัวอย่าง Message Type "Text"
-//      if($message == "สวัสดี"){
-//          $arrayPostData= array();
-//          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//          $arrayPostData['messages'][0]['type'] = "text";
-//          $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
-//          replyMsg($arrayHeader,$arrayPostData);
-//      }
+    $message = $arrayJson['events'][0]['message']['text'];
+    $arrayPostData= array();
+ #ตัวอย่าง Message Type "Text"
+     if($message == "สวัสดี"){
+         $arrayPostData= array();
+         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+         $arrayPostData['messages'][0]['type'] = "text";
+         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+         replyMsg($arrayHeader,$arrayPostData);
+     }
 
-//      else if($message == "สวัสดีคับ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
-//         replyMsg($arrayHeader,$arrayPostData);
-//     }
+     else if($message == "สวัสดีคับ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 
-//     else if($message == "สวัสดีครับ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
-//         replyMsg($arrayHeader,$arrayPostData);
-//     }
+    else if($message == "สวัสดีครับ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 
-//     else if($message == "สวัสดีค่ะ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
-//         replyMsg($arrayHeader,$arrayPostData);
-//     }
+    else if($message == "สวัสดีค่ะ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 
-//     else if($message == "สวัสดีคะ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
-//         replyMsg($arrayHeader,$arrayPostData);
-//     }
-//     else if($message == "หวัดดี"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
-//         replyMsg($arrayHeader,$arrayPostData);
-//     }
+    else if($message == "สวัสดีคะ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+    else if($message == "หวัดดี"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา มีอะไรให้เราช่วยไหมค่ะ";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 
-//     #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
-//     // message  "ขอบคุณ"
-//     else if($message == "ขอบคุณ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//         $arrayPostData['messages'][1]['type'] = "sticker";
-//         $arrayPostData['messages'][1]['packageId'] = "1";
-//         $arrayPostData['messages'][1]['stickerId'] = "4";
-//         replyMsg($arrayHeader,$arrayPostData);  
-//     }
+    #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
+    // message  "ขอบคุณ"
+    else if($message == "ขอบคุณ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "1";
+        $arrayPostData['messages'][1]['stickerId'] = "4";
+        replyMsg($arrayHeader,$arrayPostData);  
+    }
 
-//     else if($message == "ขอบคุณคะ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//         $arrayPostData['messages'][1]['type'] = "sticker";
-//         $arrayPostData['messages'][1]['packageId'] = "1";
-//         $arrayPostData['messages'][1]['stickerId'] = "4";
-//         replyMsg($arrayHeader,$arrayPostData);
+    else if($message == "ขอบคุณคะ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "1";
+        $arrayPostData['messages'][1]['stickerId'] = "4";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
+    }
 
-//     else if($message == "ขอบคุณค่ะ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//         $arrayPostData['messages'][1]['type'] = "sticker";
-//         $arrayPostData['messages'][1]['packageId'] = "1";
-//         $arrayPostData['messages'][1]['stickerId'] = "4";
-//         replyMsg($arrayHeader,$arrayPostData);
+    else if($message == "ขอบคุณค่ะ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "1";
+        $arrayPostData['messages'][1]['stickerId'] = "4";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     else if($message == "ขอบคุณคับ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//         $arrayPostData['messages'][1]['type'] = "sticker";
-//         $arrayPostData['messages'][1]['packageId'] = "1";
-//         $arrayPostData['messages'][1]['stickerId'] = "4";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    else if($message == "ขอบคุณคับ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "1";
+        $arrayPostData['messages'][1]['stickerId'] = "4";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     else if($message == "ขอบคุณครับ"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//         $arrayPostData['messages'][1]['type'] = "sticker";
-//         $arrayPostData['messages'][1]['packageId'] = "1";
-//         $arrayPostData['messages'][1]['stickerId'] = "4";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    else if($message == "ขอบคุณครับ"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+        $arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "1";
+        $arrayPostData['messages'][1]['stickerId'] = "4";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     //message  "ตารางเรียน"
-//     else if($message == "ตารางเรียน"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    //message  "ตารางเรียน"
+    else if($message == "ตารางเรียน"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     // message  "ผลการเรียน"
-//     else if($message == "ผลการเรียน"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียนตรงนี้จะเป็นแบบ Button";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    // message  "ผลการเรียน"
+    else if($message == "ผลการเรียน"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียนตรงนี้จะเป็นแบบ Button";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     // message  "การเรียนการสอน"
-//     else if($message == "การเรียนการสอน"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "การเรียนการสอนตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูเนื้อหาที่เรียน";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    // message  "การเรียนการสอน"
+    else if($message == "การเรียนการสอน"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "การเรียนการสอนตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูเนื้อหาที่เรียน";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     // message  "การบ้าน"
-//     else if($message == "การบ้าน"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    // message  "การบ้าน"
+    else if($message == "การบ้าน"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     // message  "ค่าใช้จ่าย"
-//     else if($message == "ค่าใช้จ่าย"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    // message  "ค่าใช้จ่าย"
+    else if($message == "ค่าใช้จ่าย"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
-//     // message  "กิจกรรม"
-//     else if($message == "กิจกรรม"){
-//         $arrayPostData= array();
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $arrayPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
-//         replyMsg($arrayHeader,$arrayPostData);
+    }
+    // message  "กิจกรรม"
+    else if($message == "กิจกรรม"){
+        $arrayPostData= array();
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
+        replyMsg($arrayHeader,$arrayPostData);
        
-//     }
+    }
 
     
     // message ดักจับคำที่แปลกๆ
-    // else{
-    //     $arrayPostData = array();
-    //     $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    //     $arrayPostData['messages'][0]['type'] = "text";
-    //     $arrayPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!";
-    //     replyMsg($arrayHeader,$arrayPostData);
+    else{
+        $arrayPostData = array();
+        $arrayPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!";
+        replyMsg($arrayHeader,$arrayPostData);
 
-    //  }
-    
-    
-     $actions = array (
-        // general message action
-        New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("button 1", "text 1"),
-        // URL type action
-        New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google", "http://www.google.com"),
-        // The following two are interactive actions
-        New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("next page", "page=3"),
-        New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Previous page", "page=1")
-        );
-        $img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
-        $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("button text", "description", $img_url, $actions);
-        $outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Button template builder", $button);
-        $response = $bot->replyMessage($event->getReplyToken(), $outputText);
-    
+     }
+     
+     
 
 
 
