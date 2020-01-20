@@ -1,6 +1,6 @@
 <?php
  
-$strAccessToken = "ACCESS_TOKEN";
+$strAccessToken = "exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่;
  
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
@@ -17,113 +17,113 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ ";  //.$arrJson['events'][0]['source']['userId'];
 
-// }else if($arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ"){
-//   $arrPostData = array();
-//   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//   $arrPostData['messages'][0]['type'] = "text";
-//   $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
+}else if($arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
 
-// }else if($arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
+}else if($arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
 
-// }else if($arrJson['events'][0]['message']['text'] == "สวัสดีคับ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
+}else if($arrJson['events'][0]['message']['text'] == "สวัสดีคับ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
 
-// }else if($arrJson['events'][0]['message']['text'] == "สวัสดีครับ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
-
-
-// //////////////////ขอบคุณ
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณ"){
-//   $arrPostData = array();
-//   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//   $arrPostData['messages'][0]['type'] = "text";
-//   $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//   $arrPostData['messages'][1]['type'] = "sticker";
-//   $arrPostData['messages'][1]['packageId'] = "1";
-//   $arพPostData['messages'][1]['stickerId'] = "4";
-
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณค่ะ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";
-
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณคะ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";
+}else if($arrJson['events'][0]['message']['text'] == "สวัสดีครับ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
 
 
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณจ่ะ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";
+//////////////////ขอบคุณ
+}else if($arrJson['events'][0]['message']['text'] == "ขอบคุณ"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+  $arrPostData['messages'][1]['type'] = "sticker";
+  $arrPostData['messages'][1]['packageId'] = "1";
+  $arพPostData['messages'][1]['stickerId'] = "4";
 
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณครับ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";    
+}else if($arrJson['events'][0]['message']['text'] == "ขอบคุณค่ะ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";
 
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณคับ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";    
+}else if($arrJson['events'][0]['message']['text'] == "ขอบคุณคะ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";
 
-// }else if($arrJson['events'][0]['message']['text'] == "ใจจ่ะ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";
 
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบใจคับ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";    
+}else if($arrJson['events'][0]['message']['text'] == "ขอบคุณจ่ะ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";
 
-// }else if($arrJson['events'][0]['message']['text'] == "ขอบใจครับ"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
-//     $arrPostData['messages'][1]['type'] = "sticker";
-//     $arrPostData['messages'][1]['packageId'] = "1";
-//     $arพPostData['messages'][1]['stickerId'] = "4";     
+}else if($arrJson['events'][0]['message']['text'] == "ขอบคุณครับ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";    
+
+}else if($arrJson['events'][0]['message']['text'] == "ขอบคุณคับ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";    
+
+}else if($arrJson['events'][0]['message']['text'] == "ใจจ่ะ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";
+
+}else if($arrJson['events'][0]['message']['text'] == "ขอบใจคับ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";    
+
+}else if($arrJson['events'][0]['message']['text'] == "ขอบใจครับ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arพPostData['messages'][1]['stickerId'] = "4";     
 
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
