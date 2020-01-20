@@ -147,7 +147,7 @@
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "button";
-        $arrayPostData['messages'][0]['button'] = "button.js";
+        $arrayPostData['messages'][0]['button'] = "button.json";
         replyMsg($arrayHeader,$arrayPostData);
        
     }
