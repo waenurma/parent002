@@ -1,14 +1,16 @@
 <?php
+    
+    $accessToken = "exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+    $content = file_get_contents('php://input');
+    $arrayJson = json_decode($content, true);
+    
+    $arrayHeader = array();
+    $arrayHeader[] = "Content-Type: application/json";
+    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 
-$API_URL = 'https://api.line.me/v2/bot/message';
-$ACCESS_TOKEN = 'exRwq1i1noogIKE8x9QpmYH8PlQQdSvCjBEeoQfy+sCbKkLHNV3Kol5ZxfuCebtuRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVWVX2b4o8DN0z03MVgp1TC2JsjIEQPXRqWxua9JrPIVfwdB04t89/1O/w1cDnyilFU='; 
-$channelSecret = 'aa79f5f6f04e775f836bf54644526aed';
-$POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
-$request = file_get_contents('php://input');   // Get request content
-$request_array = json_decode($request, true);   // Decode JSON to Array
 $jsonFlex = [
     "type" => "flex",
-    "altText" => "ผลการเรียน",
+    "altText" => "Hello Flex Message",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -16,43 +18,43 @@ $jsonFlex = [
         "type" => "box",
         "layout" => "vertical",
         "contents" => [
-          // [
-          //   "type" => "text",
-          //   "text" => "Purchase",
-          //   "size" => "lg",
-          //   "align" => "start",
-          //   "weight" => "bold",
-          //   "color" => "#009813"
-          // ],
           [
             "type" => "text",
-            "text" => "ผลการเรียน",
+            "text" => "Purchase",
+            "size" => "lg",
+            "align" => "start",
+            "weight" => "bold",
+            "color" => "#009813"
+          ],
+          [
+            "type" => "text",
+            "text" => "฿ 100.00",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
           ],
-          // [
-          //   "type" => "text",
-          //   "text" => "Rabbit Line Pay",
-          //   "size" => "lg",
-          //   "weight" => "bold",
-          //   "color" => "#000000"
-          // ],
-          // [
-          //   "type" => "text",
-          //   "text" => "2019.02.14 21:47 (GMT+0700)",
-          //   "size" => "xs",
-          //   "color" => "#B2B2B2"
-          // ],
-      //     // [
-      //     //   "type" => "text",
-      //     //   "text" => "Payment complete.",
-      //     //   "margin" => "lg",
-      //     //   "size" => "lg",
-      //     //   "color" => "#000000"
-      //     // ]
-      //   ]
-      // ],
+          [
+            "type" => "text",
+            "text" => "Rabbit Line Pay",
+            "size" => "lg",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
+          [
+            "type" => "text",
+            "text" => "2019.02.14 21:47 (GMT+0700)",
+            "size" => "xs",
+            "color" => "#B2B2B2"
+          ],
+          [
+            "type" => "text",
+            "text" => "Payment complete.",
+            "margin" => "lg",
+            "size" => "lg",
+            "color" => "#000000"
+          ]
+        ]
+      ],
       "body" => [
         "type" => "box",
         "layout" => "vertical",
@@ -66,20 +68,20 @@ $jsonFlex = [
             "layout" => "baseline",
             "margin" => "lg",
             "contents" => [
-              // [
-              //   "type" => "text",
-              //   "text" => "Merchant",
-              //   "align" => "start",
-              //   "color" => "#C3C3C3"
-              // ],
-          //     [
-          //       "type" => "text",
-          //       "text" => "BTS 01",
-          //       "align" => "end",
-          //       "color" => "#000000"
-          //     ]
-          //   ]
-          // ],
+              [
+                "type" => "text",
+                "text" => "Merchant",
+                "align" => "start",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => "BTS 01",
+                "align" => "end",
+                "color" => "#000000"
+              ]
+            ]
+          ],
           [
             "type" => "box",
             "layout" => "baseline",
@@ -141,16 +143,3 @@ if ( sizeof($request_array['events']) > 0 ) {
     }
 }
 echo "OK";
-function send_reply_message($url, $post_header, $post_body)
-{
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return $result;
-}
-?>
