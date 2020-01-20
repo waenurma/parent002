@@ -146,8 +146,8 @@
     else if($message == "ผลการเรียน"){
         $arrayPostData= array();
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "แสดงผลการเรียนตรงนี้จะเป็นแบบ Button";
+        $arrayPostData['messages'][0]['type'] = "button";
+        $arrayPostData['messages'][0]['button'] = "button.js";
         replyMsg($arrayHeader,$arrayPostData);
        
     }
@@ -187,8 +187,6 @@
         replyMsg($arrayHeader,$arrayPostData);
        
     }
-
-    
     // message ดักจับคำที่แปลกๆ
     else{
         $arrayPostData = array();
@@ -196,10 +194,10 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "กรอกข้อมูลไม่ถูกต้อง!!";
         replyMsg($arrayHeader,$arrayPostData);
+    }
 
-     }
-     
-     
+
+
 
 
 
