@@ -137,9 +137,38 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
-    
+    // $arrPostData['messages'][0]['type'] = "text";
+    // $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
+    $arrPostData= new BubbleContainerBuilder(
+        "ltr",  // กำหนด NULL หรือ "ltr" หรือ "rtl"
+        new BoxComponentBuilder(
+            "vertical",
+            array(
+                new TextComponentBuilder("This is Header")
+            )
+        ),
+        new ImageComponentBuilder(
+            "https://www.ninenik.com/images/ninenik_page_logo.png",NULL,NULL,NULL,NULL,"full","20:13","cover"),
+        new BoxComponentBuilder(
+            "vertical",
+            array(
+                new TextComponentBuilder("This is Body")
+            )
+        ),
+        new BoxComponentBuilder(
+            "vertical",
+            array(
+                new TextComponentBuilder("This is Footer")
+            )
+        ),
+        new BubbleStylesBuilder( // style ทั้งหมดของ bubble
+            new BlockStyleBuilder("#FFC90E"),  // style สำหรับ header block
+            new BlockStyleBuilder("#EFE4B0"), // style สำหรับ hero block
+            new BlockStyleBuilder("#B5E61D"), // style สำหรับ body block
+            new BlockStyleBuilder("#FFF200") // style สำหรับ footer block
+        )
+    );
+    $replyData = new FlexMessageBuilder("Flex",$arrPostData);
 
 }else if($arrJson['events'][0]['message']['text'] == "การเรียนการสอน"){
     $arrPostData = array();
@@ -174,6 +203,18 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
  
+
+
+
+
+
+
+
+
+
+
+
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
