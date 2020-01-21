@@ -7,7 +7,7 @@
     $request = file_get_contents('php://input');   // Get request content
     $request_array = json_decode($request, true);   // Decode JSON to Array
 
-    $jsonFlex = [
+    $jsonButtons = [
       "type" => "template",
       "altText" => "ผลการเรียน",
       "template" => [
@@ -37,7 +37,7 @@
           $reply_token = $event['replyToken'];
           $data = [
               'replyToken' => $reply_token,
-              'messages' => [$jsonFlex]
+              'messages' => [$jsonButtons]
           ];
           print_r($data);
           $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
