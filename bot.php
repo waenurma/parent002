@@ -139,7 +139,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
-    
+    // $replyjson['type'] = 'text'
+    // $replyjson['text'] = '1234'
+    // json_encode($replyjson)
 
 }else if($arrJson['events'][0]['message']['text'] == "การเรียนการสอน"){
     $arrPostData = array();
