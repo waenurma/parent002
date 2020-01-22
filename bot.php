@@ -139,6 +139,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
+    
+    
+    
     // $replyjson['type'] = 'text'
     // $replyjson['text'] = '1234'
     // json_encode($replyjson)
@@ -188,5 +191,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
- 
+
+
+
+
 ?>
