@@ -205,7 +205,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
- 
 
 
 $ch = curl_init();
@@ -221,38 +220,8 @@ curl_close ($ch);
 exit;               
 
 
-if($typeMessage=='text'){
-    $userMessage = $eventObj->getText(); // เก็บค่าข้อความที่ผู้ใช้พิมพ์
-     
-    switch($userMessage){
-        case     "test":
-            $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
-            $replyData = new TextMessageBuilder($textReplyMessage);                     
-            break;
-        default:
-            $url = "https://bots.dialogflow.com/line/<Agent-ID>/webhook";
-            $headers = getallheaders();
-//          file_put_contents('headers.txt',json_encode($headers, JSON_PRETTY_PRINT));          
-//          file_put_contents('body.txt',file_get_contents('php://input'));
-            $headers['Host'] = "bots.dialogflow.com";
-            $json_headers = array();
-            foreach($headers as $k=>$v){
-                $json_headers[]=$k.":".$v;
-            }
-            $inputJSON = file_get_contents('php://input');
-            // ส่วนของการส่งการแจ้งเตือนผ่านฟังก์ชั่น cURL
-            $ch = curl_init();
-            curl_setopt( $ch, CURLOPT_URL, $url);
-            curl_setopt( $ch, CURLOPT_POST, 1);
-            curl_setopt( $ch, CURLOPT_BINARYTRANSFER, true);
-            curl_setopt( $ch, CURLOPT_POSTFIELDS, $inputJSON);
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, $json_headers);
-            curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 2); // 0 | 2 ถ้าเว็บเรามี ssl สามารถเปลี่ยนเป้น 2
-            curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 1); // 0 | 1 ถ้าเว็บเรามี ssl สามารถเปลี่ยนเป้น 1
-            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
-            $result = curl_exec( $ch );
-            curl_close( $ch );
-            exit;
+
+
+
 
 ?>
