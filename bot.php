@@ -39,6 +39,18 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
 
+}else if($arrJson['events'][0]['message']['text'] == "สวัสดีจ่ะ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
+
+}else if($arrJson['events'][0]['message']['text'] == "สวัสดีจร้า"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
+
 
 //////////////////ขอบคุณ
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณ"){
@@ -123,7 +135,23 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4";     
 
+}else if($arrJson['events'][0]['message']['text'] == "ขอบใจจ่ะ"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arrPostData['messages'][1]['stickerId'] = "4"; 
 
+}else if($arrJson['events'][0]['message']['text'] == "ขอบใจจร้า"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
+    $arrPostData['messages'][1]['type'] = "sticker";
+    $arrPostData['messages'][1]['packageId'] = "1";
+    $arrPostData['messages'][1]['stickerId'] = "4";    
 //////////////////เมนู6เมนู
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน"){
