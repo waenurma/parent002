@@ -2,7 +2,7 @@
 
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = 'm7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw= ';//copy Channel access token ตอนที่ตั้งค่ามาใส่ 
-$channelSecret = 'aa79f5f6f04e775f836bf54644526aed';
+$channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
 
 
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
@@ -131,11 +131,11 @@ $jsonFlex = [
 
 
 
-if ( sizeof($request_array['events']) > 0 ) {
+if ( sizeof($request_array['events']) > [0] ['message']['text'] =='l' ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
         $reply_message = '';
-        $reply_token = $event['replyToken'];
+        $reply_token = $event['replyToken']= $request_array['events'][0]['replyToken'];
 
 
         $data = [
@@ -155,8 +155,6 @@ if ( sizeof($request_array['events']) > 0 ) {
 }
 
 echo "OK";
-
-
 
 
 function send_reply_message($url, $post_header, $post_body)
