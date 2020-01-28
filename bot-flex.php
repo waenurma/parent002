@@ -145,7 +145,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         print_r($data);
 
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-        
+
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
         echo "Result: ".$send_result."\r\n";
@@ -154,6 +154,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 }
 
 echo "OK";
+
 
 
 function send_reply_message($url, $post_header, $post_body)
@@ -167,7 +168,7 @@ function send_reply_message($url, $post_header, $post_body)
     $result = curl_exec($ch);
     curl_close($ch);
 
-    return $result;
+    
 }
 
 ?>
