@@ -220,8 +220,4 @@ curl_close ($ch);
 exit;               
 
 
-
-
-
-
 ?>
