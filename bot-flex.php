@@ -70,7 +70,7 @@ if (strtolower($message['text']) == "buttons template" || $message['text'] == "h
 }
 ==============================
 */
-if (strtolower($message['text']) == "confirm template" || $message['text'] == "確認模板") {
+if (strtolower($message['text']) == "confirm template" || $message['text'] == "f") {
   $client->replyMessage(array(
       'replyToken' => $event['replyToken'],
       'messages' => array(
@@ -156,7 +156,7 @@ if (strtolower($message['text']) == "confirm template" || $message['text'] == "�
 }
 ==============================
 */
-if (strtolower($message['text']) == "carousel template" || $message['text'] == "旋轉木馬模板" || $message['text'] == "輪播模板") {
+if (strtolower($message['text']) == "carousel template" || $message['text'] == "g" || $message['text'] == "s") {
   $client->replyMessage(array(
       'replyToken' => $event['replyToken'],
       'messages' => array(
