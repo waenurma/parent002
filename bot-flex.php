@@ -131,12 +131,11 @@ $jsonFlex = [
 
 
 
-if ( sizeof($request_array['events']) > [0] ['message']['text'] =='l' ) {
+if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
-        $reply_message = '';
-        $reply_token = $event['replyToken']= $request_array['events'][0]['replyToken'];
-
+        $reply_message = 'a';
+        $reply_token = $event['replyToken'];
 
         $data = [
             'replyToken' => $reply_token,
@@ -146,7 +145,6 @@ if ( sizeof($request_array['events']) > [0] ['message']['text'] =='l' ) {
         print_r($data);
 
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
         echo "Result: ".$send_result."\r\n";
