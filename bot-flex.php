@@ -1,6 +1,6 @@
 <?php
 
-$API_URL = 'https://api.line.me/v2/bot/message';
+$API_URL = 'https://api.line.me/v2/bot/message/reply';
 $ACCESS_TOKEN = 'm7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw= ';//copy Channel access token ตอนที่ตั้งค่ามาใส่ 
 $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
 
@@ -134,7 +134,7 @@ $jsonFlex = [
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
-        $reply_message = 'a';
+        $reply_message = '';
         $reply_token = $event['replyToken'];
 
         $data = [
@@ -145,7 +145,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         print_r($data);
 
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-
+        
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
         echo "Result: ".$send_result."\r\n";
@@ -154,7 +154,6 @@ if ( sizeof($request_array['events']) > 0 ) {
 }
 
 echo "OK";
-
 
 
 function send_reply_message($url, $post_header, $post_body)
@@ -168,7 +167,7 @@ function send_reply_message($url, $post_header, $post_body)
     $result = curl_exec($ch);
     curl_close($ch);
 
-    
+    return $result;
 }
 
 ?>
