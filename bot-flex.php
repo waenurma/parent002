@@ -7,8 +7,8 @@ $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
 
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
-$request = file_get_contents('php://input');   // Get request content
-$request_array = json_decode($request, true);   // Decode JSON to Array
+$content = file_get_contents('php://input');   // Get request content
+$request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
     "type" => "flex",
