@@ -63,7 +63,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "separator",
-            "color" => "#800080",
+            "color" => "#B2B2B2",
           ],
           [
             "type" => "box",
@@ -105,7 +105,7 @@ $jsonFlex = [
           [
             "type" => "separator",
             "margin" => "lg",
-            "color" => "#800080"
+            "color" => "#B2B2B2"
           ]
         ]
       ],
