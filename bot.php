@@ -162,7 +162,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
+    $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ" || "ฉันเองก็ไม่แน่ใจว่าชื่ออะไร";
 
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
