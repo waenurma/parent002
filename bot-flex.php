@@ -33,14 +33,14 @@ $jsonFlex = [
             "text" => "ผลการเรียน",
             "size" => "3xl",
             "weight" => "bold",
-            "color" => "#000000"
+            "color" => "#8B008B"
           ],
           [
             "type" => "text",
             "text" => "ชื่อ-นามสกุล",
             "size" => "lg",
             "weight" => "bold",
-            "color" => "#000000"
+            "color" => "#8B008B"
           ],
           // [
           //   "type" => "text",
@@ -53,7 +53,7 @@ $jsonFlex = [
             "text" => "เกรดเฉลี่ยรวม 4.00",
             "margin" => "lg",
             "size" => "lg",
-            "color" => "#DA70D6"
+            "color" => "#8B008B"
           ]
         ]
       ],
@@ -63,7 +63,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "separator",
-            "color" => "#DA70D6",
+            "color" => "#8B008B",
           ],
           [
             "type" => "box",
@@ -74,13 +74,13 @@ $jsonFlex = [
                 "type" => "text",
                 "text" => "ภาคเรียนที่ 1/63",
                 "align" => "start",
-                "color" => "#DA70D6"
+                "color" => "#8B008B"
               ],
               [
                 "type" => "text",
                 "text" => "4.00",
                 "align" => "end",
-                "color" => "#000000"
+                "color" => "#8B008B"
               ]
             ]
           ],
@@ -92,7 +92,7 @@ $jsonFlex = [
               [
                 "type" => "text",
                 "text" => "ภาคเรียนที่2/63",
-                "color" => "#DA70D6"
+                "color" => "#8B008B"
               ],
               [
                 "type" => "text",
@@ -104,7 +104,7 @@ $jsonFlex = [
           [
             "type" => "separator",
             "margin" => "lg",
-            "color" => "#DA70D6"
+            "color" => "#8B008B"
           ]
         ]
       ],
@@ -117,7 +117,7 @@ $jsonFlex = [
             "text" => "View Details",
             "size" => "lg",
             "align" => "start",
-            "color" => "#DA70D6",
+            "color" => "#8B008B",
             "action" => [
               "type" => "uri",
               "label" => "View Details",
