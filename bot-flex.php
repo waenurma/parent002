@@ -33,14 +33,14 @@ $jsonFlex = [
             "text" => "ผลการเรียน",
             "size" => "3xl",
             "weight" => "bold",
-            "color" => "#8B008B"
+            "color" => "#800080"
           ],
           [
             "type" => "text",
             "text" => "ชื่อ-นามสกุล",
             "size" => "lg",
             "weight" => "bold",
-            "color" => "#8B008B"
+            "color" => "#800080"
           ],
           // [
           //   "type" => "text",
@@ -53,7 +53,7 @@ $jsonFlex = [
             "text" => "เกรดเฉลี่ยรวม 4.00",
             "margin" => "lg",
             "size" => "lg",
-            "color" => "#8B008B"
+            "color" => "#800080"
           ]
         ]
       ],
@@ -63,7 +63,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "separator",
-            "color" => "#8B008B",
+            "color" => "#800080",
           ],
           [
             "type" => "box",
@@ -74,13 +74,13 @@ $jsonFlex = [
                 "type" => "text",
                 "text" => "ภาคเรียนที่ 1/63",
                 "align" => "start",
-                "color" => "#8B008B"
+                "color" => "#800080"
               ],
               [
                 "type" => "text",
                 "text" => "4.00",
                 "align" => "end",
-                "color" => "#8B008B"
+                "color" => "#800080"
               ]
             ]
           ],
@@ -92,19 +92,20 @@ $jsonFlex = [
               [
                 "type" => "text",
                 "text" => "ภาคเรียนที่2/63",
-                "color" => "#8B008B"
+                "color" => "#800080"
               ],
               [
                 "type" => "text",
                 "text" => "4.00",
-                "align" => "end"
+                "align" => "end",
+                "color" => "#800080"
               ]
             ]
           ],
           [
             "type" => "separator",
             "margin" => "lg",
-            "color" => "#8B008B"
+            "color" => "#800080"
           ]
         ]
       ],
@@ -117,7 +118,7 @@ $jsonFlex = [
             "text" => "View Details",
             "size" => "lg",
             "align" => "start",
-            "color" => "#8B008B",
+            "color" => "#800080",
             "action" => [
               "type" => "uri",
               "label" => "View Details",
