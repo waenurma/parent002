@@ -119,9 +119,9 @@ $jsonFlex = [
             "align" => "start",
             "color" => "#0084B6",
             "action" => [
-              // "type" => "uri",
-              // "label" => "View Details",
-              // "uri" => "https://google.co.th/"
+              "type" => "uri",
+              "label" => "View Details",
+              "uri" => "https://google.co.th/"
             ]
           ]
         ]
