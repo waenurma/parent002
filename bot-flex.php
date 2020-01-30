@@ -1,19 +1,18 @@
 <?php
 
-
 $API_URL = 'https://api.line.me/v2/bot/message';
-$ACCESS_TOKEN = 'm7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw='; 
+$ACCESS_TOKEN = 'm7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw= ';//copy Channel access token ตอนที่ตั้งค่ามาใส่ 
 $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
 
 
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
-$request = file_get_contents('php://input');   // Get request content
-$request_array = json_decode($request, true);   // Decode JSON to Array
+$content = file_get_contents('php://input');   // Get request content
+$request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
     "type" => "flex",
-    "altText" => "ผลการเรียน",
+    "altText" => "ผลการศึกษา",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -21,7 +20,14 @@ $jsonFlex = [
         "type" => "box",
         "layout" => "vertical",
         "contents" => [
-        
+          // [
+          //   "type" => "text",
+          //   "text" => "Purchase",
+          //   "size" => "lg",
+          //   "align" => "start",
+          //   "weight" => "bold",
+          //   "color" => "#009813"
+          // ],
           [
             "type" => "text",
             "text" => "ผลการเรียน",
@@ -31,15 +37,20 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => "ชื่อ-สกุล",
+            "text" => "ชื่อ-นามสกุล",
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
           ],
-          
+          // [
+          //   "type" => "text",
+          //   "text" => "2019.02.14 21:47 (GMT+0700)",
+          //   "size" => "xs",
+          //   "color" => "#B2B2B2"
+          // ],
           [
             "type" => "text",
-            "text" => "เกรดเฉลี่ยรวม",
+            "text" => "เกรดเฉลี่ยรวม 4.00",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -61,7 +72,7 @@ $jsonFlex = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ภาคเรียนที่1/2563",
+                "text" => "ภาคเรียนที่ 1/63",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
@@ -80,7 +91,7 @@ $jsonFlex = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ภาคเรียนที่2/2563",
+                "text" => "ภาคเรียนที่2/63",
                 "color" => "#C3C3C3"
               ],
               [
@@ -118,14 +129,11 @@ $jsonFlex = [
     ]
   ];
 
-
-
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
         $reply_message = '';
         $reply_token = $event['replyToken'];
-
 
         $data = [
             'replyToken' => $reply_token,
@@ -135,7 +143,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         print_r($data);
 
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-
+        
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
         echo "Result: ".$send_result."\r\n";
@@ -159,6 +167,10 @@ function send_reply_message($url, $post_header, $post_body)
 
     return $result;
 }
+
+
+
+
 
 
 ?>
