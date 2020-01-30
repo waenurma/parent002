@@ -60,6 +60,7 @@ $jsonFlex = [
       "body" => [
         "type" => "box",
         "layout" => "vertical",
+        "background-color" => "blue",
         "contents" => [
           [
             "type" => "separator",
