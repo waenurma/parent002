@@ -63,7 +63,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "separator",
-            "color" => "#C3C3C3"
+            "color" => "#C71585",
           ],
           [
             "type" => "box",
@@ -117,7 +117,7 @@ $jsonFlex = [
             "text" => "View Details",
             "size" => "lg",
             "align" => "start",
-            "color" => "#C71585",
+            "color" => "#0084B6",
             "action" => [
               "type" => "uri",
               "label" => "View Details",
