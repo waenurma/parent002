@@ -37,7 +37,13 @@ $jsonFlex = [
             "color" => "#000000"
           ],
           
-          
+          [
+            "type" => "text",
+            "text" => "เกรดเฉลี่ยรวม",
+            "margin" => "lg",
+            "size" => "lg",
+            "color" => "#000000"
+          ]
         ]
       ],
       "body" => [
@@ -55,13 +61,13 @@ $jsonFlex = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "Merchant",
+                "text" => "ภาคเรียนที่1/2563",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => "BTS 01",
+                "text" => "4.00",
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -74,12 +80,12 @@ $jsonFlex = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "New balance",
+                "text" => "ภาคเรียนที่2/2563",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => "฿ 45.57",
+                "text" => "4.00",
                 "align" => "end"
               ]
             ]
@@ -104,7 +110,7 @@ $jsonFlex = [
             "action" => [
               "type" => "uri",
               "label" => "View Details",
-              "uri" => "https://google.co.th/"
+              // "uri" => "https://google.co.th/"
             ]
           ]
         ]
