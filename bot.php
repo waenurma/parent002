@@ -152,8 +152,24 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ยินดีจร้าาา";
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
-    $arrPostData['messages'][1]['stickerId'] = "4";    
-//////////////////เมนู6เมนู
+    $arrPostData['messages'][1]['stickerId'] = "4";  
+    
+
+//ลูกเล่นทั่วไป
+}else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
+  }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+
+
+
+    //////////////////เมนู6เมนู
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน"){
     $arrPostData = array();
@@ -206,6 +222,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
+
+
+
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
