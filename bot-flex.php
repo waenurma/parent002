@@ -33,14 +33,14 @@ $jsonFlex = [
             "text" => "ผลการเรียน",
             "size" => "3xl",
             "weight" => "bold",
-            "color" => "#708090"
+            "color" => "#000000"
           ],
           [
             "type" => "text",
             "text" => "ชื่อ-นามสกุล",
             "size" => "lg",
             "weight" => "bold",
-            "color" => "#708090"
+            "color" => "#000000"
           ],
           // [
           //   "type" => "text",
@@ -74,7 +74,7 @@ $jsonFlex = [
                 "type" => "text",
                 "text" => "ภาคเรียนที่ 1/63",
                 "align" => "start",
-                "color" => "#C3C3C3"
+                "color" => "#708090"
               ],
               [
                 "type" => "text",
@@ -92,7 +92,7 @@ $jsonFlex = [
               [
                 "type" => "text",
                 "text" => "ภาคเรียนที่2/63",
-                "color" => "#C3C3C3"
+                "color" => "#708090"
               ],
               [
                 "type" => "text",
