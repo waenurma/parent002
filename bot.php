@@ -1,5 +1,7 @@
 <?php
  
+ 
+
 $strAccessToken = "m7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw=";//copy Channel access token ตอนที่ตั้งค่ามาใส่;
 $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
 $content = file_get_contents('php://input');
@@ -161,11 +163,21 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
-  }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
+
+}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+
+}else if($arrJson['events'][0]['message']['text'] == "d"){
+    $arrPostData = array();
+    $url = "http://www.grandats.com/docs/edr-parent";
+    $arrPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] ="url";
+    $arryPostData['messages'][0]['originalContentUrl'] = $url;
+
+
 
 
 
