@@ -33,7 +33,7 @@ $jsonFlex = [
             "text" => "ผลการเรียน",
             "size" => "3xl",
             "weight" => "bold",
-            "color" => "#800080"
+            "color" => "#B2B2B2"
           ],
           [
             "type" => "text",
