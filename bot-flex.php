@@ -32,6 +32,7 @@ $jsonFlex = [
             "type" => "text",
             "text" => "ผลการเรียน",
             "size" => "3xl",
+            "font" => "prompt",
             "weight" => "bold",
             "color" => "#000000"
           ],
