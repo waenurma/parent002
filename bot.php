@@ -171,12 +171,13 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 
 }else if($arrJson['events'][0]['message']['text'] == "แผนที่"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "location";
-        $arrayPostData['messages'][0]['title'] = "แผนที่";
-        $arrayPostData['messages'][0]['address'] =   "7.1389336,100.881115";
-        $arrayPostData['messages'][0]['latitude'] = "7.1389336";
-        $arrayPostData['messages'][0]['longitude'] = "100.881115";
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "location";
+    $arrPostData['messages'][0]['title'] = "แผนที่";
+    $arrPostData['messages'][0]['address'] =   "7.1389336,100.881115";
+    $arrPostData['messages'][0]['latitude'] = "7.1389336";
+    $arrPostData['messages'][0]['longitude'] = "100.881115";
 
 
 
