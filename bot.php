@@ -164,20 +164,12 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
 
-// }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
-//     $arrPostData = array();
-//     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-//     $arrPostData['messages'][0]['type'] = "text";
-//     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-
-}else if($arrJson['events'][0]['message']['text'] == "พิกัด"){
+}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "location";
-    $arrPostData['messages'][0]['Title'] = "แผนที่";
-    $arrPostData['messages'][0]['Address'] = "13.7251088,100.3529072";
-    $arrPostData['messages'][0]['Latitude'] = "13.7251088";
-    $arrPostData['messages'][0]['Longitude'] = "100.3529072";
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+
 
 
 
