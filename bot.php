@@ -226,6 +226,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
 
+}else if($arrJson['events'][0]['message']['text']== "พิกัดสยามพารากอน"){
+        $arrPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrPostData['messages'][0]['type'] = "location";
+        $arrPostData['messages'][0]['title'] = "สยามพารากอน";
+        $arrPostData['messages'][0]['address'] =   "13.7465354,100.532752";
+        $arrPostData['messages'][0]['latitude'] = "13.7465354";
+        $arrPostData['messages'][0]['longitude'] = "100.532752";
+  
 
 
     /////ดักคำแปลกๆ
