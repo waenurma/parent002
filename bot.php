@@ -227,6 +227,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
 
 }else if($arrJson['events'][0]['message']['text']== "พิกัดสยามพารากอน"){
+    $arrPostData = array();
         $arrPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrPostData['messages'][0]['type'] = "location";
         $arrPostData['messages'][0]['title'] = "สยามพารากอน";
