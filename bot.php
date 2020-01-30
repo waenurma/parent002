@@ -16,7 +16,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา $text มีอะไรให้เราช่วยไหมค่ะ ";  //.$arrJson['events'][0]['source']['userId'];
+  $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา .$arrJson มีอะไรให้เราช่วยไหมค่ะ ";  //.$arrJson['events'][0]['source']['userId'];
 
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ"){
   $arrPostData = array();
@@ -247,7 +247,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
 
 
-function replyMsg($arrayHeader,$arrayPostData){
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
@@ -258,7 +257,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
-}
+
 exit;               
 
 
