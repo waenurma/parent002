@@ -137,7 +137,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         // error_log(json_encode($event));
         $reply_message = '';
         $reply_token = $event['replyToken'];
-        
+
         $data = [
             'replyToken' => $reply_token,
             'messages' => [$jsonFlex]
@@ -149,7 +149,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
-        echo "Result: ".$send_result."\r\n";
+        // echo "Result: ".$send_result."\r\n";
         
     }
 }
