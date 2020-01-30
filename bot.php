@@ -170,17 +170,16 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 
-}else if($arrJson['events'][0]['message']['text'] == "แผนที่"){
+}else if($arrJson['events'][0]['message']['text'] == "พิกัด"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "location";
     $arrPostData['messages'][0]['title'] = "แผนที่";
-    $arrPostData['messages'][0]['address'] =   "7.1389336,100.881115";
-    $arrPostData['messages'][0]['latitude'] = "7.1389336";
-    $arrPostData['messages'][0]['longitude'] = "100.881115";
+    $arrPostData['messages'][0]['address'] = "13.2344922,101.5986259";
+    $arrPostData['messages'][0]['latitude'] = "13.2344922";
+    $arrPostData['messages'][0]['longitude'] = "101.5986259";
 
-
-
+    
 
 
     //////////////////เมนู6เมนู
