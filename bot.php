@@ -171,6 +171,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 
 
+}else if($arrJson['events'][0]['message']['text'] == "7"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "uri";
+    $arrPostData['messages'][0]['label'] = "https://google.com/";
+    $arrPostData['messages'][0][' linkUri'] = "https://google.com/";
+   
+
 
 
 
