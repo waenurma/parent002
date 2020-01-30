@@ -50,7 +50,7 @@ $jsonFlex = [
           // ],
           [
             "type" => "text",
-            "text" => "GPA 4.00",
+            "text" => "เกรดเฉลี่ยรวม 4.00",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
