@@ -53,7 +53,7 @@ $jsonFlex = [
             "text" => "เกรดเฉลี่ยรวม 4.00",
             "margin" => "lg",
             "size" => "lg",
-            "color" => "#000000"
+            "color" => "#DA70D6"
           ]
         ]
       ],
@@ -63,7 +63,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "separator",
-            "color" => "#C71585",
+            "color" => "#DA70D6",
           ],
           [
             "type" => "box",
@@ -74,7 +74,7 @@ $jsonFlex = [
                 "type" => "text",
                 "text" => "ภาคเรียนที่ 1/63",
                 "align" => "start",
-                "color" => "#C3C3C3"
+                "color" => "#DA70D6"
               ],
               [
                 "type" => "text",
@@ -92,7 +92,7 @@ $jsonFlex = [
               [
                 "type" => "text",
                 "text" => "ภาคเรียนที่2/63",
-                "color" => "#C3C3C3"
+                "color" => "#DA70D6"
               ],
               [
                 "type" => "text",
@@ -104,7 +104,7 @@ $jsonFlex = [
           [
             "type" => "separator",
             "margin" => "lg",
-            "color" => "#C3C3C3"
+            "color" => "#DA70D6"
           ]
         ]
       ],
