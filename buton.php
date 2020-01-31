@@ -9,8 +9,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsontemplate = [
-    
+$jsontemplate = [ 
   "type" => "template",
   "altText"=> "this is a buttons template",
   "template"=> [
@@ -27,7 +26,7 @@ $jsontemplate = [
         "text"=> "ตารางเรียนรายสัปดาห์"
       ]
     ],
-    "thumbnailImageUrl"=> "SPECIFY_YOUR_IMAGE_URL",
+    "thumbnailImageUrl"=> "https://2.bp.blogspot.com/-FwV3GEvNP_0/WiavzB4v2mI/AAAAAAAAARY/lEFa5WR58KcYNucUbwKbUOlctPWsUsroQCLcBGAs/s1600/635817379401360517-School-building-icon.jpg",
     "title"=> "ตารางเรียน",
     "text"=>"ชื่อ-สกุล"
   ]
