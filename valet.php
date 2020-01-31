@@ -9,29 +9,33 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsontemplate = [ 
-    
-        "type"=> "template",
-        "altText"=>  "this is a buttons template",
-        "template"=>  [
-          "type"=>  "buttons",
-          "actions"=>  [
-            [
-              "type"=>  "uri",
-              "label"=> "ตารางเรียนรายวัน",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
-            ],
-            [
-              "type"=>  "uri",
-              "label"=>  "ตารางเรียนรายสัปดาห์",
-              "uri"=>  "http://405965027.student.yru.ac.th/tes5line/homework.php"
-            ]
-          ],
-          "thumbnailImageUrl"=>  "https://2.bp.blogspot.com/-FwV3GEvNP_0/WiavzB4v2mI/AAAAAAAAARY/lEFa5WR58KcYNucUbwKbUOlctPWsUsroQCLcBGAs/s1600/635817379401360517-School-building-icon.jpg",
-          "title"=>  "ตารางเรียน",
-          "text"=>  "ชื่อ-สกุล"
+$jsontemplate = [
+    "type"=> "template",
+    "altText"=> "this is a buttons template",
+    "template"=> [
+      "type"=> "buttons",
+      "actions"=> [
+        [
+          "type"=> "uri",
+          "label"=> "ค่าเทอม",
+          "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
+        ],
+        [
+          "type"=> "uri",
+          "label"=> "ยอดคงเหลือ",
+          "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
+        ],
+        [
+          "type"=> "uri",
+          "label"=> "ยอดค้างชำระ",
+          "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
         ]
-        ];
+      ],
+      "thumbnailImageUrl"=> "https://lh3.googleusercontent.com/DBQ4DQHTALaCp6ooPHqCrEtk4QADZC357GlA4h5SiKpP9HQuuPyXViq8yfXvoghgprA",
+      "title"=> "เป๋าตังค์",
+      "text"=> "รายละเอียดค่าใช้จ่าย"
+    ]
+    ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));

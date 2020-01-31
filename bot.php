@@ -205,7 +205,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
 
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"){
-    require "botvallet.php";
+    require "valet.php";
     // $arrPostData = array();
     // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     // $arrPostData['messages'][0]['type'] = "text";
