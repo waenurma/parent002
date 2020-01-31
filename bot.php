@@ -219,8 +219,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ขอโทษครับ บอทยังไม่เข้าใจคำถาม ลองพิมพ์ใหม่อีกครั้ง หรือเลือกเมนูด้านล่างได้นะครับ 🙇";
+  require "bot-flex.php";
 }
 
 
