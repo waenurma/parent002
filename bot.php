@@ -199,10 +199,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "การเรียนการสอนตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูเนื้อหาที่เรียน";
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
+    require "bothomework.php";
+    // $arrPostData = array();
+    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    // $arrPostData['messages'][0]['type'] = "text";
+    // $arrPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
 
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"){
     require "valet.php";
