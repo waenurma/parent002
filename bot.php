@@ -211,10 +211,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
 
 }else if($arrJson['events'][0]['message']['text'] == "กิจกรรม"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
+    require  "buttonActivity.php";
+     // $arrPostData = array();
+    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    // $arrPostData['messages'][0]['type'] = "text";
+    // $arrPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
 
 
 
