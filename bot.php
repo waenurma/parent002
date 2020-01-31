@@ -178,7 +178,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     //////////////////เมนู6เมนู
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน"){
-    require "buton.php";
+    require "butontimetable.php";
     // $arrPostData = array();
     // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     // $arrPostData['messages'][0]['type'] = "text";
