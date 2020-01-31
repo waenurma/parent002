@@ -12,7 +12,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
     "type" => "flex",
-    "altText" => "ผลการศึกษา",
+    "altText" => "ผลการเรียน",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",

@@ -11,7 +11,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsontemplate = [
     "type"=> "template",
-    "altText"=> "this is a carousel template",
+    "altText"=> "การบ้าน",
     "template"=>[
       "type"=> "carousel",
       "actions"=> [],
