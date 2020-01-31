@@ -185,7 +185,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     // $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
 
 }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน"){
-   require "bot-flex.php";
+   require "bot-flex-Gpa.php";
     
     
     // $replyjson['type'] = 'text'
@@ -205,10 +205,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
 
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
+    require "buttonvallet.php";
+    // $arrPostData = array();
+    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    // $arrPostData['messages'][0]['type'] = "text";
+    // $arrPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
 
 }else if($arrJson['events'][0]['message']['text'] == "กิจกรรม"){
     require  "buttonActivity.php";
