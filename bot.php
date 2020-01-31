@@ -219,7 +219,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  require "random.php";
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = require "random.php";
 }
 
 
