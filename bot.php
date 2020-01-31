@@ -182,7 +182,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
 
 }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน"){
-    require "bot-flex.php";
+   require "bot-flex.php";
     
     
     // $replyjson['type'] = 'text'
@@ -217,12 +217,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
     /////ดักคำแปลกๆ
 }else{
-    $a=array("ขอโทษครับ บอทยังไม่เข้าใจคำถาม","ไม่แน่ใจว่าถูกมั๊ย","ลองพิมพ์ใหม่อีกครั้ง หรือเลือกเมนูด้านล่างได้นะครับ 🙇","yellow","brown");
-$random_keys=array_rand($a,3);
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] =  $a[$random_keys[0]]
+  require "random.php";
 }
 
 
