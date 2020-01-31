@@ -219,7 +219,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  require "bot-flex.php";
+  require "random.php";
 }
 
 
