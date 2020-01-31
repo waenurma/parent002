@@ -40,7 +40,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonbutton]
+            'messages' => [$jsontemplate ]
         ];
 
         print_r($data);
