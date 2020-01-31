@@ -18,12 +18,12 @@ $jsontemplate = [
       [
         "type"=> "message",
         "label"=> "คาบเรียนรายวัน",
-        "text"=> "คาบเรียนรายวัน"
+        "uri" => "http://405965027.student.yru.ac.th/tes5line/homework.php"
       ],
       [
         "type"=> "message",
         "label"=> "ตารางเรียนรายสัปดาห์",
-        "text"=> "ตารางเรียนรายสัปดาห์"
+        "uri" => "http://405965027.student.yru.ac.th/tes5line/homework.php"
       ]
     ],
     "thumbnailImageUrl"=> "https://2.bp.blogspot.com/-FwV3GEvNP_0/WiavzB4v2mI/AAAAAAAAARY/lEFa5WR58KcYNucUbwKbUOlctPWsUsroQCLcBGAs/s1600/635817379401360517-School-building-icon.jpg",
