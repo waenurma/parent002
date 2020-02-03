@@ -49,15 +49,15 @@ $jsontemplate = [
               "actions"=>  [
                 [
                   "type"=>  "uri",
-                  "label"=>  "คลิกดูพยากรณ์อากาศ",
+                  "label"=>  "คลิกดู ฝน ฟ้า อากาศ",
                   "uri"=>  "https://www.tmd.go.th/"
                 ]
               ]
                 ],
             [
               "thumbnailImageUrl"=>  "https://www.isranews.org/images/stories/2012/sep/thairath_logo1.jpg",
-              "title"=>  "ข่าว",
-              "text"=>  "ข่าวในประจำวัน",
+              "title"=>  "ข่าวสาร",
+              "text"=>  "ข่าวประจำวัน",
               "actions"=>  [
                 [
                   "type"=>  "uri",
