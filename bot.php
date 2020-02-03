@@ -159,7 +159,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     
 
 //ลูกเล่นทั่วไป
-}else if($arrJson['events'][0]['message']['text'] == "พยากรณ์อากาศ" || "ราคาทอง"){
+}else if($arrJson['events'][0]['message']['text'] == "พยากรณ์อากาศ" || $arrJson['events'][0]['message']['text'] == "ราคาทอง"){
     require "tes.php";
     // $arrPostData = array();
     // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
