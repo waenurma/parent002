@@ -161,7 +161,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
     
 
 //ลูกเล่นทั่วไป
-}else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
+}else if($arrJson['events'][0]['message']['text'] == "p"){
     require "weather.php";
     // $arrPostData = array();
     // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
