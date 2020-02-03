@@ -11,27 +11,39 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonimagemap = [
-
-  "type"=> "imagemap",
-  "baseUrl"=> "PROVIDE_URL_FROM_YOUR_SERVER",
-  "altText"=> "This is an imagemap",
-  "baseSize"=> [
-    "width"=> 1040,
-    "height"=> 590
-  ],
-  "actions"=> [
-    [
-      "type"=> "uri",
-      "area"=> [
-        "x"=> 0,
-        "y"=> 21,
-        "width"=> 1040,
-        "height"=> 531
-      ],
-      "linkUri"=> "https://www.tmd.go.th/daily_forecast.php"
-    ]
-  ]
-    ];
+    
+        "line"=> [
+          "type"=> "imagemap",
+          "baseUrl"=>"https://1.bp.blogspot.com/-U90M8DyKu7Q/W9EtONMCf6I/AAAAAAAAW_4/7L_jB_Rg9oweu2HKhULNdu9WNefw9zf9wCLcBGAs/s1600/",
+          "altText"=> "This is an imagemap",
+          "baseSize"=> [
+            "height"=> 1040,
+            "width"=> 1040
+          ],
+          "actions"=> [
+            [
+              "type"=> "uri",
+              "linkUri"=> "https://www.google.com/",
+              "area"=> [
+                "x"=> 0,
+                "y"=> 0,
+                "width"=> 512,
+                "height"=> 731
+              ]
+            ],
+            [
+              "type"=> "message",
+              "text"=>"Hello",
+              "area"=> [
+                "x"=> 512,
+                "y"=> 0,
+                "width"=> 512,
+                "height"=> 731
+              ] 
+            ]
+          ]
+        ]
+              ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
