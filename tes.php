@@ -10,30 +10,28 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsontemplate = [
-  
-    "type"=>"template",
-    "altText"=> "ผลการเรียน",
-    "template"=> [
-      "type"=> "buttons",
-      "actions"=> [
-        [
-          "type"=> "uri",
-          "label"=> "ภาคเรียนที่1/63",
-          "uri"=> "https://www.google.com/"
-        ],
-        [
-          "type"=> "uri",
-          "label"=> "ภาคเรียนที่2/63",
-          "uri"=> "https://www.google.com/"
-        ]
-      ],
-      "thumbnailImageUrl"=> "https://monitordomercado.com.br/api/v1/image/large/1519140310118_3cfd9060-1652-11e8-87ea-c52e331a4071.jpeg",
-      "title"=> "ผลการเรียน",
-      "text"=>"ชื่อ-นามสกุล"
-    ]
-    ];
+$jsonimagemap = [
 
+  "type"=> "imagemap",
+  "baseUrl"=> "PROVIDE_URL_FROM_YOUR_SERVER",
+  "altText"=> "This is an imagemap",
+  "baseSize"=> [
+    "width"=> 1040,
+    "height"=> 590
+  ],
+  "actions"=> [
+    [
+      "type"=> "uri",
+      "area"=> [
+        "x"=> 0,
+        "y"=> 21,
+        "width"=> 1040,
+        "height"=> 531
+      ],
+      "linkUri"=> "https://www.tmd.go.th/daily_forecast.php"
+    ]
+  ]
+    ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
@@ -42,7 +40,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsontemplate]
+            'messages' => [$jsonimagemap ]
         ];
 
         print_r($data);
