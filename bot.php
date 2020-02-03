@@ -162,10 +162,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
 //ลูกเล่นทั่วไป
 }else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
+    require "weather.php";
+    // $arrPostData = array();
+    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    // $arrPostData['messages'][0]['type'] = "text";
+    // $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
 
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
@@ -180,18 +181,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน"){
     require "butontimetable.php";
-    // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
 
 }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน"){
    require "bot-flex-Gpa.php";
-    
-    
-    // $replyjson['type'] = 'text'
-    // $replyjson['text'] = '1234'
-    // json_encode($replyjson)
 
 }else if($arrJson['events'][0]['message']['text'] == "การเรียนการสอน"){
     $arrPostData = array();
@@ -201,35 +193,21 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน"){
     require "bothomework.php";
-    // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
 
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"){
     require "valet.php";
-    // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
-
+  
 }else if($arrJson['events'][0]['message']['text'] == "กิจกรรม"){
     require  "buttonActivity.php";
-     // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
-
-
-
+ 
     /////ดักคำแปลกๆ
 }else{
     $a=array("ถามอย่างนี้ บอทตั้งตัวไม่ทันเลยว่าจะตอบคำนี้ว่าไง","นั้นคงอยู่นอกเหนือความสามารถของบอทตอนนี้","ลองพิมพ์ใหม่อีกครั้ง หรือเลือกเมนูด้านล่างได้นะครับ 🙇","บอทไม่มีคำตอบสำหรับคำถามนี้ มีอะไรอย่างอื่นให้บอทช่วยไหม?","ไม่แน่ใจว่าเข้าใจถูกมั๊ย","ขอโทษครับ บอทยังม่เข้าใจคำถาม");
     $random_keys=array_rand($a,2);
     $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
 }
 
 
