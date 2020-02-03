@@ -162,11 +162,10 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 
 //ลูกเล่นทั่วไป
 }else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
-    require "weather.php";
-    // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
 
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
