@@ -11,123 +11,28 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
-    "type" => "flex",
-    "altText" => "ผลการเรียน",
-    "contents" => [
-      "type" => "bubble",
-      "direction" => "ltr",
-      "header" => [
-        "type" => "box",
-        "layout" => "vertical",
-        "contents" => [
-          // [
-          //   "type" => "text",
-          //   "text" => "Purchase",
-          //   "size" => "lg",
-          //   "align" => "start",
-          //   "weight" => "bold",
-          //   "color" => "#009813"
-          // ],
-          [
-            "type" => "text",
-            "text" => "ผลการเรียน",
-            "size" => "3xl",
-            "weight" => "bold",
-            "color" => "#000000"
-          ],
-          [
-            "type" => "text",
-            "text" => "ชื่อ-นามสกุล",
-            "size" => "lg",
-            "weight" => "bold",
-            "color" => "#000000"
-          ],
-          // [
-          //   "type" => "text",
-          //   "text" => "2019.02.14 21:47 (GMT+0700)",
-          //   "size" => "xs",
-          //   "color" => "#B2B2B2"
-          // ],
-          [
-            "type" => "text",
-            "text" => "เกรดเฉลี่ยรวม 4.00",
-            "margin" => "lg",
-            "size" => "lg",
-            "color" => "#000000"
-          ]
+  
+    "type"=>"template",
+    "altText"=> "this is a buttons template",
+    "template"=> [
+      "type"=> "buttons",
+      "actions"=> [
+        [
+          "type"=> "uri",
+          "label"=> "ภาคเรียนที่1/63",
+          "uri"=> "https://www.google.com/"
+        ],
+        [
+          "type"=> "uri",
+          "label"=> "ภาคเรียนที่2/63",
+          "uri"=> "https://www.google.com/"
         ]
       ],
-      "body" => [
-        "type" => "box",
-        "layout" => "vertical",
-        "contents" => [
-          [
-            "type" => "separator",
-            "color" => "#C3C3C3"
-          ],
-          [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "ภาคเรียนที่ 1/63",
-                "align" => "start",
-                "color" => "#708090"
-              ],
-              [
-                "type" => "text",
-                "text" => "4.00",
-                "align" => "end",
-                "color" => "#000000"
-              ]
-            ]
-          ],
-          [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "ภาคเรียนที่2/63",
-                "color" => "#708090"
-              ],
-              [
-                "type" => "text",
-                "text" => "4.00",
-                "align" => "end"
-              ]
-            ]
-          ],
-          [
-            "type" => "separator",
-            "margin" => "lg",
-            "color" => "#C3C3C3"
-          ]
-        ]
-      ],
-      "footer" => [
-        "type" => "box",
-        "layout" => "horizontal",
-        "contents" => [
-          [
-            "type" => "text",
-            "text" => "View Details",
-            "size" => "lg",
-            "align" => "start",
-            "color" => "#0084B6",
-            "action" => [
-              "type" => "uri",
-              "label" => "View Details",
-              "uri" => "https://google.co.th/"
-            ]
-          ]
-        ]
-      ]
+      "thumbnailImageUrl"=> "https://monitordomercado.com.br/api/v1/image/large/1519140310118_3cfd9060-1652-11e8-87ea-c52e331a4071.jpeg",
+      "title"=> "ผลการเรียน",
+      "text"=>"ชื่อ-นามสกุล"
     ]
-  ];
+    ];
 
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
@@ -152,7 +57,6 @@ if ( sizeof($request_array['events']) > 0 ) {
 }
 
 echo "OK";
-
 
 function send_reply_message($url, $post_header, $post_body)
 {
