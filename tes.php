@@ -10,40 +10,65 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsonimagemap = [
-    
-        "line"=> [
-          "type"=> "imagemap",
-          "baseUrl"=>"https://1.bp.blogspot.com/-U90M8DyKu7Q/W9EtONMCf6I/AAAAAAAAW_4/7L_jB_Rg9oweu2HKhULNdu9WNefw9zf9wCLcBGAs/s1600/",
-          "altText"=> "This is an imagemap",
-          "baseSize"=> [
-            "height"=> 1040,
-            "width"=> 1040
-          ],
-          "actions"=> [
+$jsontemplate = [
+
+        "type"=> "template",
+        "altText"=>  "this is a carousel template",
+        "template"=>  [
+          "type"=>  "carousel",
+          "actions"=>  [],
+          "columns"=>  [
             [
-              "type"=> "uri",
-              "linkUri"=> "https://www.google.com/",
-              "area"=> [
-                "x"=> 0,
-                "y"=> 0,
-                "width"=> 512,
-                "height"=> 731
+              "thumbnailImageUrl"=>  "https://tv.bectero.com/wp-content/uploads/2019/01/gold-full-01.jpg",
+              "title"=>  "ราคาทอง",
+              "text"=>  "ดูรายเอียดเพิ่มเติม",
+              "actions"=>  [
+                [
+                  "type"=>  "uri",
+                  "label"=>  "คลิกดูราคาทอง",
+                  "uri"=>  "https://xn--42cah7d0cxcvbbb9x.com/"
+                ]
               ]
-            ],
+                ],
             [
-              "type"=> "message",
-              "text"=>"Hello",
-              "area"=> [
-                "x"=> 512,
-                "y"=> 0,
-                "width"=> 512,
-                "height"=> 731
-              ] 
+              "thumbnailImageUrl"=>  "https://sites.google.com/site/kchnanthwimutkul/_/rsrc/1499710187784/cheux-pheling-pheux-kar-khmnakhm/sthankarn-kar-chi-cheux-pheling-pheux-kar-khmnakhm/3-kar-kahnd-rakha-naman-cheux-pheling/3-แบรนด์น้ำมันต่างชาติ-ปรับทัพรีแบรนด์ครั้งใหญ่.jpg",
+              "title"=>  "ราคาน้ำมัน",
+              "text"=>  "ดูรายละเอียดราคาน้ำมัน",
+              "actions"=>  [
+                [
+                  "type"=>  "uri",
+                  "label"=>  "คลิกดูราคาน้ำมัน",
+                  "uri"=>  "https://www.pttor.com/oilprice-province.aspx"
+                ]
+              ]
+                ],
+            [
+              "thumbnailImageUrl"=>  "https://www.songkhlatoday.com/wp-content/uploads/2019/09/1.jpg",
+              "title"=>  "พยากรณ์อากาศ",
+              "text"=>  "ฝน ฟ้า อากาศ",
+              "actions"=>  [
+                [
+                  "type"=>  "uri",
+                  "label"=>  "คลิกดูพยากรณ์อากาศ",
+                  "uri"=>  "https://www.tmd.go.th/"
+                ]
+              ]
+                ],
+            [
+              "thumbnailImageUrl"=>  "https://www.isranews.org/images/stories/2012/sep/thairath_logo1.jpg",
+              "title"=>  "ข่าว",
+              "text"=>  "ข่าวในประจำวัน",
+              "actions"=>  [
+                [
+                  "type"=>  "uri",
+                  "label"=>  "คลิกเลย",
+                  "uri"=>  "https://www.thairath.co.th/news"
+                ]
+              ]
             ]
           ]
         ]
-              ];
+                ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
@@ -52,7 +77,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonimagemap ]
+            'messages' => [$jsontemplate]
         ];
 
         print_r($data);
