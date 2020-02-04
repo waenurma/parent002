@@ -67,8 +67,4 @@ function send_reply_message($url, $post_header, $post_body)
 }
 
 
-
-
-
-
 ?>
