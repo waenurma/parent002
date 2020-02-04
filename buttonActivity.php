@@ -19,7 +19,7 @@ $jsontemplate = [
             [
               "type" => "uri",
               "label" => "คลิกดูกิจกรรม",
-              "uri" => "http://http://405965027.student.yru.ac.th/tes5line/activity.php"
+              "uri" => "http://405965027.student.yru.ac.th/tes5line/activity.php"
             ]
           ],
           "thumbnailImageUrl" => "https://wellness.mcmaster.ca/app/uploads/2017/12/Different-Activities-1024x512.jpg",
