@@ -113,11 +113,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน"){
     require "butontimetable.php";
-    // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "กรุณาตรวจสอบบนสมาร์ทโฟน";
-
+    
 }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน"){
    require "bot-flex-Gpa.php";
     
