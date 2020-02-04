@@ -11,14 +11,11 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-
-
 if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ" || $arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ ";  //.$arrJson['events'][0]['source']['userId'];
-
 
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดีคับ" ||$arrJson['events'][0]['message']['text'] == "สวัสดีครับ"){
     $arrPostData = array();
@@ -26,13 +23,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
 
-
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดีจ่ะ"|| $arrJson['events'][0]['message']['text'] == "สวัสดีจร้า"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
-
 
 //////////////////ขอบคุณ
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณ" ||$arrJson['events'][0]['message']['text'] == "ขอบคุณค่ะ"){
@@ -44,7 +39,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4";
 
-
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณคะ"||$arrJson['events'][0]['message']['text'] == "ขอบคุณจ่ะ"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -53,7 +47,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4";
-
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณครับ" || $arrJson['events'][0]['message']['text'] == "ขอบคุณคับ"){
     $arrPostData = array();
@@ -64,7 +57,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4";    
 
-
 }else if($arrJson['events'][0]['message']['text'] == "ใจจ่ะ"||$arrJson['events'][0]['message']['text'] == "ขอบใจคับ"||$arrJson['events'][0]['message']['text'] == "ขอบใจครับ"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -73,7 +65,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4";
-
 
 }else if($arrJson['events'][0]['message']['text'] == "ขอบใจจ่ะ" ||$arrJson['events'][0]['message']['text'] == "ขอบใจจร้า" || $arrJson['events'][0]['message']['text'] == "ใจจร้า"){
     $arrPostData = array();
@@ -84,9 +75,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4"; 
 
-    
-
-//ลูกเล่นทั่วไป-------------ข่าว----ราคาน้ำมัน---ราคาทอง---
+//ลูกเล่นทั่วไป-------------ข่าว----ราคาน้ำมัน---ราคาทอง---พยากรณือากาศ
 // }else if($arrJson['events'][0]['message']['text'] == "พยากรณ์อากาศ" || $arrJson['events'][0]['message']['text'] == "ราคาทอง"|| $arrJson['events'][0]['message']['text'] == "ราคาน้ำมัน" || $arrJson['events'][0]['message']['text'] == "ข่าว"){
 
 }else if($arrJson['events'][0]['message']['text'] == "ราคาทอง"  || $arrJson['events'][0]['message']['text'] == "ทอง"){
@@ -107,6 +96,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+
 
 
     /////////////////////////////////////////เมนู6เมนู///////////////////////////////////////////////
@@ -130,7 +120,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน"){
     require "bothomework.php";
     
-
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"){
     require "valet.php";
     
