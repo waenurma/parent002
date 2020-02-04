@@ -133,25 +133,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน"){
     require "bothomework.php";
-    // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "การบ้านตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูการบ้าน";
+    
 
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"){
     require "valet.php";
-    // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "จะทำแบบลิงค์แล้วดูยอดที่ต้องชำระหรือค่าเทอมค่าใช้จ่ายต่างๆ";
-
+    
 }else if($arrJson['events'][0]['message']['text'] == "กิจกรรม"){
     require  "buttonActivity.php";
-     // $arrPostData = array();
-    // $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    // $arrPostData['messages'][0]['type'] = "text";
-    // $arrPostData['messages'][0]['text'] = "จะเป็นแบบลิงค์ไปแล้วแสดงว่ามีกิจกรรมอะไรบ้าง";
-
+    
 
 
    //////////////////////////////////////ดักคำแปลกๆ/////////////////////////////////////////////////
