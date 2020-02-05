@@ -98,7 +98,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 
 
-
+}else if($arrJson['events'][0]['message']['text'] =="y"){
+    require "imap.php";
     /////////////////////////////////////////เมนู6เมนู///////////////////////////////////////////////
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน"){
@@ -135,18 +136,18 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 }
 
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$strUrl);
-curl_setopt($ch, CURLOPT_HEADER, false);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$result = curl_exec($ch);
-curl_close ($ch);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,$strUrl);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $result = curl_exec($ch);
+    curl_close ($ch);
 
-exit;               
+    exit;               
 
 
 ?>
