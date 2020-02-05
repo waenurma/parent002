@@ -87,7 +87,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 }else if($arrJson['events'][0]['message']['text'] == "ข่าวสาร"  || $arrJson['events'][0]['message']['text'] == "ข่าว"){
     require "news.php";
 
-}else if($arrJson['events'][0]['message']['text'] == "พยากรณ์"  || $arrJson['events'][0]['message']['text'] == "ฝน ฟ้า อากาศ"|| $arrJson['events'][0]['message']['text'] == "ฝนฟ้าอากาศ"|| $arrJson['events'][0]['message']['text'] == "พยากรณ์อากาศ"){
+}else if($arrJson['events'][0]['message']['text'] == "พยากรณ์"  || $arrJson['events'][0]['message']['text'] == "อากาศ"|| $arrJson['events'][0]['message']['text'] == "ฝนฟ้าอากาศ"|| $arrJson['events'][0]['message']['text'] == "พยากรณ์อากาศ"){
     require "Weather.php";    
 
     /////////////////////////////////////////////////////////////////////////////////////////////
