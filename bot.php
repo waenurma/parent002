@@ -112,11 +112,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     // json_encode($replyjson)
 
 }else if($arrJson['events'][0]['message']['text'] == "การเรียนการสอน"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "การเรียนการสอนตรงนี้จะทำให้ลิงค์หน้าเว็บสามารถดูเนื้อหาที่เรียน";
-
+    require "study.php";
+ 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน"){
     require "bothomework.php";
     
