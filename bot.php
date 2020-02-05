@@ -97,7 +97,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 
-
+    
+//ทดลอง imagemap
 // }else if($arrJson['events'][0]['message']['text'] =="y"){
 //     require "imap.php";
 
