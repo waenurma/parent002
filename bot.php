@@ -1,15 +1,15 @@
 <?php
  
-$strAccessToken = "m7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw=";//copy Channel access token ตอนที่ตั้งค่ามาใส่;
-$channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
+    $strAccessToken = "m7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw=";//copy Channel access token ตอนที่ตั้งค่ามาใส่;
+    $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
 
-$content = file_get_contents('php://input');
-$arrJson = json_decode($content, true);
-$strUrl = "https://api.line.me/v2/bot/message/reply";
+    $content = file_get_contents('php://input');
+    $arrJson = json_decode($content, true);
+    $strUrl = "https://api.line.me/v2/bot/message/reply";
 
-$arrHeader = array();
-$arrHeader[] = "Content-Type: application/json";
-$arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+    $arrHeader = array();
+    $arrHeader[] = "Content-Type: application/json";
+    $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ" || $arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
     $arrPostData = array();
@@ -129,9 +129,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $a=array("ถามอย่างนี้ บอทตั้งตัวไม่ทันเลยว่าจะตอบคำนี้ว่าไง","ขอโทษครับ บอทยังไม่เข้าใจคำถาม","ลองพิมพ์ใหม่อีกครั้ง หรือเลือกเมนูด้านล่างได้นะครับ 🙇","บอทไม่มีคำตอบสำหรับคำถามนี้ มีอะไรอย่างอื่นให้บอทช่วยไหม?","ไม่แน่ใจว่าเข้าใจถูกมั๊ย","นั้นคงอยู่นอกเหนือความสามารถของบอทตอนนี้");
     $random_keys=array_rand($a,2);
     $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
 }
 
 
