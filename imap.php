@@ -12,7 +12,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 $jsonimagemap = [ 
 
   "type"=> "imagemap",
-  "baseUrl"=> "https://charabizasia.files.wordpress.com/2017/07/main-1.jpg?w=1040",
+  "baseUrl"=> "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.naewna.com%2Fbusiness%2F457115&psig=AOvVaw0nOdEsqjBBOd__BqVQrzh-&ust=1581047727116000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiiz8WDvOcCFQAAAAAdAAAAABAD",
   "altText"=> "This is an imagemap",
   "baseSize"=> [
     "width"=> 1040,
