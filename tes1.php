@@ -18,7 +18,7 @@ $jsonbubble = [
    "contents"=> [
      [
        "type"=> "image",
-       "url"=> "https://example.com/flex/images/image.jpg",
+       "url"=> "https://sites.google.com/site/kchnanthwimutkul/_/rsrc/1499710187784/cheux-pheling-pheux-kar-khmnakhm/sthankarn-kar-chi-cheux-pheling-pheux-kar-khmnakhm/3-kar-kahnd-rakha-naman-cheux-pheling/3-แบรนด์น้ำมันต่างชาติ-ปรับทัพรีแบรนด์ครั้งใหญ่.jpg",
        "size"=>"full"
      ]
    ]
@@ -36,7 +36,7 @@ $jsonbubble = [
        "action"=> [
          "type"=> "uri",
          "label"=> "Tap me",
-         "uri"=> "https://example.com"
+         "uri"=> "https://google.com"
        ],
        "style"=> "primary",
        "color"=> "#0000ff"
