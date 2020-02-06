@@ -1,4 +1,3 @@
-
 <?php
  ////////อันนี้แบบมีบัททอน/////////////
 $API_URL = 'https://api.line.me/v2/bot/message';
@@ -12,36 +11,39 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonflex = [
-    
-        "type": "flex",
-        "altText": "Flex Message",
-        "contents": [
-          "type": "bubble",
-          "hero": [
-            "type": "image",
-            "url": "https://1.bp.blogspot.com/-hhxkuymydsU/XbFqiXeZAVI/AAAAAAAAUns/Ek_-UucXj-Q2Wg1-d9dgmDQnxazm4aNBgCPcBGAYYCw/w680/gold1.jpg",
-            "size": "full",
-            "aspectRatio": "20:13",
-            "aspectMode": "cover",
-            "action": [
-              "type": "uri",
-              "label": "Action",
-              "uri": "https://linecorp.com"
+        "type"=> "flex",
+        "altText"=> "Flex Message",
+        "contents"=> [
+          "type"=> "bubble",
+          "hero"=> [
+            "type"=> "image",
+            "url"=> "https://1.bp.blogspot.com/-hhxkuymydsU/XbFqiXeZAVI/AAAAAAAAUns/Ek_-UucXj-Q2Wg1-d9dgmDQnxazm4aNBgCPcBGAYYCw/w680/gold1.jpg",
+            "size"=> "full",
+            "aspectRatio"=> "20:13",
+            "aspectMode"=> "cover",
+            "action"=>[
+              "type"=> "uri",
+              "label"=> "Action",
+              "uri"=> "https://linecorp.com"
             ]
             ],
-          "footer": [
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
+          "footer"=> [
+            "type"=> "box",
+            "layout"=> "vertical",
+            "contents"=> [
               [
-                "type": "button",
-                "action": [
-                  "type": "uri",
-                  "label": "Add to Cart",
-                  "uri": "https://linecorp.com"
+                "type"=> "spacer",
+                "size"=> "xxl"
+              ],
+              [
+                "type"=>"button",
+                "action"=> [
+                  "type"=> "uri",
+                  "label"=> "คลิกเลย",
+                  "uri"=> "https://linecorp.com"
                 ],
-                "color": "#F3F131",
-                "style": "secondary"
+                "color"=> "#ECD316",
+                "style"=> "primary"
               ]
             ]
           ]
