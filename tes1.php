@@ -32,14 +32,14 @@ $jsonbubble = [
        "size"=> "xl"
      ],
      [
-       "type"=> "button",
-       "action"=> [
-         "type"=> "uri",
-         "label"=> "Tap me",
-         "uri"=> "https://google.com"
+        "type"=> "button",
+        "style"=> "primary",
+        "action"=> [
+          "type"=> "uri",
+          "label"=> "Primary style button",
+          "uri"=> "https://example.com"
        ],
-       "style"=> "primary",
-       "color"=> "#0000ff"
+      
      ]
    ]
  ]
