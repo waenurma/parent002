@@ -9,30 +9,42 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsonimagemap = [ 
+$jsonbubble = [ 
 
-  "type"=> "imagemap",
-  "baseUrl"=> "https://parent002.herokuapp.com/parent002/i.jpg",
-  // "baseUrl"=> "https://charabizasia.files.wordpress.com/2017/07/main-1.jpg?w=1040",ลิงค์ณุปนี้ขึ้นของใลน์
-  "altText"=> "ทดสอบ imagemap",
-  "baseSize"=> [
-    "width"=> 1040,
-    "height"=> 1040
-  ],
-  "actions"=> [
-    [
-      "type"=>"uri",
-      "area"=> [
-        "x"=> 8,
-        "y"=> 7,
-        "width"=> 1022,
-        "height"=> 1011
-      ],
-      "linkUri"=>"https://www.google.com/"
-    ]
-    ]
+ "type"=> "bubble",
+ "body"=> [
+   "type"=> "box",
+   "layout"=> "vertical",
+   "contents"=> [
+     [
+       "type"=> "image",
+       "url"=> "https://example.com/flex/images/image.jpg",
+       "size"=>"full"
+     ]
+   ]
+     ],
+ "footer"=> [
+   "type"=> "box",
+   "layout"=> "vertical",
+   "contents"=> [
+     [
+       "type"=> "spacer",
+       "size"=> "xl"
+     ],
+     [
+       "type"=> "button",
+       "action"=> [
+         "type"=> "uri",
+         "label"=> "Tap me",
+         "uri"=> "https://example.com"
+       ],
+       "style"=> "primary",
+       "color"=> "#0000ff"
+     ]
+   ]
+ ]
     ];
-  if ( sizeof($request_array['events']) > 0 ) {
+if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
         $reply_message = '';
@@ -40,7 +52,7 @@ $jsonimagemap = [
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonimagemap]
+            'messages' => [$jsonbubble]
         ];
 
         print_r($data);
