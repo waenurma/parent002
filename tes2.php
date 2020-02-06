@@ -1,5 +1,5 @@
 <?php
- ////////อันนี้แบบมีบัททอน/////////////
+ ////////อันนี้แบบรูปอย่างเดียว/////////////
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = 'm7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw= ';//copy Channel access token ตอนที่ตั้งค่ามาใส่ 
 $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
@@ -11,44 +11,24 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonflex = [
-        "type"=> "flex",
-        "altText"=> "Flex Message",
-        "contents"=> [
-          "type"=> "bubble",
-          "hero"=> [
-            "type"=> "image",
-            "url"=> "https://1.bp.blogspot.com/-hhxkuymydsU/XbFqiXeZAVI/AAAAAAAAUns/Ek_-UucXj-Q2Wg1-d9dgmDQnxazm4aNBgCPcBGAYYCw/w680/gold1.jpg",
-            "size"=> "full",
-            "aspectRatio"=> "20:13",
-            "aspectMode"=> "cover",
-            "action"=>[
-              "type"=> "uri",
-              "label"=> "Action",
-              "uri"=> "https://linecorp.com"
-            ]
-            ],
-          "footer"=> [
-            "type"=> "box",
-            "layout"=> "vertical",
-            "contents"=> [
-              [
-                "type"=> "spacer",
-                "size"=> "xxl"
-              ],
-              [
-                "type"=>"button",
-                "action"=> [
-                  "type"=> "uri",
-                  "label"=> "คลิกเลย",
-                  "uri"=> "https://linecorp.com"
-                ],
-                "color"=> "#ECD316",
-                "style"=> "primary"
-              ]
-            ]
-          ]
+    "type"=> "flex",
+    "altText"=> "Flex Message",
+    "contents"=> [
+      "type"=> "bubble",
+      "hero"=> [
+        "type"=> "image",
+        "url"=> "https://1.bp.blogspot.com/-hhxkuymydsU/XbFqiXeZAVI/AAAAAAAAUns/Ek_-UucXj-Q2Wg1-d9dgmDQnxazm4aNBgCPcBGAYYCw/w680/gold1.jpg",
+        "size"=> "full",
+        "aspectRatio"=> "20:13",
+        "aspectMode"=> "cover",
+        "action"=> [
+          "type"=> "uri",
+          "label"=> "Action",
+          "uri"=> "https://linecorp.com"
         ]
-            ];
+      ]
+    ]
+        ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));

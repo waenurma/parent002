@@ -100,7 +100,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     
 //ทดลอง imagemap
 }else if($arrJson['events'][0]['message']['text'] =="y"){
-    require "imap.php";
+    require "tes2.php";
 
 }else if($arrJson['events'][0]['message']['text'] =="a"){
     require "tes1.php";
