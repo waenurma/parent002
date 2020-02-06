@@ -9,8 +9,10 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsonbubble = [ 
-
+$jsonflex = [
+    "type"=> "flex",
+    "altText"=> "this is a flex message",
+    "contents"=> [
  "type"=> "bubble",
  "body"=> [
    "type"=> "box",
@@ -43,6 +45,7 @@ $jsonbubble = [
      ]
    ]
  ]
+    ]
     ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
@@ -52,7 +55,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonbubble]
+            'messages' => [$jsonflex]
         ];
 
         print_r($data);
