@@ -99,8 +99,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 
     
 //ทดลอง imagemap
-// }else if($arrJson['events'][0]['message']['text'] =="y"){
-//     require "imap.php";
+}else if($arrJson['events'][0]['message']['text'] =="y"){
+    require "imap.php";
 
 
 
