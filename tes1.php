@@ -10,43 +10,44 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonflex = [
-    "type"=> "flex",
-    "altText"=> "this is a flex message",
-    "contents"=> [
- "type"=> "bubble",
- "body"=> [
-   "type"=> "box",
-   "layout"=> "vertical",
-   "contents"=> [
-     [
-       "type"=> "image",
-       "url"=> "https://sites.google.com/site/kchnanthwimutkul/_/rsrc/1499710187784/cheux-pheling-pheux-kar-khmnakhm/sthankarn-kar-chi-cheux-pheling-pheux-kar-khmnakhm/3-kar-kahnd-rakha-naman-cheux-pheling/3-แบรนด์น้ำมันต่างชาติ-ปรับทัพรีแบรนด์ครั้งใหญ่.jpg",
-       "size"=>"full"
-     ]
-   ]
-     ],
- "footer"=> [
-   "type"=> "box",
-   "layout"=> "vertical",
-   "contents"=> [
-     [
-       "type"=> "spacer",
-       "size"=> "xl"
-     ],
-     [
-        "type"=> "button",
-        "style"=> "primary",
-        "action"=> [
-          "type"=> "uri",
-          "label"=> "Primary style button",
-          "uri"=> "https://example.com"
-       ],
-      
-     ]
-   ]
- ]
-    ]
-    ];
+        "type"=> "flex",
+        "altText"=> "Flex Message",
+        "contents"=> [
+          "type"=> "bubble",
+          "hero"=> [
+            "type"=> "image",
+            "url"=> "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+            "size"=> "full",
+            "aspectRatio"=> "20:13",
+            "aspectMode"=> "cover",
+            "action"=>[
+              "type"=> "uri",
+              "label"=> "Action",
+              "uri"=> "https://linecorp.com"
+            ]
+            ],
+          "footer"=> [
+            "type"=> "box",
+            "layout"=> "vertical",
+            "contents"=> [
+              [
+                "type"=> "spacer",
+                "size"=> "xxl"
+              ],
+              [
+                "type"=>"button",
+                "action"=> [
+                  "type"=> "uri",
+                  "label"=> "Add to Cart",
+                  "uri"=> "https://linecorp.com"
+                ],
+                "color"=> "#ECD316",
+                "style"=> "primary"
+              ]
+            ]
+          ]
+        ]
+            ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
