@@ -11,7 +11,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonimagemap = [ 
   "type"=> "imagemap",
-  "baseUrl"=> "https://parent002.herokuapp.com/imagemap/i.jpg",
+  "baseUrl"=> "https://parent002.herokuapp.com/i.jpg",
   "altText"=> "This is an imagemap",
   "baseSize"=> [
     "width"=> 1040,
