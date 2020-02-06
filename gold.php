@@ -22,7 +22,7 @@ $jsontemplate = [
               "uri"=> "https://xn--42cah7d0cxcvbbb9x.com/"
             ]
           ],
-          "thumbnailImageUrl"=> "https://tv.bectero.com/wp-content/uploads/2019/01/gold-full-01.jpg",
+          "thumbnailImageUrl"=> "https://1.bp.blogspot.com/-hhxkuymydsU/XbFqiXeZAVI/AAAAAAAAUns/Ek_-UucXj-Q2Wg1-d9dgmDQnxazm4aNBgCPcBGAYYCw/w680/gold1.jpg",
           "title"=> "ราคาทอง",
           "text"=> "ดูรายละเอียดเพิ่มเติม"
         ]
