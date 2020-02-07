@@ -17,14 +17,19 @@ $jsontemplate = [
           "type"=>  "buttons",
           "actions"=>  [
             [
-              "type"=>  "uri",
-              "label"=> "ตารางเรียนรายวัน",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/studycf.php"
+              "type"=> "uri",
+              "label"=> "ตารางเรียนปัจจุบัน",
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
             ],
             [
-              "type"=>  "uri",
-              "label"=>  "ตารางเรียนรายสัปดาห์",
-              "uri"=>  "http://405965027.student.yru.ac.th/tes5line/studycf.php"
+              "type"=> "uri",
+              "label"=> "ตารางเรียนรายวัน",
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
+            ],
+            [
+              "type"=> "uri",
+              "label"=> "ตารางเรียนร่วม",
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
             ]
           ],
           "thumbnailImageUrl"=>  "https://2.bp.blogspot.com/-FwV3GEvNP_0/WiavzB4v2mI/AAAAAAAAARY/lEFa5WR58KcYNucUbwKbUOlctPWsUsroQCLcBGAs/s1600/635817379401360517-School-building-icon.jpg",
