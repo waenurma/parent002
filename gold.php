@@ -19,7 +19,7 @@ $jsontemplate = [
             [
               "type"=>"uri",
               "label"=> "คลิกดูราคาทอง",
-              "uri"=> "https://xn--42cah7d0cxcvbbb9x.com/"
+              "uri"=> "https://www.goldtraders.or.th/"
             ]
           ],
           "thumbnailImageUrl"=> "https://1.bp.blogspot.com/-hhxkuymydsU/XbFqiXeZAVI/AAAAAAAAUns/Ek_-UucXj-Q2Wg1-d9dgmDQnxazm4aNBgCPcBGAYYCw/w680/gold1.jpg",
