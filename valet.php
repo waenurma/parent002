@@ -11,29 +11,19 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsontemplate = [
     "type"=> "template",
-    "altText"=> "ค่าใช้จ่าย",
+    "altText"=> "this is a buttons template",
     "template"=> [
       "type"=> "buttons",
       "actions"=> [
         [
           "type"=> "uri",
-          "label"=> "ค่าเทอม",
-          "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
-        ],
-        [
-          "type"=> "uri",
-          "label"=> "ยอดคงเหลือ",
-          "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
-        ],
-        [
-          "type"=> "uri",
-          "label"=> "ยอดค้างชำระ",
-          "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
+          "label"=> "คลิกเลย",
+          "uri"=> "http://405965027.student.yru.ac.th/tes5line/vollet1.php"
         ]
       ],
-      "thumbnailImageUrl"=> "https://lh3.googleusercontent.com/DBQ4DQHTALaCp6ooPHqCrEtk4QADZC357GlA4h5SiKpP9HQuuPyXViq8yfXvoghgprA",
+      "thumbnailImageUrl"=> "https://miro.medium.com/max/1200/1*vSlyXXDKQ8RSu1VC0HPbaA.png",
       "title"=> "เป๋าตังค์",
-      "text"=> "รายละเอียดค่าใช้จ่าย"
+      "text"=> "รายละเอียดเพิ่มเติม"
     ]
     ];
 if ( sizeof($request_array['events']) > 0 ) {
