@@ -99,15 +99,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 
 
 
-//ทดลองรูปอย่างเดียว
-}else if($arrJson['events'][0]['message']['text'] =="y"){
-    require "tes2.php";
-
-    //รูปแลีปุ่มบัททอนด้านล่าง
-}else if($arrJson['events'][0]['message']['text'] =="a"){
-    require "tes1.php";
-
-
     /////////////////////////////////////////เมนู6เมนู///////////////////////////////////////////////
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" || $arrJson['events'][0]['message']['text'] == "timetable"){

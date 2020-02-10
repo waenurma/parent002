@@ -1,4 +1,5 @@
 <?php
+
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = 'm7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw= ';//copy Channel access token ตอนที่ตั้งค่ามาใส่ 
 $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
@@ -9,34 +10,30 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsontemplate = [ 
-    
-        "type"=> "template",
-        "altText"=>  "ตารางเรียน",
-        "template"=>  [
-          "type"=>  "buttons",
-          "actions"=>  [
-            [
-              "type"=> "uri",
-              "label"=> "ตารางเรียนปัจจุบัน",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/studycf.php"
-            ],
-            [
-              "type"=> "uri",
-              "label"=> "ตารางเรียนรายวัน",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/timetable.php"
-            ],
-            [
-              "type"=> "uri",
-              "label"=> "ตารางเรียนร่วม",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/studycf.php"
-            ]
-          ],
-          "thumbnailImageUrl"=>  "https://2.bp.blogspot.com/-FwV3GEvNP_0/WiavzB4v2mI/AAAAAAAAARY/lEFa5WR58KcYNucUbwKbUOlctPWsUsroQCLcBGAs/s1600/635817379401360517-School-building-icon.jpg",
-          "title"=>  "ตารางเรียน",
-          "text"=>  "ชื่อ-สกุล"
+$jsontemplate = [
+  
+    "type"=>"template",
+    "altText"=> "ผลการเรียน",
+    "template"=> [
+      "type"=> "buttons",
+      "actions"=> [
+        [
+          "type"=> "uri",
+          "label"=> "ภาคเรียนที่1/63",
+          "uri"=> "https://www.google.com/"
+        ],
+        [
+          "type"=> "uri",
+          "label"=> "ภาคเรียนที่2/63",
+          "uri"=> "https://www.google.com/"
         ]
-        ];
+      ],
+      "thumbnailImageUrl"=> "https://monitordomercado.com.br/api/v1/image/large/1519140310118_3cfd9060-1652-11e8-87ea-c52e331a4071.jpeg",
+      "title"=> "ผลการเรียน",
+      "text"=>"ชื่อ-นามสกุล"
+    ]
+    ];
+
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
@@ -45,7 +42,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsontemplate ]
+            'messages' => [$jsontemplate]
         ];
 
         print_r($data);
@@ -61,7 +58,6 @@ if ( sizeof($request_array['events']) > 0 ) {
 
 echo "OK";
 
-
 function send_reply_message($url, $post_header, $post_body)
 {
     $ch = curl_init($url);
@@ -75,6 +71,7 @@ function send_reply_message($url, $post_header, $post_body)
 
     return $result;
 }
+
 
 
 ?>
