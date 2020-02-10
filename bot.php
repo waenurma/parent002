@@ -113,14 +113,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     require "butontimetable.php";
     
 }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน" || $arrJson['events'][0]['message']['text'] == "Academic results" || $arrJson['events'][0]['message']['text'] == "grade"){
-   require "bot-flex-Gpa.php";
+//    require "bot-flex-Gpa.php";
     
     // $replyjson['type'] = 'text'
     // $replyjson['text'] = '1234'
     // json_encode($replyjson)
 
 }else if($arrJson['events'][0]['message']['text'] == "การเรียนการสอน"|| $arrJson['events'][0]['message']['text'] == "learn"){
-    require "study.php";
+    // require "study.php";
  
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน"|| $arrJson['events'][0]['message']['text'] == "homework"){
     require "bothomework.php";
