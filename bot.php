@@ -97,7 +97,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 
-    
+
+
 //ทดลองรูปอย่างเดียว
 }else if($arrJson['events'][0]['message']['text'] =="y"){
     require "tes2.php";
@@ -128,8 +129,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"|| $arrJson['events'][0]['message']['text'] == "เป๋าตังค์"){
     require "valet.php";
     
-}else if($arrJson['events'][0]['message']['text'] == "กิจกรรม"|| $arrJson['events'][0]['message']['text'] == "acctivity"){
-    require  "buttonActivity.php";
+// }else if($arrJson['events'][0]['message']['text'] == "กิจกรรม"|| $arrJson['events'][0]['message']['text'] == "acctivity"){
+//     require  "buttonActivity.php";
     
 
    //////////////////////////////////////ดักคำแปลกๆ/////////////////////////////////////////////////
