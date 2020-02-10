@@ -1,7 +1,7 @@
 <?php
  
-    $strAccessToken = "m7uuiyQihjxD2Po3jFwWxjslOwuw1T/ODORXy1vPsFQ2XuUHVVj5Sk9sHQNhdNjMRyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVU3EgejzBxajVyv30+aa3gPxAtxAgL7ertukDN7srPvXFGUYhWQfeY8sLGRXgo3xvw=";//copy Channel access token ตอนที่ตั้งค่ามาใส่;
-    $channelSecret = '1e9a50e53936e05409b5095cabc4ac2b';
+    $strAccessToken = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
+    $channelSecret = '157d1d03926e37e516f42f5e9a44af73';
 
     $content = file_get_contents('php://input');
     $arrJson = json_decode($content, true);
@@ -74,6 +74,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][1]['type'] = "sticker";
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4"; 
+
     
 
    //////////////////////////////////////ดักคำแปลกๆ/////////////////////////////////////////////////
