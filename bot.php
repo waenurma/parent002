@@ -29,8 +29,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
 
-
-
 //////////////////ขอบคุณ
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณ" ||$arrJson['events'][0]['message']['text'] == "ขอบคุณค่ะ"){
     $arrPostData = array();
@@ -77,8 +75,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4"; 
 
-
-
 //ลูกเล่นทั่วไป-------------ข่าว----ราคาน้ำมัน---ราคาทอง---พยากรณือากาศ
 // }else if($arrJson['events'][0]['message']['text'] == "พยากรณ์อากาศ" || $arrJson['events'][0]['message']['text'] == "ราคาทอง"|| $arrJson['events'][0]['message']['text'] == "ราคาน้ำมัน" || $arrJson['events'][0]['message']['text'] == "ข่าว"){
 
@@ -94,15 +90,13 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 }else if($arrJson['events'][0]['message']['text'] == "พยากรณ์"  || $arrJson['events'][0]['message']['text'] == "อากาศ"|| $arrJson['events'][0]['message']['text'] == "ฝนฟ้าอากาศ"|| $arrJson['events'][0]['message']['text'] == "พยากรณ์อากาศ"){
     require "Weather.php";    
 
-
-
-
     /////////////////////////////////////////////////////////////////////////////////////////////
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+
 
 
 //ทดลองรูปอย่างเดียว
@@ -114,16 +108,20 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     require "tes1.php";
 
 
-
-
     /////////////////////////////////////////เมนู6เมนู///////////////////////////////////////////////
 
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" || $arrJson['events'][0]['message']['text'] == "timetable"){
     require "butontimetable.php";
     
+// }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน" || $arrJson['events'][0]['message']['text'] == "Academic results" || $arrJson['events'][0]['message']['text'] == "grade"){
+//    require "bot-flex-Gpa.php";
+    
     // $replyjson['type'] = 'text'
     // $replyjson['text'] = '1234'
     // json_encode($replyjson)
+
+// }else if($arrJson['events'][0]['message']['text'] == "การเรียนการสอน"|| $arrJson['events'][0]['message']['text'] == "learn"){
+//     require "study.php";
  
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน"|| $arrJson['events'][0]['message']['text'] == "homework"){
     require "bothomework.php";
@@ -131,7 +129,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
 }else if($arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย"|| $arrJson['events'][0]['message']['text'] == "เป๋าตังค์"){
     require "valet.php";
     
-
+// }else if($arrJson['events'][0]['message']['text'] == "กิจกรรม"|| $arrJson['events'][0]['message']['text'] == "acctivity"){
+//     require  "buttonActivity.php";
+    
 
    //////////////////////////////////////ดักคำแปลกๆ/////////////////////////////////////////////////
 }else{
@@ -142,6 +142,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
 }
+
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$strUrl);
@@ -155,5 +156,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['
     curl_close ($ch);
 
     exit;               
+
 
 ?>
