@@ -21,7 +21,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "text",
-            "text" => "Purchase",
+            "text" => "ผลการเรียน",
             "size" => "lg",
             "align" => "start",
             "weight" => "bold",
@@ -29,27 +29,22 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => "฿ 100.00",
+            "text" => "4.00",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
           ],
           [
             "type" => "text",
-            "text" => "Rabbit Line Pay",
+            "text" => "เกรดเฉลี่ยร่วม",
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
           ],
+
           [
             "type" => "text",
-            "text" => "2019.02.14 21:47 (GMT+0700)",
-            "size" => "xs",
-            "color" => "#B2B2B2"
-          ],
-          [
-            "type" => "text",
-            "text" => "Payment complete.",
+            "text" => "ชื่อ-นามสกุล",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -71,13 +66,13 @@ $jsonFlex = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "Merchant",
+                "text" => "ภาคเรียนที่1",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => "BTS 01",
+                "text" => "4.00",
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -90,12 +85,12 @@ $jsonFlex = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "New balance",
+                "text" => "ภาคเรียนที่2",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => "฿ 45.57",
+                "text" => "4.00",
                 "align" => "end"
               ]
             ]
@@ -113,7 +108,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "text",
-            "text" => "View Details",
+            "text" => "คลิกดูผลการเรียน",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
