@@ -1,15 +1,13 @@
 <?php
 
-
 $API_URL = 'https://api.line.me/v2/bot/message';
-$strAccessToken = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
+$ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
 $channelSecret = '157d1d03926e37e516f42f5e9a44af73';
-
 
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
-$request = file_get_contents('php://input');   // Get request content
-$request_array = json_decode($request, true);   // Decode JSON to Array
+$content = file_get_contents('php://input');   // Get request content
+$request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
     "type" => "flex",
@@ -129,15 +127,11 @@ $jsonFlex = [
       ]
     ]
   ];
-
-
-
-if ( sizeof($request_array['events']) > 0 ) {
+  if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
         $reply_message = '';
         $reply_token = $event['replyToken'];
-
 
         $data = [
             'replyToken' => $reply_token,
@@ -147,7 +141,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         print_r($data);
 
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-
+        
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
         echo "Result: ".$send_result."\r\n";
@@ -156,8 +150,6 @@ if ( sizeof($request_array['events']) > 0 ) {
 }
 
 echo "OK";
-
-
 
 
 function send_reply_message($url, $post_header, $post_body)
@@ -174,4 +166,6 @@ function send_reply_message($url, $post_header, $post_body)
     return $result;
 }
 
+
 ?>
+
