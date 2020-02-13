@@ -68,7 +68,7 @@ $jsonFlex = [
                 "type" => "text",
                 "text" => "ภาคเรียนที่1",
                 "align" => "start",
-                "color" => "#C3C3C3"
+                "color" => "#000000"
               ],
               [
                 "type" => "text",
@@ -86,7 +86,7 @@ $jsonFlex = [
               [
                 "type" => "text",
                 "text" => "ภาคเรียนที่2",
-                "color" => "#C3C3C3"
+                "color" => "#000000"
               ],
               [
                 "type" => "text",
