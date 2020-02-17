@@ -12,7 +12,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 $jsontemplate = [
   
     "type"=>"text",
-    "text"=> `Please send me your location!, I will report AQI for you.`,
+    "text"=> "Please send me your location!, I will report AQI for you",
     "quickReply"=>[
       "items"=> [
         [
