@@ -17,7 +17,7 @@ $jsontemplate = [
       "actions"=> [
         [
           "type"=> "message",
-          "label"=> "Brown",
+          "label"=> "คลิกดู",
           "text"=> "เลือกตารางเรียน"
         ],
         // [
