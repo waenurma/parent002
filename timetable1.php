@@ -1,6 +1,6 @@
 <?php
 
-$API_URL = 'https://api.line.me/v2/bot/message/push';
+$API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
 $channelSecret = '157d1d03926e37e516f42f5e9a44af73';
 
@@ -10,18 +10,36 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonquickReply = [
-  
-    "type"=> "text",
-    "text"=> "คลิกเลือกเมนูด้านล่าง",
-    "quickReply"=> [
+
+    "type"=> "text", // ①
+    "text"=> "Select your favorite food category or send me your location!",
+    "quickReply"=> [ // ②
       "items"=> [
-        [
-          "type"=> "action",
+      [
+          "type"=> "action", // ③
+          "imageUrl"=> "https://example.com/sushi.png",
           "action"=> [
-            "type"=> "cameraRoll",
-            "label"=> "Camera Roll"
+            "type"=> "message",
+            "label"=> "Sushi",
+            "text"=> "Sushi"
           ]
           ],
+        [
+          "type"=> "action",
+          "imageUrl"=> "https://example.com/tempura.png",
+          "action"=> [
+            "type"=> "message",
+            "label"=> "Tempura",
+            "text"=> "Tempura"
+        ]
+          ],
+        [
+          "type"=> "action", // ④
+          "action"=> [
+            "type"=> "location",
+            "label"=> "Send location"
+        ]
+    ]
       ]
     ]
           ];
