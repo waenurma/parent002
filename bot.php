@@ -91,7 +91,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 }else if($arrJson['events'][0]['message']['text'] == "เป๋าตังค์" ||$arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย" ){
     require "vollet.php";
    ////ผลเรียนแบบflexตัวใหญ่
-}else if($arrJson['events'][0]['message']['text'] == "เกรด" ){
+}else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
     require "flex.php";
 }else if($arrJson['events'][0]['message']['text'] == "a" ){
     require "test.php";
