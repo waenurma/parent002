@@ -12,7 +12,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 $jsonquickReply = [
   
     "type"=> "text",
-    "text"=> "เลือกตารางเรียน",
+    "text"=> "คลิกเลือกเมนูด้านล่าง",
     "quickReply"=> [
       "items"=> [
         [
