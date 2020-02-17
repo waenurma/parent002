@@ -20,8 +20,8 @@ $jsonquickReply = [
           "imageUrl"=> "https://example.com/sushi.png",
           "action"=> [
             "type"=> "message",
-            "label"=> "Sushi",
-            "text"=> "Sushi"
+            "label"=> "ตารางเรียนปัจจุบัน",
+            //"text"=> "Sushi"
           ]
           ],
         [
@@ -29,15 +29,15 @@ $jsonquickReply = [
           "imageUrl"=> "https://example.com/tempura.png",
           "action"=> [
             "type"=> "message",
-            "label"=> "Tempura",
-            "text"=> "Tempura"
+            "label"=> "ตารางเรียนถัดไป",
+            //"text"=> "Tempura"
         ]
           ],
         [
           "type"=> "action", // ④
           "action"=> [
             "type"=> "location",
-            "label"=> "Send location"
+            "label"=> "ตารางเรียนร่วม"
         ]
     ]
       ]
