@@ -21,7 +21,7 @@ $jsonquickReply = [
           "action"=> [
             "type"=> "message",
             "label"=> "ตารางเรียนปัจจุบัน",
-            //"text"=> "Sushi"
+            "text"=> "Sushi"
           ]
           ],
         [
@@ -30,7 +30,7 @@ $jsonquickReply = [
           "action"=> [
             "type"=> "message",
             "label"=> "ตารางเรียนถัดไป",
-            //"text"=> "Tempura"
+            "text"=> "Tempura"
         ]
           ],
         [
