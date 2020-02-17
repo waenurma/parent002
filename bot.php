@@ -86,7 +86,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     require "timetable.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "เลือกดูตารางเรียน" ){
-    //require "timetable.php";
+    require "timetable1.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
     require "homework.php";
