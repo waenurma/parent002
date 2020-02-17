@@ -9,22 +9,67 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsontemplate = [
+$jsontext = [
   
-    "type"=>"text",
-    "text"=> "Please send me your location!, I will report AQI for you",
-    "quickReply"=>[
+    "type"=> "text",
+    "text"=> "Hello Quick Reply!",
+    "quickReply"=> [
       "items"=> [
         [
           "type"=> "action",
           "action"=> [
+            "type"=> "cameraRoll",
+            "label"=> "Camera Roll"
+          ]
+          ],
+        [
+          "type"=> "action",
+          "action"=> [
+            "type"=> "camera",
+            "label"=> "Camera"
+          ]
+          ],
+        [
+          "type"=> "action",
+          "action"=> [
             "type"=> "location",
-            "label"=> "Send Location"
+            "label"=> "Location"
+          ]
+          ],
+        [
+          "type"=> "action",
+          "imageUrl"=> "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-1-512.png",
+          "action"=> [
+            "type"=> "message",
+            "label"=> "Message",
+            "text"=> "Hello World!"
+          ]
+        ],
+        [
+          "type"=> "action",
+          "action"=> [
+            "type"=> "postback",
+            "label"=> "Postback",
+            "data"=> "action=buy&itemid=123",
+            "displayText"=> "Buy"
+          ]
+        ],
+        [
+          "type"=> "action",
+          "imageUrl"=> "https://icla.org/wp-content/uploads/2018/02/blue-calendar-icon.png",
+          "action"=> [
+            "type"=>"datetimepicker",
+            "label"=> "Datetime Picker",
+            "data"=>"storeId=12345",
+            "mode"=> "datetime",
+            "initial"=> "2018-08-10t00:00",
+            "max"=> "2018-12-31t23:59",
+            "min"=> "2018-08-01t00:00"
           ]
         ]
       ]
     ]
-    ];
+          ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
@@ -33,7 +78,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsontemplate ]
+            'messages' => [$jsontext ]
         ];
 
         print_r($data);
