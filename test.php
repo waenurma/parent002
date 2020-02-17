@@ -13,10 +13,12 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 $jsonimage_carousel = [
     
         "type"=> "template",
-        "altText"=> "This is an image carousel template",
+        "altText"=> "รูปภาพบราวนี่ที่สามารถคลิกได้",
         "template"=> [
           "type"=> "image_carousel",
           "columns"=> [
+            //รูปภาพ->คลิกแล้วจะส่งเป็นข้อความ
+            
             [
               "imageUrl"=> "https://vignette.wikia.nocookie.net/line/images/b/bb/2015-brown.png",
               "action"=>[
@@ -25,11 +27,12 @@ $jsonimage_carousel = [
                 "text"=> "Brown was selected"
               ]
               ],
+               //รูปภาพ->คลิกแล้วลิงค์ไปยังหน้าอื่น
             [
               "imageUrl"=> "https://vignette.wikia.nocookie.net/line/images/1/10/2015-cony.png",
               "action"=> [
                 "type"=> "uri",
-                "label"=> "Cony",
+                "label"=> "คลิกเลย",
                 "uri"=> "https://developers.line.biz"
               ]
             ]
