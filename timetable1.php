@@ -9,7 +9,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsontext = [
+$jsonquickReply = [
   
     "type"=> "text",
     "text"=> "Hello Quick Reply!",
@@ -78,7 +78,7 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsontext ]
+            'messages' => [$jsonquickReply ]
         ];
 
         print_r($data);
