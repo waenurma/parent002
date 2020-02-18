@@ -39,7 +39,14 @@ $jsonquickReply = [
               "text"=> "Tempura"
           ]
             ],
-
+            [
+              "type"=> "action",
+              "action"=> [
+                "type"=> "message",
+                "label"=> "ตารางเรียนรายร่วม",
+                "text"=> "Tempura"
+            ]
+              ],
 
       ]
     ]
