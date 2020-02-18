@@ -113,9 +113,12 @@ $jsonFlex = [
             "align" => "start",
             "color" => "#0084B6",
             "action" => [
-              "type" => "uri",
+              // "type" => "uri",
+              // "label" => "View Details",
+              // "uri" => "https://google.co.th/"
+              "type" => "message",
               "label" => "View Details",
-              "uri" => "https://google.co.th/"
+              "text" => "เลือก https://google.co.th/"
             ]
           ]
         ]
