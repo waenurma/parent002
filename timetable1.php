@@ -17,29 +17,37 @@ $jsonquickReply = [
       "items"=> [
       [
           "type"=> "action", // ③
-          "imageUrl"=> "https://example.com/sushi.png",
           "action"=> [
-            "type"=> "message",
+            "type"=> "uri",
             "label"=> "ตารางเรียนปัจจุบัน",
-            "text"=> "Sushi"
+            "uri"=>"https://developers.line.biz"
+            
           ]
           ],
         [
           "type"=> "action",
-          "imageUrl"=> "https://example.com/tempura.png",
           "action"=> [
-            "type"=> "message",
-            "label"=> "ตารางเรียนถัดไป",
-            "text"=> "Tempura"
+            "type"=> "uri",
+            "label"=> "ตารางเรียนคาบถัดไป",
+            "uri"=>"https://developers.line.biz"
         ]
           ],
-        [
-          "type"=> "action", // ④
-          "action"=> [
-            "type"=> "location",
-            "label"=> "ตารางเรียนร่วม"
-        ]
-    ]
+          [
+            "type"=> "action",
+            "action"=> [
+              "type"=> "uri",
+              "label"=> "ตารางเรียนรายวัน",
+              "uri"=>"https://developers.line.biz"
+          ]
+            ],
+            [
+              "type"=> "action",
+              "action"=> [
+                "type"=> "uri",
+                "label"=> "ตารางเรียนร่วม",
+                "uri"=>"https://developers.line.biz"
+            ]
+              ]
       ]
     ]
           ];
