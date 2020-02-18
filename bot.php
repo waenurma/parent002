@@ -101,6 +101,9 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 
 
  /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ----------------------
+}else if($arrJson['events'][0]['message']['text'] == "อื่นๆ" ){
+    require "quick.php";
+
 }else if($arrJson['events'][0]['message']['text'] == "ทอง"||$arrJson['events'][0]['message']['text'] == "ราคาทอง"  ){
     require "gold.php";
 

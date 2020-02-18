@@ -18,33 +18,33 @@ $jsonquickReply = [
       [
           "type"=> "action", // ③
           "action"=> [
-            "type"=> "uri",
-            "label"=> "ตารางเรียนปัจจุบัน",
-            "uri"=> "https://developers.line.biz"
+            "type"=> "message",
+            "label"=> "ข่าวสาร",
+            "text"=> "ข่าวสาร"
           ]
           ],
         [
           "type"=> "action",
           "action"=> [
             "type"=> "message",
-            "label"=> "ตารางเรียนคาบถัดไป",
-            "text"=> "Tempura"
+            "label"=> "ราคาทอง",
+            "text"=> "ราคาทอง"
         ]
           ],
           [
             "type"=> "action",
             "action"=> [
               "type"=> "message",
-              "label"=> "ตารางเรียนรายวัน",
-              "text"=> "Tempura"
+              "label"=> "ราคาน้ำมัน",
+              "text"=> "ราคาน้ำมัน"
           ]
             ],
             [
               "type"=> "action",
               "action"=> [
                 "type"=> "message",
-                "label"=> "ตารางเรียนรายร่วม",
-                "text"=> "Tempura"
+                "label"=> "พยากรณ์อากาศ",
+                "text"=> "ฝนฟ้าอากาศ"
             ]
               ],
 
