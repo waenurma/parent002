@@ -18,9 +18,9 @@ $jsonquickReply = [
       [
           "type"=> "action", // ③
           "action"=> [
-            "type"=> "message",
+            "type"=> "uri",
             "label"=> "ตารางเรียนปัจจุบัน",
-            "text"=> "Sushi"
+            "uri"=> "https://developers.line.biz"
           ]
           ],
         [
