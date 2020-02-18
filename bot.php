@@ -85,14 +85,14 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
     require "timetable.php";
 
-}else if($arrJson['events'][0]['message']['text'] == "เลือกตารางเรียน" ){
-    require "timetable1.php";
+// }else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
+//     require "timetable1.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
     require "homework.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "เป๋าตังค์" ||$arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย" ){
-    require "vollet.php";
+    require "vollet.php" && require "timetable1.php";
    ////ผลเรียนแบบflexตัวใหญ่
 }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
     require "flex.php";
