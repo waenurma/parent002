@@ -20,8 +20,8 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
         $arrPostData = array();
         $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
         $arrPostData['messages'][0]['type'] = "video";
-        $arrPostData['messages'][0]['originalContentUrl'] = "https://youtu.be/PNACvjldl3I";//ใส่ url ของ video ที่ต้องการส่ง
-        $arrPostData['messages'][0]['previewImageUrl'] = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";//ใส่รูป preview ของ video
+        $arrPostData['messages'][0]['originalContentUrl'] = "https://s3-ap-southeast-1.amazonaws.com/dezpax/b_files/video_example.mp4";//ใส่ url ของ video ที่ต้องการส่ง
+        $arrPostData['messages'][0]['previewImageUrl'] = "https://3.bp.blogspot.com/-POLCd-KKazc/W9EtNxsqwpI/AAAAAAAAW_0/c8P1A4Ik3tMsCXZwaI1B2n3eXZqG0ifzwCLcBGAs/s1600/sao-preview.jpg";//ใส่รูป preview ของ video
 
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ" || $arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
     $arrPostData = array();
