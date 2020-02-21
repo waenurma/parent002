@@ -102,7 +102,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     require "vollet.php";
    ////ผลเรียนแบบflexตัวใหญ่
 }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
-    require "flex.php";
+    // require "flex.php";
     
 }else if($arrJson['events'][0]['message']['text'] == "a" ){
     require "test.php";
