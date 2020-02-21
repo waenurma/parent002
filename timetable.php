@@ -18,7 +18,7 @@ $jsontemplate = [
         [
           "type"=> "uri",
           "label"=> "ตารางเรียนปัจจุบัน",
-          "uri"=>"http://405965027.student.yru.ac.th/tes5line/day1.php" //เปลี่ยนลิงค์
+          "uri"=>"http://405965027.student.yru.ac.th/tes5line/day1.php" 
         ],
         [
           "type"=> "uri", 
