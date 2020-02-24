@@ -129,28 +129,7 @@ $jsonFlex = [
             "weight"=> "regular",
             "color"=> "#53AB58"
           ],
-          [
-            "type"=> "box",
-            "layout"=> "baseline",
-            "contents"=> [
-              [
-                "type"=> "text",
-                "text"=> "เลขบัญชี",
-                "flex"=> 0,
-                "margin"=> "lg",
-                "weight"=> "regular",
-                "color"=> "#4D3B3B"
-              ],
-              [
-                "type"=> "text",
-                "text"=> "xxx-xxx-x123",
-                "margin"=> "xl",
-                "size"=> "sm",
-                "align"=> "center",
-                "color"=> "#8A7B7B"
-              ]
-            ]
-          ]
+         
         ]
               ],
       "footer"=> [
