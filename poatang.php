@@ -47,7 +47,7 @@ $jsonFlex = [
          
           [
             "type"=> "text",
-            "text"=> "____________________________",
+            "text"=> "______________________________",
             "margin"=> "lg",
             "align"=> "start",
             "weight"=> "regular",
@@ -123,7 +123,7 @@ $jsonFlex = [
           ],
           [
             "type"=> "text",
-            "text"=> "____________________________",
+            "text"=> "______________________________",
             "align"=> "start",
             "gravity"=> "center",
             "weight"=> "regular",
