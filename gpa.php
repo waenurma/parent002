@@ -10,121 +10,188 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
-    "type" => "flex",
-    "altText" => "ผลการเรียน",
-    "contents" => [
-      "type" => "bubble",
-      "direction" => "ltr",
-      "header" => [
-        "type" => "box",
-        "layout" => "vertical",
-        "contents" => [
-          [
-            "type" => "text",
-            "text" => "ผลการเรียน",
-            "size" => "lg",
-            "align" => "start",
-            "weight" => "bold",
-            "color" => "#009813"
-          ],
-          [
-            "type" => "text",
-            "text" => "4.00",
-            "size" => "3xl",
-            "weight" => "bold",
-            "color" => "#000000"
-          ],
-          [
-            "type" => "text",
-            "text" => "เกรดเฉลี่ยร่วม",
-            "size" => "lg",
-            "weight" => "bold",
-            "color" => "#000000"
-          ],
-
-          [
-            "type" => "text",
-            "text" => "ชื่อ-นามสกุล",
-            "margin" => "lg",
-            "size" => "lg",
-            "color" => "#000000"
-          ]
-        ]
+    "type"=> "flex",
+    "altText"=> "Flex Message",
+    "contents"=> [
+      "type"=> "bubble",
+      "hero"=> [
+        "type"=> "image",
+        "url"=> "https://raw.githubusercontent.com/aicit2015/picture-/master/assalam.png",
+        "size"=> "full",
+        "aspectRatio"=> "20:13",
+        "aspectMode"=> "cover",
+        "backgroundColor"=> "#BFB1B1"
+       
       ],
-      "body" => [
-        "type" => "box",
-        "layout" => "vertical",
-        "contents" => [
+      "body"=> [
+        "type"=> "box",
+        "layout"=> "vertical",
+        "spacing"=> "md",
+        
+        "contents"=> [
           [
-            "type" => "separator",
-            "color" => "#C3C3C3"
+            "type"=> "text",
+            "text"=> "ฝากเงิน โอนเงิน ถอนเงิน",
+            "size"=> "lg",
+            "align"=> "center",
+            "weight"=> "bold",
+            "color"=> "#23731C"
           ],
           [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
+            "type"=> "text",
+            "text"=> "02 ก.พ  2563 - 9.36 ",
+            "margin"=> "md",
+            "align"=> "center",
+            "color"=> "#5D5858"
+          ],
+          [
+            "type"=> "box",
+            "layout"=> "baseline",
+            "contents"=> [
               [
-                "type" => "text",
-                "text" => "ภาคเรียนที่1",
-                "align" => "start",
-                "color" => "#000000"
+                "type"=> "text",
+                "text"=> "รหัสสมาชิก :",
+                "flex"=> 0,
+                "margin"=> "xl",
+                "align"=> "end",
+                "weight"=> "regular",
+                "color"=> "#DC4747"
               ],
               [
-                "type" => "text",
-                "text" => "4.00",
-                "align" => "end",
-                "color" => "#000000"
+                "type"=> "text",
+                "text"=> "1230456789",
+                "margin"=> "xxl",
+                "size"=> "sm",
+                "align"=> "start",
+                "color"=> "#BE1313"
               ]
             ]
+              ],
+          [
+            "type"=> "text",
+            "text"=> "____________________________",
+            "margin"=> "lg",
+            "align"=> "start",
+            "weight"=> "regular",
+            "color"=> "#53AB58"
           ],
           [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
+            "type"=> "box",
+            "layout"=> "vertical",
+            "spacing"=> "sm",
+            "contents"=> [
               [
-                "type" => "text",
-                "text" => "ภาคเรียนที่2",
-                "color" => "#000000"
+                "type"=> "box",
+                "layout"=> "baseline",
+                "contents"=> [
+                  [
+                    "type"=> "text",
+                    "text"=> "จำนวนเงิน",
+                    "flex"=> 0,
+                    "margin"=> "xl",
+                    "weight"=> "regular",
+                    "color"=> "#5D4D4D"
+                  ],
+                  [
+                    "type"=> "text",
+                    "text"=> "xxx.xx",
+                    "margin"=> "xxl",
+                    "size"=> "sm",
+                    "align"=> "center",
+                    "color"=> "#0F0E0E"
+                  ],
+                  [
+                    "type"=> "text",
+                    "text"=> "บาท",
+                    "size"=> "sm",
+                    "align"=> "end",
+                    "color"=> "#0F0E0E"
+                  ]
+                ]
+                  ],
+              [
+                "type"=> "box",
+                "layout"=> "baseline",
+                "contents"=> [
+                  [
+                    "type"=> "text",
+                    "text"=> "ยอดเงินคงเหลือ",
+                    "flex"=> 0,
+                    "margin"=> "lg",
+                    "weight"=> "regular",
+                    "color"=> "#4D3B3B"
+                  ],
+                  [
+                    "type"=> "text",
+                    "text"=> "xxx.xx",
+                    "margin"=> "xl",
+                    "size"=> "sm",
+                    "align"=> "center",
+                    "color"=> "#201B1B"
+                  ],
+                  [
+                    "type"=> "text",
+                    "text"=> "บาท",
+                    "size"=> "sm",
+                    "align"=> "end",
+                    "color"=> "#201B1B"
+                  ]
+                ]
+              ]
+            ]
+                  ],
+          [
+            "type"=> "filler"
+          ],
+          [
+            "type"=> "text",
+            "text"=> "____________________________",
+            "align"=> "start",
+            "gravity"=> "center",
+            "weight"=> "regular",
+            "color"=> "#53AB58"
+          ],
+          [
+            "type"=> "box",
+            "layout"=> "baseline",
+            "contents"=> [
+              [
+                "type"=> "text",
+                "text"=> "เลขบัญชี",
+                "flex"=> 0,
+                "margin"=> "lg",
+                "weight"=> "regular",
+                "color"=> "#4D3B3B"
               ],
               [
-                "type" => "text",
-                "text" => "4.00",
-                "align" => "end"
+                "type"=> "text",
+                "text"=> "xxx-xxx-x123",
+                "margin"=> "xl",
+                "size"=> "sm",
+                "align"=> "center",
+                "color"=> "#8A7B7B"
               ]
             ]
-          ],
-          [
-            "type" => "separator",
-            "margin" => "lg",
-            "color" => "#C3C3C3"
           ]
         ]
-      ],
-      "footer" => [
-        "type" => "box",
-        "layout" => "horizontal",
-        "contents" => [
+              ],
+      "footer"=> [
+        "type"=> "box",
+        "layout"=> "vertical",
+        "contents"=> [
           [
-            "type" => "text",
-            "text" => "คลิกดูผลการเรียน",
-            "size" => "lg",
-            "align" => "start",
-            "color" => "#0084B6",
-            "action" => [
-              // "type" => "uri",
-              // "label" => "View Details",
-              // "uri" => "https://google.co.th/"
-              "type" => "uri",
-              "label" => "View Details",
-              "uri" => "https://google.co.th/"
-            ]
+            "type"=> "spacer",
+            "size"=> "sm"
+          ],
+          [
+            "type"=> "spacer",
+            "size"=> "xl"
           ]
         ]
       ]
     ]
-  ];
+  
+          ];
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
