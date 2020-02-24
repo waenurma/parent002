@@ -16,7 +16,7 @@ $jsonFlex = [
       "type"=> "bubble",
       "hero"=> [
         "type"=> "image",
-        "url"=> "https://raw.githubusercontent.com/aicit2015/picture-/master/assalam.png",
+        "url"=> "https://miro.medium.com/max/1200/1*vSlyXXDKQ8RSu1VC0HPbaA.png",
         "size"=> "full",
         "aspectRatio"=> "20:13",
         "aspectMode"=> "cover",
@@ -31,7 +31,7 @@ $jsonFlex = [
         "contents"=> [
           [
             "type"=> "text",
-            "text"=> "ฝากเงิน โอนเงิน ถอนเงิน",
+            "text"=> "เป๋าตังค์",
             "size"=> "lg",
             "align"=> "center",
             "weight"=> "bold",
@@ -39,34 +39,12 @@ $jsonFlex = [
           ],
           [
             "type"=> "text",
-            "text"=> "02 ก.พ  2563 - 9.36 ",
+            "text"=> "ตรวจเช็ครายละเอียดค่าใช้จ่าย",
             "margin"=> "md",
             "align"=> "center",
             "color"=> "#5D5858"
           ],
-          [
-            "type"=> "box",
-            "layout"=> "baseline",
-            "contents"=> [
-              [
-                "type"=> "text",
-                "text"=> "รหัสสมาชิก :",
-                "flex"=> 0,
-                "margin"=> "xl",
-                "align"=> "end",
-                "weight"=> "regular",
-                "color"=> "#DC4747"
-              ],
-              [
-                "type"=> "text",
-                "text"=> "1230456789",
-                "margin"=> "xxl",
-                "size"=> "sm",
-                "align"=> "start",
-                "color"=> "#BE1313"
-              ]
-            ]
-              ],
+         
           [
             "type"=> "text",
             "text"=> "____________________________",
