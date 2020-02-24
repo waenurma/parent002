@@ -21,7 +21,7 @@ $jsonFlex = [
         "aspectRatio"=> "20:13",
         "aspectMode"=> "cover",
         "backgroundColor"=> "#BFB1B1"
-       
+      
       ],
       "body"=> [
         "type"=> "box",
