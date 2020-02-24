@@ -36,7 +36,7 @@ $jsontemplate = [
           "uri"=> "http://405965027.student.yru.ac.th/tes5line/study_joi.php"
         ]
       ],
-      "thumbnailImageUrl"=> "https://2.bp.blogspot.com/-FwV3GEvNP_0/WiavzB4v2mI/AAAAAAAAARY/lEFa5WR58KcYNucUbwKbUOlctPWsUsroQCLcBGAs/s1600/635817379401360517-School-building-icon.jpg",
+      "thumbnailImageUrl"=> "https://speedingtortoise.com/wp-content/uploads/2019/06/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A1%E0%B8%B5%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%9E.jpg",
       "title"=> "ตารางเรียน",
       "text"=> "ชื่อ-สกุล"
     ]
