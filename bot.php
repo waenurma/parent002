@@ -100,6 +100,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 
 }else if($arrJson['events'][0]['message']['text'] == "เป๋าตังค์" ||$arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย" ){
     require "poatang.php";
+
    ////ผลเรียนแบบflexตัวใหญ่
 // }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
 //     require "gpa.php";
@@ -135,8 +136,6 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
 }
-
-
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$strUrl);
     curl_setopt($ch, CURLOPT_HEADER, false);
