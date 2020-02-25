@@ -106,10 +106,10 @@ $jsonFlex = [
                     "type"=> "button",
                     "action"=> [
                       "type"=> "uri",
-                      "label"=> "Add to Cart",
+                      "label"=> "เช็ครายการใช้จ่าย",
                       "uri"=> "https://linecorp.com"
                     ],
-                    "color"=> "#F3F131",
+                    "color"=> "#0084B6",
                     "style"=> "secondary"
                   ]
                 ]
