@@ -107,8 +107,9 @@ $jsonFlex = [
                     "action"=> [
                       "type"=> "uri",
                       "label"=> "เช็ครายการใช้จ่าย",
-                      "uri"=> "https://linecorp.com",
-                      "color"=> "FFFFFF"
+                      "color"=> "FFFFFF",
+                      "uri"=> "https://linecorp.com"
+                      
                     ],
                     "color"=> "#0084B6",
                     "style"=> "secondary"
