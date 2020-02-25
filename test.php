@@ -169,7 +169,7 @@ $jsonFlex = [
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonimage_carousel]
+            'messages' => [$jsonFlex]
         ];
 
         print_r($data);
