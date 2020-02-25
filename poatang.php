@@ -132,22 +132,25 @@ $jsonFlex = [
          
         ]
               ],
-      "footer"=> [
-        "type"=> "box",
-        "layout"=> "vertical",
-        "contents"=> [
-          [
-            "type"=> "spacer",
-            "size"=> "sm"
-          ],
-          [
-            "type"=> "spacer",
-            "size"=> "xl"
-          ]
-        ]
-      ]
+              "footer" => [
+                "type" => "box",
+                "layout" => "horizontal",
+                "contents" => [
+                  [
+                    "type" => "text",
+                    "text" => "View Details",
+                    "size" => "lg",
+                    "align" => "start",
+                    "color" => "#0084B6",
+                    "action" => [
+                      "type" => "uri",
+                      "label" => "View Details",
+                      "uri" => "https://google.co.th/"
+                    ]
+                  ]
+                ]
+              ]
     ]
-  
           ];
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
