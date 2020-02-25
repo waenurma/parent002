@@ -44,7 +44,6 @@ $jsonFlex = [
             "align"=> "center",
             "color"=> "#5D5858"
           ],
-         
           [
             "type" => "separator",
             "color" => "#C3C3C3",
@@ -55,7 +54,6 @@ $jsonFlex = [
             "layout"=> "vertical",
             "spacing"=> "sm",
             "contents"=> [
-              
               [
                 "type"=> "box",
                 "layout"=> "baseline",
@@ -95,7 +93,6 @@ $jsonFlex = [
             "color" => "#C3C3C3",
             "margin" => "lg"
           ],
-        
         ]
               ],
               "footer"=> [
@@ -108,7 +105,6 @@ $jsonFlex = [
                       "type"=> "uri",
                       "label"=> "เช็ครายการใช้จ่าย",
                       "uri"=> "https://linecorp.com"
-                      
                     ],
                     "color"=> "#0084B6",
                     "style"=> "primary"
