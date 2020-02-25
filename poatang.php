@@ -46,12 +46,8 @@ $jsonFlex = [
           ],
          
           [
-            "type"=> "text",
-            "text"=> "_____________________________",
-            "margin"=> "lg",
-            "align"=> "start",
-            "weight"=> "regular",
-            "color"=> "#53AB58"
+            "type" => "separator",
+            "color" => "#C3C3C3"
           ],
           [
             "type"=> "box",
@@ -122,12 +118,8 @@ $jsonFlex = [
             "type"=> "filler"
           ],
           [
-            "type"=> "text",
-            "text"=> "_____________________________",
-            "align"=> "start",
-            "gravity"=> "center",
-            "weight"=> "regular",
-            "color"=> "#53AB58"
+            "type" => "separator",
+            "color" => "#C3C3C3"
           ],
          
         ]
