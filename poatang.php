@@ -98,21 +98,19 @@ $jsonFlex = [
         
         ]
               ],
-              "footer" => [
-                "type" => "box",
-                "layout" => "horizontal",
-                "contents" => [
+              "footer"=> [
+                "type"=> "box",
+                "layout"=> "vertical",
+                "contents"=> [
                   [
-                    "type" => "text",
-                    "text" => "เช็ครายการใช้จ่าย",
-                    "size" => "lg",
-                    "align" => "start",
-                    "color" => "#0084B6",
-                    "action" => [
-                      "type" => "uri",
-                      "label" => "เช็ครายการใช้จ่าย",
-                      "uri" => "https://google.co.th/"
-                    ]
+                    "type"=> "button",
+                    "action"=> [
+                      "type"=> "uri",
+                      "label"=> "Add to Cart",
+                      "uri"=> "https://linecorp.com"
+                    ],
+                    "color"=> "#F3F131",
+                    "style"=> "secondary"
                   ]
                 ]
               ]
