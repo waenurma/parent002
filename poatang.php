@@ -112,7 +112,7 @@ $jsonFlex = [
                       
                     ],
                     "color"=> "#0084B6",
-                    "style"=> "secondary"
+                    "style"=> "primary"
                   ]
                 ]
               ]
