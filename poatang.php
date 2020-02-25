@@ -90,7 +90,7 @@ $jsonFlex = [
           ],
           [
             "type" => "separator",
-            "color" => "#C3C3C3",
+            "color" => "#0084B6",
             "margin" => "lg"
           ],
         ]
