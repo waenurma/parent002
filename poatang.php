@@ -11,7 +11,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
     "type"=> "flex",
-    "altText"=> "Flex Message",
+    "altText"=> "เช็คยอดเงินค่าใช้จ่าย",
     "contents"=> [
       "type"=> "bubble",
       "hero"=> [
@@ -55,35 +55,7 @@ $jsonFlex = [
             "layout"=> "vertical",
             "spacing"=> "sm",
             "contents"=> [
-              [
-                "type"=> "box",
-                "layout"=> "baseline",
-                "contents"=> [
-                  [
-                    "type"=> "text",
-                    "text"=> "จำนวนเงิน",
-                    "flex"=> 0,
-                    "margin"=> "xl",
-                    "weight"=> "regular",
-                    "color"=> "#5D4D4D"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "xxx.xx",
-                    "margin"=> "xxl",
-                    "size"=> "sm",
-                    "align"=> "center",
-                    "color"=> "#0F0E0E"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "บาท",
-                    "size"=> "sm",
-                    "align"=> "end",
-                    "color"=> "#0F0E0E"
-                  ]
-                ]
-                  ],
+              
               [
                 "type"=> "box",
                 "layout"=> "baseline",
@@ -123,7 +95,7 @@ $jsonFlex = [
             "color" => "#C3C3C3",
             "margin" => "lg"
           ],
-         
+        
         ]
               ],
               "footer" => [
