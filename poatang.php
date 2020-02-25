@@ -138,13 +138,13 @@ $jsonFlex = [
                 "contents" => [
                   [
                     "type" => "text",
-                    "text" => "View Details",
+                    "text" => "เช็ครายการใช้จ่าย",
                     "size" => "lg",
                     "align" => "start",
                     "color" => "#0084B6",
                     "action" => [
                       "type" => "uri",
-                      "label" => "View Details",
+                      "label" => "เช็ครายการใช้จ่าย",
                       "uri" => "https://google.co.th/"
                     ]
                   ]
