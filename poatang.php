@@ -44,41 +44,8 @@ $jsonFlex = [
             "align"=> "center",
             "color"=> "#5D5858"
           ],
-          [
-            "type" => "separator",
-            "color" => "#0084B6",
-            "margin" => "lg"
-          ],
-          [
-            "type"=> "box",
-            "layout"=> "vertical",
-            "spacing"=> "sm",
-            "contents"=> [
-              [
-                "type"=> "box",
-                "layout"=> "baseline",
-                "contents"=> [
-                  [
-                    "type"=> "button",
-                    "action"=> [
-                      "type"=> "uri",
-                      "label"=> "ยอดเงินที่ใช้ได้",
-                      "uri"=> "https://linecorp.com"
-                    ],
-                  
-                  ]
-                ]
-              ]
-            ]
-                  ],
-          [
-            "type"=> "filler"
-          ],
-          [
-            "type" => "separator",
-            "color" => "#0084B6",
-            "margin" => "lg"
-          ],
+         
+  
         ]
               ],
               "footer"=> [
@@ -93,7 +60,8 @@ $jsonFlex = [
                       "uri"=> "https://linecorp.com"
                     ],
                     "color"=> "#0084B6",
-                    "style"=> "primary"
+                    "style"=> "primary",
+                    "margin" => "xl"
                   ],
                   [
                     "type"=> "button",
