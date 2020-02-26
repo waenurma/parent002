@@ -51,6 +51,7 @@ $jsonFlex = [
               "footer"=> [
                 "type"=> "box",
                 "layout"=> "vertical",
+                "height"=> "sm",
                 "contents"=> [
                   [
                     "type"=> "button",
