@@ -40,7 +40,7 @@ $jsonFlex = [
           [
             "type"=> "text",
             "text"=> "ตรวจเช็ครายละเอียดค่าใช้จ่าย",
-            "margin"=> "md",
+            "margin"=> "sm",
             "align"=> "center",
             "color"=> "#5D5858"
           ],
