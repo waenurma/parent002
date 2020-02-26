@@ -107,7 +107,8 @@ $jsonFlex = [
                       "uri"=> "https://linecorp.com"
                     ],
                     "color"=> "#0084B6",
-                    "style"=> "primary"
+                    "style"=> "primary",
+                    "margin" => "lg"
                   ],
                   [
                     "type"=> "button",
