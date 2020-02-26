@@ -59,19 +59,14 @@ $jsonFlex = [
                 "layout"=> "baseline",
                 "contents"=> [
                   [
-                    "type"=> "text",
-                    "text"=> "ยอดเงินคงเหลือ",
-                    "margin"=> "lg",
-                    "weight"=> "regular",
-                    "color"=> "#4D3B3B",
-                    "action" => [
-                      "type" => "uri",
-                      "label" => "View Details",
-                      "uri" => "https://google.co.th/"
-                    ]
-                  ],
+                    "type"=> "button",
+                    "action"=> [
+                      "type"=> "uri",
+                      "label"=> "ยอดเงินที่ใช้ได้",
+                      "uri"=> "https://linecorp.com"
+                    ],
                   
-                  
+                  ]
                 ]
               ]
             ]
