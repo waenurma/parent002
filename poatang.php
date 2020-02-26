@@ -59,8 +59,8 @@ $jsonFlex = [
                       "label"=> "ยอดเงินที่ใช้ได้",
                       "uri"=> "https://linecorp.com"
                   ],
-                    "color"=> "#0084B6",
-                    "margin"=> "xl",
+                    "color"=> "#5FC1DF",
+                    "margin"=> "sm",
                     "height"=> "sm",
                     "style"=> "primary"
                 ],
@@ -71,7 +71,7 @@ $jsonFlex = [
                       "label"=> "เช็ครายการใช้จ่าย",
                       "uri"=> "https://linecorp.com"
                     ],
-                    "color"=> "#0084B6",
+                    "color"=> "#5FC1DF",
                     "margin"=> "sm",
                     "height"=> "sm",
                     "style"=> "primary"
