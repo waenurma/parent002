@@ -49,21 +49,7 @@ $jsonFlex = [
             "color" => "#0084B6",
             "margin" => "lg"
           ],
-          [
-            "type"=> "box",
-            "layout"=> "vertical",
-            "spacing"=> "sm",
-            "contents"=> [
-              [
-                "type"=> "box",
-                "layout"=> "baseline",
-                "contents"=> [
-                  
-                  
-                ]
-              ]
-            ]
-                  ],
+         
           [
             "type"=> "filler"
           ],
