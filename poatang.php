@@ -58,29 +58,8 @@ $jsonFlex = [
                 "type"=> "box",
                 "layout"=> "baseline",
                 "contents"=> [
-                  [
-                    "type"=> "text",
-                    "text"=> "ยอดเงินคงเหลือ",
-                    "flex"=> 0,
-                    "margin"=> "lg",
-                    "weight"=> "regular",
-                    "color"=> "#4D3B3B"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "xxx.xx",
-                    "margin"=> "xl",
-                    "size"=> "sm",
-                    "align"=> "center",
-                    "color"=> "#201B1B"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "บาท",
-                    "size"=> "sm",
-                    "align"=> "end",
-                    "color"=> "#201B1B"
-                  ]
+                  
+                  
                 ]
               ]
             ]
