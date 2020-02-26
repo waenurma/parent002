@@ -44,12 +44,46 @@ $jsonFlex = [
             "align"=> "center",
             "color"=> "#5D5858"
           ],
-          
-         
+          [
+            "type" => "separator",
+            "color" => "#0084B6",
+            "margin" => "lg"
+          ],
+          [
+            "type"=> "box",
+            "layout"=> "vertical",
+            "spacing"=> "sm",
+            "contents"=> [
+              [
+                "type"=> "box",
+                "layout"=> "baseline",
+                "contents"=> [
+                  [
+                    "type"=> "text",
+                    "text"=> "ยอดเงินคงเหลือ",
+                    "margin"=> "lg",
+                    "weight"=> "regular",
+                    "color"=> "#4D3B3B",
+                    "action" => [
+                      "type" => "uri",
+                      "label" => "View Details",
+                      "uri" => "https://google.co.th/"
+                    ]
+                  ],
+                  
+                  
+                ]
+              ]
+            ]
+                  ],
           [
             "type"=> "filler"
           ],
-         
+          [
+            "type" => "separator",
+            "color" => "#0084B6",
+            "margin" => "lg"
+          ],
         ]
               ],
               "footer"=> [
@@ -64,8 +98,7 @@ $jsonFlex = [
                       "uri"=> "https://linecorp.com"
                     ],
                     "color"=> "#0084B6",
-                    "style"=> "primary",
-                    "margin" => "lg"
+                    "style"=> "primary"
                   ],
                   [
                     "type"=> "button",
