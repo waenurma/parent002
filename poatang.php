@@ -44,20 +44,12 @@ $jsonFlex = [
             "align"=> "center",
             "color"=> "#5D5858"
           ],
-          [
-            "type" => "separator",
-            "color" => "#0084B6",
-            "margin" => "lg"
-          ],
+          
          
           [
             "type"=> "filler"
           ],
-          [
-            "type" => "separator",
-            "color" => "#0084B6",
-            "margin" => "lg"
-          ],
+         
         ]
               ],
               "footer"=> [
