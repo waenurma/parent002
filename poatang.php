@@ -51,7 +51,6 @@ $jsonFlex = [
               "footer"=> [
                 "type"=> "box",
                 "layout"=> "vertical",
-                "height"=> "sm",
                 "contents"=> [
                   [
                     "type"=> "button",
@@ -59,11 +58,12 @@ $jsonFlex = [
                       "type"=> "uri",
                       "label"=> "ยอดเงินที่ใช้ได้",
                       "uri"=> "https://linecorp.com"
-                    ],
-                    "color"=> "#0084B6",
-                    "style"=> "primary",
-                    "margin" => "xl"
                   ],
+                    "color"=> "#5FC1DF",
+                    "margin"=> "xl",
+                    "height"=> "sm",
+                    "style"=> "primary"
+                ],
                   [
                     "type"=> "button",
                     "action"=> [
@@ -71,7 +71,9 @@ $jsonFlex = [
                       "label"=> "เช็ครายการใช้จ่าย",
                       "uri"=> "https://linecorp.com"
                     ],
-                    "color"=> "#0084B6",
+                    "color"=> "#5FC1DF",
+                    "margin"=> "sm",
+                    "height"=> "sm",
                     "style"=> "primary"
                   ]
                 ]
