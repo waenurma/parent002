@@ -17,7 +17,12 @@ $jsontemplate = [
           "actions"=> [
             [
               "type"=> "uri",
-              "label"=> "คลิกดูการบ้าน",
+              "label"=> "คลิกดูการบ้านวันนี้",
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
+            ],
+            [
+              "type"=> "uri",
+              "label"=> "คลิกดูการบ้านที่ค้าง",
               "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
             ]
           ],
