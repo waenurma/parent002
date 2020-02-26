@@ -105,8 +105,8 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 // }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
 //     require "gpa.php";
     
-}else if($arrJson['events'][0]['message']['text'] == "a" ){
-    require "carousel.php";
+// }else if($arrJson['events'][0]['message']['text'] == "a" ){
+//     require "carousel.php";
 
 
  /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ----------------------
