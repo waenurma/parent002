@@ -15,31 +15,24 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-   ////code vdo
-}else if($arrJson['events'][0]['message']['text'] == "vdo" ){
-        $arrPostData = array();
-        $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-        $arrPostData['messages'][0]['type'] = "video";
-        $arrPostData['messages'][0]['originalContentUrl'] = "https://s3-ap-southeast-1.amazonaws.com/dezpax/b_files/video_example.mp4";//ใส่ url ของ video ที่ต้องการส่ง
-        $arrPostData['messages'][0]['previewImageUrl'] = "https://3.bp.blogspot.com/-POLCd-KKazc/W9EtNxsqwpI/AAAAAAAAW_0/c8P1A4Ik3tMsCXZwaI1B2n3eXZqG0ifzwCLcBGAs/s1600/sao-preview.jpg";//ใส่รูป preview ของ video
 
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ" || $arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ ";  //.$arrJson['events'][0]['source']['userId'];
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมครับ ";  //.$arrJson['events'][0]['source']['userId'];
 
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดีคับ" ||$arrJson['events'][0]['message']['text'] == "สวัสดีครับ"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมครับ";
 
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดีจ่ะ"|| $arrJson['events'][0]['message']['text'] == "สวัสดีจร้า"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมค่ะ";
+    $arrPostData['messages'][0]['text'] = "สวัสดีจ้าาาา มีอะไรให้เราช่วยไหมครับ";
 
 //////////////////ขอบคุณ
 }else if($arrJson['events'][0]['message']['text'] == "ขอบคุณ" ||$arrJson['events'][0]['message']['text'] == "ขอบคุณค่ะ"){
