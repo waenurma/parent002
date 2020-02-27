@@ -1,8 +1,4 @@
 <?php
-
-//เชื่อมฐานข้อมูล
-
-
   $LINEData = file_get_contents('php://input');
   $jsonData = json_decode($LINEData,true);
 
@@ -11,10 +7,10 @@
   $text = $jsonData["events"][0]["message"]["text"];
   $timestamp = $jsonData["events"][0]["timestamp"];
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "LINE";
+  $servername = " 405965027.student.yru.ac.th";
+  $username = "405965027";
+  $password = "1959900578490";
+  $dbname = "405965027_db";
   $mysql = new mysqli($servername, $username, $password, $dbname);
   mysqli_set_charset($mysql, "utf8");
 
@@ -51,11 +47,11 @@
       $Surname = $row['Surname'];
       $CustomerID = $row['CustomerID'];
     }
-    $replyText["text"] = "สวัสดีคุณ $Name $Surname ";  // (#$CustomerID)
+    $replyText["text"] = "สวัสดีคุณ $Name $Surname (#$CustomerID)";
   }
 
   $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
-  $lineData['AccessToken'] = "(เเก้เป็น Channel AccessToken ของเราเลยครับ)";
+  $lineData['AccessToken'] = "072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=";
 
   $replyJson["replyToken"] = $replyToken;
   $replyJson["messages"][0] = $replyText;
