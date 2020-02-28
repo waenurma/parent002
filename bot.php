@@ -9,6 +9,7 @@
     $arrHeader = array();
     $arrHeader[] = "Content-Type: application/json";
     $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+    
 
 if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['message']['text'] == "id"){
     $arrPostData = array();
