@@ -96,8 +96,8 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     require "poatang.php";
 
    ////ผลเรียนแบบflexตัวใหญ่
-// }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
-//     require "gpa.php";
+}else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
+    require "GPA.php";
     
 // }else if($arrJson['events'][0]['message']['text'] == "a" ){
 //     require "carousel.php";
