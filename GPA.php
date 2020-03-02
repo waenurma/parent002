@@ -11,7 +11,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
         "type"=> "flex",
-        "altText"=> "Flex Message",
+        "altText"=> "ผลการเรียน",
         "contents"=> [
           "type"=> "bubble",
           "hero"=> [
