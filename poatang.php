@@ -21,13 +21,12 @@ $jsonFlex = [
         "aspectRatio"=> "20:13",
         "aspectMode"=> "cover",
         "backgroundColor"=> "#BFB1B1"
-      
       ],
+
       "body"=> [
         "type"=> "box",
         "layout"=> "vertical",
         "spacing"=> "md",
-        
         "contents"=> [
           [
             "type"=> "text",
@@ -37,6 +36,7 @@ $jsonFlex = [
             "weight"=> "bold",
             "color"=>"#0084B6"
           ],
+
           [
             "type"=> "text",
             "text"=> "ตรวจเช็ครายละเอียดค่าใช้จ่าย",
@@ -44,10 +44,9 @@ $jsonFlex = [
             "align"=> "center",
             "color"=> "#5D5858"
           ],
-         
-  
-        ]
+            ]
               ],
+
               "footer"=> [
                 "type"=> "box",
                 "layout"=> "vertical",
@@ -71,6 +70,7 @@ $jsonFlex = [
                       "label"=> "เช็ครายการใช้จ่าย",
                       "uri"=> "https://linecorp.com"
                     ],
+                    
                     "color"=> "#5FC1DF",
                     "margin"=> "sm",
                     "height"=> "sm",
