@@ -60,7 +60,7 @@ $jsonFlex = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ภาคเรียน 1 ",
+                "text" => "ภาคเรียนที่ 1 ",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
