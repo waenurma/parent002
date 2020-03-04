@@ -13,7 +13,6 @@ $request_array = (json_decode($result, true));
 // $request = file_get_contents('php://input');   // Get request content
 // $request_array = json_decode($request, true);   // Decode JSON to Array
 
-$data = doc.data();
 $jsonFlex = [
     "type" => "flex",
     "altText" => "Hello Flex Message",
@@ -34,7 +33,7 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => "เกรดเฉลี่ยรวม".$GPA_ALL,
+            "text" => "เกรดเฉลี่ยรวม",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
