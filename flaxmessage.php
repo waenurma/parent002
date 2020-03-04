@@ -8,11 +8,16 @@ $ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
 $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
-$request = file_get_contents($link);
-$request_array = (json_decode($request , true));
+$result = file_get_contents($link);
+$data = (json_decode($result, true));
 // $request = file_get_contents('php://input');   // Get request content
 // $request_array = json_decode($request, true);   // Decode JSON to Array
 
+        $opt = $data['opt'];
+				$data= $data['data'];
+        
+        
+ 
 $jsonFlex = [
     "type" => "flex",
     "altText" => "Hello Flex Message",
