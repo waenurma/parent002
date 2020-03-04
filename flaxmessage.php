@@ -3,27 +3,15 @@
 include('config.php');
 
 $API_URL = 'https://api.line.me/v2/bot/message';
-$ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
 $channelSecret = '157d1d03926e37e516f42f5e9a44af73';
+$ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
+$link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
+$request = file_get_contents($link);
+$request_array = (json_decode($request , true));
 // $request = file_get_contents('php://input');   // Get request content
 // $request_array = json_decode($request, true);   // Decode JSON to Array
-
-$options = array(
-  'http' => array(
-    'method'  => 'POST',
-    'content' => json_encode( $data_api ),
-    'header'=>  "Content-Type: application/json\r\n" .
-                "Accept: application/json\r\n"
-    )
-);
-
-$link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
-$context  = stream_context_create( $options );
-$result = file_get_contents( $link , false, $context );
-$response = json_decode( $result );
-
 
 $jsonFlex = [
     "type" => "flex",
@@ -45,7 +33,7 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => "$data->text_data",
+            "text" => "$data->GPA_ALL",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
