@@ -13,9 +13,7 @@ $data = (json_decode($result, true));
 // $request = file_get_contents('php://input');   // Get request content
 // $request_array = json_decode($request, true);   // Decode JSON to Array
 
-     
-        
- 
+    
 $jsonFlex = [
   "type" => "flex",
   "altText" => "Hello Flex Message",
@@ -36,7 +34,8 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "$response->text_status",
+          "text" => "$data->GPA_ALL",
+          "flex"=> 0,
           "size" => "3xl",
           "weight" => "bold",
           "color" => "#000000"
