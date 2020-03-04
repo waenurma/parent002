@@ -34,7 +34,7 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => $GPA_ALL,
+            "text" => "เกรดเฉลี่ยรวม".$GPA_ALL,
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
