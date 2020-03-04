@@ -8,8 +8,8 @@ $channelSecret = '157d1d03926e37e516f42f5e9a44af73';
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
 $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
-$result = file_get_contents($link);
-$data = (json_decode($result, true));
+$request = file_get_contents($link);
+$request_array = (json_decode($result, true));
 // $request = file_get_contents('php://input');   // Get request content
 // $request_array = json_decode($request, true);   // Decode JSON to Array
 
