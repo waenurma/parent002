@@ -9,7 +9,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 
 $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
 $result = file_get_contents($link);
-$data = (json_decode($result, true));
+$request_array  = (json_decode($result, true));
 // $request = file_get_contents('php://input');   // Get request content
 // $request_array = json_decode($request, true);   // Decode JSON to Array
 
@@ -46,10 +46,14 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "ชื่อ-นามสกุล",
-          "size" => "lg",
-          "weight" => "bold",
-          "color" => "#000000"
+          "text" => "ชื่อ-นามสกุล".$data->STUDENT_ID,
+          "flex"=> 0,
+          "margin"=> "lg",
+          "size"=> "md",
+          "align"=> "start",
+          "weight"=> "regular",
+          "color"=> "#000000",
+          "wrap"=> true
         ],
 
       ]
@@ -126,8 +130,8 @@ $jsonFlex = [
   ]
 ];
 
-if ( sizeof($data['events']) > 0 ) {
-    foreach ($data['events'] as $event) {
+if ( sizeof($request_array ['events']) > 0 ) {
+    foreach ($request_array ['events'] as $event) {
         error_log(json_encode($event));
         $reply_message = '';
         $reply_token = $event['replyToken'];
