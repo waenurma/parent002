@@ -102,7 +102,7 @@ $jsonFlex = [
         "contents" => [
           [
             "type" => "text",
-            "text" => "ผลการเรียนร่วม",
+            "text" => "ผลการเรียนรวม",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",

@@ -35,7 +35,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => $opt->opt_year,
+          "text" => "...............",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
@@ -46,7 +46,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "ชื่อ-นามสกุล".$data->STUDENT_ID,
+          "text" => "ชื่อ-นามสกุล",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
