@@ -35,7 +35,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => $data,
+          "text" => $data->SCHOOL_YEAR,
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
