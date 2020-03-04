@@ -36,9 +36,12 @@ $jsonFlex = [
           "type" => "text",
           "text" => "$data->GPA_ALL",
           "flex"=> 0,
-          "size" => "3xl",
-          "weight" => "bold",
-          "color" => "#000000"
+          "margin"=> "lg",
+          "size"=> "md",
+          "align"=> "start",
+          "weight"=> "regular",
+          "color"=> "#000000",
+          "wrap"=> true
         ],
         [
           "type" => "text",
