@@ -32,7 +32,7 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => "$opt",
+            "text" => ".$opt.",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
