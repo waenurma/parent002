@@ -1,15 +1,17 @@
 <?php
+include('config.php');
 
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
 $channelSecret = '157d1d03926e37e516f42f5e9a44af73';
 
-
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
-$request = file_get_contents('php://input');   // Get request content
-$request_array = json_decode($request, true);   // Decode JSON to Array
-
+$link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
+$result = file_get_contents($link);
+$data = (json_decode($result, true));
+// $request = file_get_contents('php://input');   // Get request content
+// $request_array = json_decode($request, true);   // Decode JSON to Array
 $jsonFlex = [
     "type" => "flex",
     "altText" => "Hello Flex Message",
@@ -30,7 +32,7 @@ $jsonFlex = [
           ],
           [
             "type" => "text",
-            "text" => "฿ 100.00",
+            "text" => $opt,
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
