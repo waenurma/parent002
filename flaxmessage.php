@@ -158,7 +158,6 @@ if ( sizeof($request_array ['events']) > 0 ) {
         
     }
 }
-
 //echo "OK";
 echo $request_array1['data'][0]['GPA_ALL'];
 
