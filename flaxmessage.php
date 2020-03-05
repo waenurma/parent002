@@ -11,6 +11,7 @@ $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=016
 
 $result1 = file_get_contents($link);
 $request_array1  = (json_decode($result1, true));
+
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 
