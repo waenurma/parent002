@@ -16,7 +16,7 @@ $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
 
-
+//$val = "0";
 $jsonFlex = [
   "type" => "flex",
   "altText" => "ผลการเรียน",
@@ -37,7 +37,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "888",
+          "text" => $request_array1,
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
@@ -157,8 +157,8 @@ if ( sizeof($request_array ['events']) > 0 ) {
         
     }
 }
-
 echo "OK";
+
 
 function send_reply_message($url, $post_header, $post_body)
 {
