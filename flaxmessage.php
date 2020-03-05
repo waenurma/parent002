@@ -9,8 +9,8 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 
 $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
 
-//$result1 = file_get_contents($link);
-//$request_array1  = (json_decode($result, true));
+$result1 = file_get_contents($link);
+$request_array1  = (json_decode($result, true));
 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
@@ -35,7 +35,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "00.00",
+          "text" => $request_array1['data'][0]['GPA_ALL'],
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
@@ -132,7 +132,7 @@ $jsonFlex = [
     ]
   ]
 ];
-print_r($request_array,$jsonFlex);
+
 if ( sizeof($request_array ['events']) > 0 ) {
     foreach ($request_array ['events'] as $event) {
         error_log(json_encode($event));
