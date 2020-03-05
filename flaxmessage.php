@@ -159,7 +159,7 @@ if ( sizeof($request_array ['events']) > 0 ) {
     }
 }
 
-echo "OK";
+echo "$request_array1";
 
 function send_reply_message($url, $post_header, $post_body)
 {
