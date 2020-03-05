@@ -62,58 +62,6 @@ $jsonFlex = [
       ]
     ],
 
-    "body" => [
-      "type" => "box",
-      "layout" => "vertical",
-      "contents" => [
-        [
-          "type" => "separator",
-          "color" => "#C3C3C3"
-        ],
-        [
-          "type" => "box",
-          "layout" => "baseline",
-          "margin" => "lg",
-          "contents" => [
-            [
-              "type" => "text",
-              "text" => "ภาคเรียนที่ 1 ",
-              "align" => "start",
-              "color" => "#C3C3C3"
-            ],
-            [
-              "type" => "text",
-              "text" => "00.00",
-              "align" => "end",
-              "color" => "#000000"
-            ]
-          ]
-        ],
-        [
-          "type" => "box",
-          "layout" => "baseline",
-          "margin" => "lg",
-          "contents" => [
-            [
-              "type" => "text",
-              "text" => "ภาคเรียนที่ 2",
-              "color" => "#C3C3C3"
-            ],
-            [
-              "type" => "text",
-              "text" => "00.00",
-              "align" => "end",
-              "color" => "#000000"
-            ]
-          ]
-        ],
-        [
-          "type" => "separator",
-          "margin" => "lg",
-          "color" => "#C3C3C3"
-        ]
-      ]
-    ],
 
     "footer" => [
       "type" => "box",
