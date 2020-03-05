@@ -8,16 +8,16 @@ $ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II
 $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $ACCESS_TOKEN);
 
 $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
-$result = file_get_contents($link);
-$request_array  = (json_decode($result, true));
-// $request = file_get_contents('php://input');   // Get request content
-// $request_array = json_decode($request, true);   // Decode JSON to Array
 
-    
+//$result1 = file_get_contents($link);
+//$request_array1  = (json_decode($result, true));
 
+$request = file_get_contents('php://input');   // Get request content
+$request_array = json_decode($request, true);   // Decode JSON to Array
+print_r($request_array);
 $jsonFlex = [
   "type" => "flex",
-  "altText" => "Hello Flex Message",
+  "altText" => "ผลการเรียน",
   "contents" => [
     "type" => "bubble",
     "direction" => "ltr",
@@ -35,7 +35,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "...............",
+          "text" => "00.00",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
@@ -46,7 +46,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "ชื่อ-นามสกุล".$request_array->data,
+          "text" => "ชื่อ-นามสกุล",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
@@ -58,6 +58,7 @@ $jsonFlex = [
 
       ]
     ],
+
     "body" => [
       "type" => "box",
       "layout" => "vertical",
@@ -98,7 +99,8 @@ $jsonFlex = [
             [
               "type" => "text",
               "text" => "00.00",
-              "align" => "end"
+              "align" => "end",
+              "color" => "#000000"
             ]
           ]
         ],
@@ -109,6 +111,7 @@ $jsonFlex = [
         ]
       ]
     ],
+
     "footer" => [
       "type" => "box",
       "layout" => "horizontal",
@@ -139,7 +142,7 @@ if ( sizeof($request_array ['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonFlex]
+            'messages' => [$request_array1]
         ];
 
         print_r($data);
@@ -154,9 +157,6 @@ if ( sizeof($request_array ['events']) > 0 ) {
 }
 
 echo "OK";
-
-
-
 
 function send_reply_message($url, $post_header, $post_body)
 {
