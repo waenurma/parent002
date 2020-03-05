@@ -40,7 +40,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "$data",
+          "text" => "$data->['0']['GPA_ALL']",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
