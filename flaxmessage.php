@@ -18,8 +18,8 @@ $request_array = json_decode($request, true);   // Decode JSON to Array
 $val = strval($request_array1['data'][0]['GPA_ALL']);
 print_r($request_array1['data'][0]['GPA_ALL']);
 
-$val1 = strval($request_array1['opt'][0]['term']);
-print_r($request_array1['opt'][0]['term']);
+$val1 = strval($request_array1['opt'][0]['data_subjgrade']['gpa']);
+print_r($request_array1['opt'][0]['data_subjgrade']['gpa']);
 //$val = "0";
 $jsonFlex = [
   "type" => "flex",
@@ -80,13 +80,13 @@ $jsonFlex = [
           "contents" => [
             [
               "type" => "text",
-              "text" => $val1,
+              "text" => "ภาคเรียนที่ 1",
               "align" => "start",
               "color" => "#C3C3C3"
             ],
             [
               "type" => "text",
-              "text" => "00.00",
+              "text" => $val1,
               "align" => "end",
               "color" => "#000000"
             ]
