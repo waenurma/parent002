@@ -35,7 +35,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => $request_array1[0]['data'][0]['GPA_ALL'],
+          "text" => "{$request_array1[0]['data'][0]['GPA_ALL']}",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
