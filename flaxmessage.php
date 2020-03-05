@@ -15,7 +15,7 @@ $request_array1  = (json_decode($result1, true));
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
-
+$val = "dd";
 $jsonFlex = [
   "type" => "flex",
   "altText" => "ผลการเรียน",
@@ -36,7 +36,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "022",
+          "text" => $val,
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
@@ -146,11 +146,11 @@ if ( sizeof($request_array ['events']) > 0 ) {
             'messages' => [$jsonFlex]
         ];
 
-  print_r($data);
+        print_r($data);
+
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
-      
-       $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+        $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
         echo "Result: ".$send_result."\r\n";
         
