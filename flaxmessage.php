@@ -15,11 +15,8 @@ $request_array1  = (json_decode($result1, true));
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
-// $val = strval($request_array1['data'][0]['GPA_ALL']);
-// print_r($request_array1['data'][0]['GPA_ALL']);
-
-$val1 = strval($request_array1['opt'][0]['data_subjgrade']['gpa']);
-print_r($request_array1['opt'][0]['data_subjgrade']['gpa']);
+$val = strval($request_array1['data'][0]['GPA_ALL']);
+print_r($request_array1['data'][0]['GPA_ALL']);
 //$val = "0";
 $jsonFlex = [
   "type" => "flex",
@@ -41,7 +38,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => $val1,
+          "text" => $val,
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
@@ -80,13 +77,13 @@ $jsonFlex = [
           "contents" => [
             [
               "type" => "text",
-              "text" => "ภาคเรียนที่ 1",
+              "text" => "ภาคเรียนที่ 1 ",
               "align" => "start",
               "color" => "#C3C3C3"
             ],
             [
               "type" => "text",
-              "text" => $val1,
+              "text" => "00.00",
               "align" => "end",
               "color" => "#000000"
             ]
