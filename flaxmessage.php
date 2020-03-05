@@ -10,13 +10,14 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=01658&card=1959900766962&action=subjgrade';
 
 $result1 = file_get_contents($link);
-$request_array1  = (json_decode($result1));
+$request_array1  = (json_decode($result1, true));
 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
-
- $val = $result1[1]['data'][0]['GPA_ALL'];
+$val = strval($request_array1['data'][0]['GPA_ALL']);
+print_r($request_array1['data'][0]['GPA_ALL']);
+//$val = "0";
 $jsonFlex = [
   "type" => "flex",
   "altText" => "ผลการเรียน",
@@ -135,8 +136,8 @@ $jsonFlex = [
   ]
 ];
 
-if ( sizeof($request_array ['events']) > 0 ) {
-    foreach ($request_array ['events'] as $event) {
+if ($request_array ) {
+    foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
         $reply_message = '';
         $reply_token = $event['replyToken'];
@@ -147,7 +148,7 @@ if ( sizeof($request_array ['events']) > 0 ) {
             'messages' => [$jsonFlex]
         ];
 
-        print_r($data);
+        //print_r($data);
 
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
@@ -157,8 +158,8 @@ if ( sizeof($request_array ['events']) > 0 ) {
         
     }
 }
-echo "OK".$val;
 
+echo "OK";
 
 function send_reply_message($url, $post_header, $post_body)
 {
