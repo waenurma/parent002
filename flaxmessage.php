@@ -15,6 +15,11 @@ $request_array1  = (json_decode($result1, true));
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
+
+$link = array(
+$request_array1[0]['data'][0]['GPA_ALL'] => $data
+);
+
 $jsonFlex = [
   "type" => "flex",
   "altText" => "ผลการเรียน",
@@ -35,7 +40,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "022",
+          "text" => "$data",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
