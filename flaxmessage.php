@@ -46,7 +46,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "ชื่อ-นามสกุล",
+          "text" => "ชื่อ-นามสกุล".$request_array->data,
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
