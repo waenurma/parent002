@@ -14,7 +14,7 @@ $link = URL .'api/apiparent/show_subjgrade.php?system=school&id=0001&student=016
 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
-print_r($request_array);
+
 $jsonFlex = [
   "type" => "flex",
   "altText" => "ผลการเรียน",
@@ -132,7 +132,7 @@ $jsonFlex = [
     ]
   ]
 ];
-
+print_r($request_array,$jsonFlex);
 if ( sizeof($request_array ['events']) > 0 ) {
     foreach ($request_array ['events'] as $event) {
         error_log(json_encode($event));
@@ -142,7 +142,7 @@ if ( sizeof($request_array ['events']) > 0 ) {
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$request_array1]
+            'messages' => [$jsonFlex]
         ];
 
         print_r($data);
