@@ -160,7 +160,7 @@ if ( sizeof($request_array ['events']) > 0 ) {
 }
 
 //echo "OK";
-echo $request_array1[0]['data'][0]['GPA_ALL'];
+echo $request_array1['data'][0]['GPA_ALL'];
 
 function send_reply_message($url, $post_header, $post_body)
 {
