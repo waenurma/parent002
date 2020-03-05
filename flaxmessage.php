@@ -15,7 +15,7 @@ $request_array1  = (json_decode($result1));
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
-print_r($result1);
+
  $val = $result1[0]['data'][0]['GPA_ALL'];
 $jsonFlex = [
   "type" => "flex",
@@ -157,7 +157,7 @@ if ( sizeof($request_array ['events']) > 0 ) {
         
     }
 }
-echo "OK".$val;
+echo "OK".$val.print_r($result1);
 
 
 function send_reply_message($url, $post_header, $post_body)
