@@ -94,7 +94,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     require "flaxmessage copy.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "g" ){
-    require "flaxmessage copy.php";
+    require "test2.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
     require "homework.php";
