@@ -15,6 +15,7 @@ $request_array1  = (json_decode($result1));
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
+print_r($result1);
  $val = $result1[0]['data'][0]['GPA_ALL'];
 $jsonFlex = [
   "type" => "flex",
