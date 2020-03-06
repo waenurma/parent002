@@ -11,7 +11,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
     "type"=> "flex",
-    "altText"=> "Flex Message",
+    "altText"=> "เป๋าตังค์",
     "contents"=> [
       "type"=> "bubble",
       "hero"=> [
@@ -91,8 +91,9 @@ $jsonFlex = [
               "label"=> "เช็ครายการใช้จ่าย",
               "uri"=> "https://linecorp.com"
             ],
-            "height"=> "sm",
-            "style"=> "link"
+            "color"=> "#2E8FA5",
+            "height"=> "md",
+            "style"=> "primary"
           ],
           [
             "type"=> "spacer",
