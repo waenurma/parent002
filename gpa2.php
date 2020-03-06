@@ -93,7 +93,7 @@ $jsonFlex = [
                     "contents"=>  [
                       [
                         "type"=>  "text",
-                        "text"=>  "รวมหน่วยกิจ ",
+                        "text"=>  "รวมหน่วยกิจ",
                         "flex"=>  0,
                         "margin"=>  "sm",
                         "weight"=>  "regular",

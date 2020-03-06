@@ -54,7 +54,7 @@ $jsonFlex = [
         ],
         [
           "type" => "text",
-          "text" => "ชื่อ-นามสกุล".$val2,
+          "text" => "รวมหน่วยกิจ".$val2."หน่วยกิจ",
           "flex"=> 0,
           "margin"=> "lg",
           "size"=> "md",
