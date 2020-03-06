@@ -86,7 +86,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
     require "timetable.php";
 
-}else if($arrJson['events'][0]['message']['text'] == "s" ){
+}else if($arrJson['events'][0]['message']['text'] == "a" ){
     require "flax.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
