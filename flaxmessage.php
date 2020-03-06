@@ -33,7 +33,7 @@ $jsonFlex = [
           "text" => "เกรดเฉลี่ยรวม",
           "size" => "lg",
           "align" => "start",
-          "weight" => "bold",
+          "weight" => "regular",
           "color" => "#009813"
         ],
         [
@@ -43,7 +43,7 @@ $jsonFlex = [
           "margin"=> "lg",
           "size"=> "xl",
           "align"=> "start",
-          "weight"=> "regular",
+          "weight"=> "bold",
           "color"=> "#000000",
           "wrap"=> true
         ],
