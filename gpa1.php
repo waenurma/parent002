@@ -34,17 +34,17 @@ $jsonFlex = [
           "size" => "lg",
           "align" => "start",
           "weight" => "regular",
-          "color" => "#009813"
+          "color" => "#000000"
         ],
         [
           "type" => "text",
           "text" => $val,
           "flex"=> 0,
           "margin"=> "lg",
-          "size"=> "md",
+          "size"=> "xxl",
           "align"=> "start",
           "weight"=> "bold",
-          "color"=> "#000000",
+          "color"=> "#009813",
           "wrap"=> true
         ],
         [
