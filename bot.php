@@ -86,9 +86,6 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
     require "timetable.php";
 
-}else if($arrJson['events'][0]['message']['text'] == "a" ){
-    require "flax.php";
-
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
     require "homework.php";
 
@@ -97,7 +94,8 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 
    ////ผลเรียนแบบflexตัวใหญ่
 }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
-    require "GPA.php";
+    require "gpa1.php";
+
     
 // }else if($arrJson['events'][0]['message']['text'] == "a" ){
 //     require "carousel.php";
