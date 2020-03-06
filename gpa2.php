@@ -23,7 +23,7 @@ print_r($request_array1['data'][0]['CREDIT_ALL']);
 $jsonFlex = [
 
         "type"=> "flex",
-        "altText"=> "Flex Message",
+        "altText"=> "ผลการเรียน",
         "contents"=> [
           "type"=> "bubble",
           "hero"=> [

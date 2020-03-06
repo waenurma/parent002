@@ -10,99 +10,98 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
-    "type"=> "flex",
-    "altText"=> "เป๋าตังค์",
-    "contents"=> [
-      "type"=> "bubble",
-      "hero"=> [
-        "type"=> "image",
-        "url"=> "https://miro.medium.com/max/1200/1*vSlyXXDKQ8RSu1VC0HPbaA.png",
-        "size"=> "full",
-        "aspectRatio"=> "20:13",
-        "aspectMode"=> "cover",
-        "action"=> [
-          "type"=> "uri",
-          "label"=> "Line",
-          "uri"=> "https://linecorp.com/"
+  "type"=> "flex",
+  "altText"=> "เป๋าตังค์",
+  "contents"=> [
+    "type"=> "bubble",
+    "hero"=> [ 
+      "type"=> "image",
+      "url"=> "https://miro.medium.com/max/1200/1*vSlyXXDKQ8RSu1VC0HPbaA.png",
+      "size"=> "full",
+      "aspectRatio"=> "2:1",
+      "aspectMode"=> "cover",
+      "action"=> [
+        "type"=> "uri",
+        "label"=> "Line",
+        "uri"=> "https://linecorp.com/"
       ]
+      ],
+    "body"=> [
+      "type"=> "box",
+      "layout"=> "vertical",
+      "contents"=> [
+        [
+          "type"=> "text",
+          "text"=> "เป๋าตังค์",
+          "size"=> "xl",
+          "align"=> "center",
+          "weight"=>"bold"
         ],
-      "body"=> [
-        "type"=> "box",
-        "layout"=> "vertical",
-        "contents"=> [
-          [
-            "type"=> "text",
-            "text"=> "เป๋าตังค์",
-            "size"=> "xl",
-            "align"=> "center",
-            "weight"=> "bold"
-          ],
-          [
-            "type"=> "separator",
-            "margin"=> "xl"
-          ],
-          [
-            "type"=> "box",
-            "layout"=> "vertical",
-            "spacing"=> "sm",
-            "margin"=> "lg",
-            "contents"=> [
-              [
-                "type"=> "box",
-                "layout"=> "baseline",
-                "spacing"=> "sm",
-                "margin"=> "xs",
-                "contents"=> [
-                  [
-                    "type"=> "text",
-                    "text"=> "ยอดเงินที่ใช้ได้  ",
-                    "flex"=> 1,
-                    "size"=> "md",
-                    "align"=> "start",
-                    "color"=> "#372E2E"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "00.00 บาท",
-                    "size"=> "lg",
-                    "align"=> "end",
-                    "color"=> "#372E2E"
-                  ]
+        [
+          "type"=> "separator",
+          "margin"=> "sm",
+          "color"=> "#B9B5B5"
+        ],
+        [
+          "type"=> "box",
+          "layout"=> "vertical",
+          "spacing"=> "sm",
+          "margin"=> "lg",
+          "contents"=> [
+            [
+              "type"=> "box",
+              "layout"=> "baseline",
+              "spacing"=> "sm",
+              "margin"=> "xs",
+              "contents"=> [
+                [
+                  "type"=> "text",
+                  "text"=> "ยอดเงินที่ใช้ได้  ",
+                  "flex"=> 1,
+                  "size"=> "lg",
+                  "align"=> "start",
+                  "color"=> "#372E2E"
+                ],
+                [
+                  "type"=> "text",
+                  "text"=> "00.00 บาท",
+                  "size"=> "lg",
+                  "align"=> "end",
+                  "weight"=> "bold",
+                  "color"=> "#372E2E"
                 ]
-                  ],
-              [
-                "type"=> "separator",
-                "margin"=> "sm"
               ]
+                ],
+            [
+              "type"=> "separator",
+              "margin"=> "lg",
+              "color"=> "#B9B5B5"
             ]
           ]
         ]
-              ],
-      "footer"=> [
-        "type"=> "box",
-        "layout"=> "vertical",
-        "flex"=> 0,
-        "spacing"=> "sm",
-        "contents"=> [
-          [
-            "type"=> "button",
-            "action"=> [
-              "type"=> "uri",
-              "label"=> "เช็ครายการใช้จ่าย",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/paitang.php"
+      ]
             ],
-            "color"=> "#2E8FA5",
-            "height"=> "md",
-            "style"=> "primary"
+    "footer"=> [
+      "type"=> "box",
+      "layout"=> "vertical",
+      "flex"=> 0,
+      "spacing"=> "sm",
+      "contents"=> [
+        [
+          "type"=> "button",
+          "action"=> [
+            "type"=> "uri",
+            "label"=> "เช็ครายการใช้จ่าย",
+            "uri"=> "http://405965027.student.yru.ac.th/tes5line/paitang.php"
           ],
-          [
-            "type"=> "spacer",
-            "size"=> "sm"
-          ]
+          "color"=> "#5CA19B",
+          "height"=> "md",
+          "style"=> "primary"
         ]
       ]
-]
-          ];
+    ]
+      ]
+];
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
