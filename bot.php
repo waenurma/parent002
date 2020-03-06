@@ -86,15 +86,15 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
     require "timetable.php";
 
-// }else if($arrJson['events'][0]['message']['text'] == "s" ){
-//     require "flaxmessage.php";
+}else if($arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
+    require "flaxmessage.php";
 
 
-}else if($arrJson['events'][0]['message']['text'] == "p" ){
-    require "flaxmessage copy.php";
+// }else if($arrJson['events'][0]['message']['text'] == "p" ){
+//     require "flaxmessage copy.php";
 
-}else if($arrJson['events'][0]['message']['text'] == "g" ){
-    require "test.2.php";
+// }else if($arrJson['events'][0]['message']['text'] == "g" ){
+//     require "test.2.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
     require "homework.php";
@@ -103,8 +103,8 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     require "poatang.php";
 
    ////ผลเรียนแบบflexตัวใหญ่
-}else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
-    require "flaxmessage.php";
+// }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
+//     require "GPA.php";
     
 // }else if($arrJson['events'][0]['message']['text'] == "a" ){
 //     require "carousel.php";
