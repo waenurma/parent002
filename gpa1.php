@@ -22,12 +22,11 @@ $val2 = strval($request_array1['data'][0]['CREDIT_ALL']);
 print_r($request_array1['data'][0]['CREDIT_ALL']);
 //$val = "0";
 $jsonFlex = [
+
   "type" => "flex",
   "altText" => "ผลการเรียน",
   "contents" => [
     "type" => "bubble",
-    
-    
     "direction" => "ltr",
     "header" => [
       "type" => "box",
@@ -35,7 +34,7 @@ $jsonFlex = [
       "contents" => [
         [
           "type" => "text",
-          "text" => "ระดับผลการเรียนเฉลี่ยรวม",
+          "text" => "ผลการเรียนเฉลี่ยรวม",
           "size" => "lg",
           "align" => "start",
           "weight" => "regular",
@@ -86,7 +85,7 @@ $jsonFlex = [
       "contents" => [
         [
           "type" => "text",
-          "text" => "ผลการเรียนร่วม",
+          "text" => "ผลการเรียนรวม",
           "size" => "lg",
           "align" => "start",
           "color" => "#0084B6",
