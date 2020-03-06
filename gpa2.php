@@ -121,7 +121,7 @@ $jsonFlex = [
                 "action"=>  [
                   "type"=>  "uri",
                   "label"=>  "ผลการเรียนแต่ละเทอม",
-                  "uri"=>  "https://linecorp.com"
+                  "uri"=>  "http://405965027.student.yru.ac.th/tes5line/grade1.php"
             ],
                 "color"=>  "#519BDC",
                 "style"=>  "primary"
