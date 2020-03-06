@@ -36,6 +36,7 @@ $jsonFlex = [
           "weight" => "regular",
           "color" => "#009813"
         ],
+        
         [
           "type" => "text",
           "text" => $val,
@@ -73,10 +74,10 @@ $jsonFlex = [
           "action"=> [
             "type"=> "uri",
             "label"=> "เช็ครายการใช้จ่าย",
-            "uri"=> "https://linecorp.com"
+            "uri"=> "http://405965027.student.yru.ac.th/tes5line/grade1.php"
           ],
           "color"=> "#2E8FA5",
-          "height"=> "md",
+          "height"=> "sd",
           "style"=> "primary"
         ],
   ]
