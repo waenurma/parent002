@@ -11,7 +11,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
     "type"=> "flex",
-    "altText"=> "เช็คยอดเงินค่าใช้จ่าย",
+    "altText"=> "Flex Message",
     "contents"=> [
       "type"=> "bubble",
       "hero"=> [
@@ -20,65 +20,87 @@ $jsonFlex = [
         "size"=> "full",
         "aspectRatio"=> "20:13",
         "aspectMode"=> "cover",
-        "backgroundColor"=> "#BFB1B1"
-      ],
-
+        "action"=> [
+          "type"=> "uri",
+          "label"=> "Line",
+          "uri"=> "https://linecorp.com/"
+      ]
+        ],
       "body"=> [
         "type"=> "box",
         "layout"=> "vertical",
-        "spacing"=> "md",
         "contents"=> [
           [
             "type"=> "text",
             "text"=> "เป๋าตังค์",
-            "size"=> "lg",
+            "size"=> "xl",
             "align"=> "center",
-            "weight"=> "bold",
-            "color"=>"#0084B6"
+            "weight"=> "bold"
           ],
-
           [
-            "type"=> "text",
-            "text"=> "ตรวจเช็ครายละเอียดค่าใช้จ่าย",
-            "margin"=> "sm",
-            "align"=> "center",
-            "color"=> "#5D5858"
+            "type"=> "separator",
+            "margin"=> "xl"
           ],
-            ]
-              ],
-
-              "footer"=> [
+          [
+            "type"=> "box",
+            "layout"=> "vertical",
+            "spacing"=> "sm",
+            "margin"=> "lg",
+            "contents"=> [
+              [
                 "type"=> "box",
-                "layout"=> "vertical",
+                "layout"=> "baseline",
+                "spacing"=> "sm",
+                "margin"=> "xs",
                 "contents"=> [
                   [
-                    "type"=> "button",
-                    "action"=> [
-                      "type"=> "uri",
-                      "label"=> "ยอดเงินที่ใช้ได้",
-                      "uri"=> "https://linecorp.com"
+                    "type"=> "text",
+                    "text"=> "ยอดเงินที่ใช้ได้  ",
+                    "flex"=> 1,
+                    "size"=> "md",
+                    "align"=> "start",
+                    "color"=> "#372E2E"
                   ],
-                    "color"=> "#5FC1DF",
-                    "margin"=> "sm",
-                    "height"=> "sm",
-                    "style"=> "primary"
-                ],
                   [
-                    "type"=> "button",
-                    "action"=> [
-                      "type"=> "uri",
-                      "label"=> "เช็ครายการใช้จ่าย",
-                      "uri"=> "https://linecorp.com"
-                    ],
-                    
-                    "color"=> "#5FC1DF",
-                    "margin"=> "sm",
-                    "height"=> "sm",
-                    "style"=> "primary"
+                    "type"=> "text",
+                    "text"=> "00.00 บาท",
+                    "size"=> "lg",
+                    "align"=> "end",
+                    "color"=> "#372E2E"
                   ]
                 ]
+                  ],
+              [
+                "type"=> "separator",
+                "margin"=> "sm"
               ]
-    ]
+            ]
+          ]
+        ]
+              ],
+      "footer"=> [
+        "type"=> "box",
+        "layout"=> "vertical",
+        "flex"=> 0,
+        "spacing"=> "sm",
+        "contents"=> [
+          [
+            "type"=> "button",
+            "action"=> [
+              "type"=> "uri",
+              "label"=> "เช็ครายการใช้จ่าย",
+              "uri"=> "https://linecorp.com"
+            ],
+            "height"=> "sm",
+            "style"=> "link"
+          ],
+          [
+            "type"=> "spacer",
+            "size"=> "sm"
+          ]
+        ]
+      ]
+]
           ];
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
