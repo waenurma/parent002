@@ -87,7 +87,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     require "timetable.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "s" ){
-    require "flaxmessage.php";
+    require "flax.php";
 
 
 }else if($arrJson['events'][0]['message']['text'] == "p" ){
