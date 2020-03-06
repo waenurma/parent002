@@ -62,24 +62,24 @@ $jsonFlex = [
       ]
     ],
 
-
-    "footer" => [
-      "type" => "box",
-      "layout" => "horizontal",
-      "contents" => [
+    "footer"=> [
+      "type"=> "box",
+      "layout"=> "vertical",
+      "flex"=> 0,
+      "spacing"=> "sm",
+      "contents"=> [
         [
-          "type" => "text",
-          "text" => "ผลการเรียนรวม",
-          "size" => "lg",
-          "align" => "start",
-          "color" => "#0084B6",
-          "action" => [
-            "type" => "uri",
-            "label" => "View Details",
-            "uri" => "https://google.co.th/"
-          ]
-        ]
-      ]
+          "type"=> "button",
+          "action"=> [
+            "type"=> "uri",
+            "label"=> "เช็ครายการใช้จ่าย",
+            "uri"=> "https://linecorp.com"
+          ],
+          "color"=> "#2E8FA5",
+          "height"=> "md",
+          "style"=> "primary"
+        ],
+  ]
     ]
   ]
 ];
