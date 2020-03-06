@@ -27,6 +27,18 @@ $jsonFlex = [
     "altText"=> "ผลการเรียน",
     "contents"=> [
       "type"=> "bubble",
+      "hero"=> [
+        "type"=> "image",
+        "url"=> "https://i.dlpng.com/static/png/351060_preview.png",
+        "size"=> "full",
+        "aspectRatio"=> "2:1",
+        "aspectMode"=> "cover",
+        "action"=>[
+          "type"=> "uri",
+          "label"=> "Action",
+          "uri"=> "https://linecorp.com"
+      
+        ],
       "body"=> [
         "type"=> "box",
         "layout"=> "vertical",
@@ -42,7 +54,7 @@ $jsonFlex = [
             "text"=> "ผลการเรียน",
             "size"=> "xl",
             "weight"=> "bold",
-            "color"=> "#080808"
+            "color"=> "#226068"
           ],
           [
             "type"=> "box",
@@ -59,7 +71,7 @@ $jsonFlex = [
                     "flex"=> 0,
                     "margin"=> "sm",
                     "weight"=> "regular",
-                    "color"=> "#AAAAAA"
+                    "color"=> "#226068"
                   ],
                   [
                     "type"=> "text",
@@ -85,7 +97,7 @@ $jsonFlex = [
                     "flex"=> 0,
                     "margin"=> "sm",
                     "weight"=> "regular",
-                    "color"=> "#AAAAAA"
+                    "color"=> "#226068"
                   ],
                   [
                     "type"=> "text",
@@ -93,7 +105,7 @@ $jsonFlex = [
                     "size"=> "sm",
                     "align"=> "end",
                     "weight"=> "regular",
-                    "color"=> "#AAAAAA"
+                    "color"=> "#226068"
                   ]
                 ]
               ]
@@ -117,6 +129,7 @@ $jsonFlex = [
           ]
         ]
       ]
+    ]
     ]
           ];
 //   "type" => "flex",
