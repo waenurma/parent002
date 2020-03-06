@@ -73,7 +73,7 @@ $jsonFlex = [
           "type"=> "button",
           "action"=> [
             "type"=> "uri",
-            "label"=> "เช็ครายการใช้จ่าย",
+            "label"=> "ผลการเรียนรวม",
             "uri"=> "http://405965027.student.yru.ac.th/tes5line/grade1.php"
           ],
           "color"=> "#2E8FA5",

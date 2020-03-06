@@ -15,125 +15,104 @@ $request_array1  = (json_decode($result1, true));
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
-
+$val = strval($request_array1['data'][0]['GPA_ALL']);
+print_r($request_array1['data'][0]['GPA_ALL']);
 //$val = "0";
+
 $jsonFlex = [
-  "type" => "flex",
-  "altText" => "ผลการเรียน",
-  "contents" => [
-    "type" => "bubble",
-    "direction" => "ltr",
-    "header" => [
-      "type" => "box",
-      "layout" => "vertical",
-      "contents" => [
+  "type"=> "flex",
+  "altText"=> "เป๋าตังค์",
+  "contents"=> [
+    "type"=> "bubble",
+    "hero"=> [
+      "type"=> "image",
+      "url"=> "https://miro.medium.com/max/1200/1*vSlyXXDKQ8RSu1VC0HPbaA.png",
+      "size"=> "full",
+      "aspectRatio"=> "20:13",
+      "aspectMode"=> "cover",
+      "action"=> [
+        "type"=> "uri",
+        "label"=> "Line",
+        "uri"=> "https://linecorp.com/"
+    ]
+      ],
+    "body"=> [
+      "type"=> "box",
+      "layout"=> "vertical",
+      "contents"=> [
         [
-          "type" => "text",
-          "text" => "เกรดเฉลี่ยรวม",
-          "size" => "lg",
-          "align" => "start",
-          "weight" => "bold",
-          "color" => "#009813"
+          "type"=> "text",
+          "text"=> "เป๋าตังค์",
+          "size"=> "xl",
+          "align"=> "center",
+          "weight"=> "bold"
         ],
         [
-          "type" => "text",
-          "text" => $request_array1,
-          "flex"=> 0,
+          "type"=> "separator",
+          "margin"=> "xl"
+        ],
+        [
+          "type"=> "box",
+          "layout"=> "vertical",
+          "spacing"=> "sm",
           "margin"=> "lg",
-          "size"=> "md",
-          "align"=> "start",
-          "weight"=> "regular",
-          "color"=> "#000000",
-          "wrap"=> true
-        ],
-        [
-          "type" => "text",
-          "text" => "ชื่อ-นามสกุล",
-          "flex"=> 0,
-          "margin"=> "lg",
-          "size"=> "md",
-          "align"=> "start",
-          "weight"=> "regular",
-          "color"=> "#000000",
-          "wrap"=> true
-        ],
-
-      ]
-    ],
-
-    "body" => [
-      "type" => "box",
-      "layout" => "vertical",
-      "contents" => [
-        [
-          "type" => "separator",
-          "color" => "#C3C3C3"
-        ],
-        [
-          "type" => "box",
-          "layout" => "baseline",
-          "margin" => "lg",
-          "contents" => [
+          "contents"=> [
             [
-              "type" => "text",
-              "text" => "ภาคเรียนที่ 1 ",
-              "align" => "start",
-              "color" => "#C3C3C3"
-            ],
+              "type"=> "box",
+              "layout"=> "baseline",
+              "spacing"=> "sm",
+              "margin"=> "xs",
+              "contents"=> [
+                [
+                  "type"=> "text",
+                  "text"=> "ยอดเงินที่ใช้ได้  ",
+                  "flex"=> 1,
+                  "size"=> "md",
+                  "align"=> "start",
+                  "color"=> "#372E2E"
+                ],
+                [
+                  "type"=> "text",
+                  "text"=> "00.00 บาท",
+                  "size"=> "lg",
+                  "align"=> "end",
+                  "color"=> "#372E2E"
+                ]
+              ]
+                ],
             [
-              "type" => "text",
-              "text" => "00.00",
-              "align" => "end",
-              "color" => "#000000"
+              "type"=> "separator",
+              "margin"=> "sm"
             ]
           ]
-        ],
-        [
-          "type" => "box",
-          "layout" => "baseline",
-          "margin" => "lg",
-          "contents" => [
-            [
-              "type" => "text",
-              "text" => "ภาคเรียนที่ 2",
-              "color" => "#C3C3C3"
-            ],
-            [
-              "type" => "text",
-              "text" => "00.00",
-              "align" => "end",
-              "color" => "#000000"
-            ]
-          ]
-        ],
-        [
-          "type" => "separator",
-          "margin" => "lg",
-          "color" => "#C3C3C3"
         ]
       ]
-    ],
-
-    "footer" => [
-      "type" => "box",
-      "layout" => "horizontal",
-      "contents" => [
+            ],
+    "footer"=> [
+      "type"=> "box",
+      "layout"=> "vertical",
+      "flex"=> 0,
+      "spacing"=> "sm",
+      "contents"=> [
         [
-          "type" => "text",
-          "text" => "ผลการเรียนร่วม",
-          "size" => "lg",
-          "align" => "start",
-          "color" => "#0084B6",
-          "action" => [
-            "type" => "uri",
-            "label" => "View Details",
-            "uri" => "https://google.co.th/"
-          ]
+          "type"=> "button",
+          "action"=> [
+            "type"=> "uri",
+            "label"=> "เช็ครายการใช้จ่าย",
+            "uri"=> "http://405965027.student.yru.ac.th/tes5line/paitang.php"
+          ],
+          "color"=> "#2E8FA5",
+          "height"=> "md",
+          "style"=> "primary"
+        ],
+        [
+          "type"=> "spacer",
+          "size"=> "sm"
         ]
       ]
     ]
-  ]
-];
+]
+        ];
 
 if ( sizeof($request_array ['events']) > 0 ) {
     foreach ($request_array ['events'] as $event) {
