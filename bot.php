@@ -97,8 +97,8 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     require "gpa1.php";
 
     
-// }else if($arrJson['events'][0]['message']['text'] == "a" ){
-//     require "carousel.php";
+}else if($arrJson['events'][0]['message']['text'] == "a" ){
+    require "gpa2.php";
 
 
  /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ----------------------
