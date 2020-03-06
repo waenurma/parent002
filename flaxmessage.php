@@ -33,18 +33,17 @@ $jsonFlex = [
           "text" => "เกรดเฉลี่ยรวม",
           "size" => "lg",
           "align" => "start",
-          "weight" => "regular",
+          "weight" => "bold",
           "color" => "#009813"
         ],
-        
         [
           "type" => "text",
           "text" => $val,
           "flex"=> 0,
           "margin"=> "lg",
-          "size"=> "xl",
+          "size"=> "md",
           "align"=> "start",
-          "weight"=> "bold",
+          "weight"=> "regular",
           "color"=> "#000000",
           "wrap"=> true
         ],
@@ -63,24 +62,24 @@ $jsonFlex = [
       ]
     ],
 
-    "footer"=> [
-      "type"=> "box",
-      "layout"=> "vertical",
-      "flex"=> 0,
-      "spacing"=> "sm",
-      "contents"=> [
+
+    "footer" => [
+      "type" => "box",
+      "layout" => "horizontal",
+      "contents" => [
         [
-          "type"=> "button",
-          "action"=> [
-            "type"=> "uri",
-            "label"=> "ผลการเรียนรวม",
-            "uri"=> "http://405965027.student.yru.ac.th/tes5line/grade1.php"
-          ],
-          "color"=> "#2E8FA5",
-          "height"=> "sd",
-          "style"=> "primary"
-        ],
-  ]
+          "type" => "text",
+          "text" => "ผลการเรียนร่วม",
+          "size" => "lg",
+          "align" => "start",
+          "color" => "#0084B6",
+          "action" => [
+            "type" => "uri",
+            "label" => "View Details",
+            "uri" => "https://google.co.th/"
+          ]
+        ]
+      ]
     ]
   ]
 ];
