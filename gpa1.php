@@ -22,82 +22,179 @@ $val2 = strval($request_array1['data'][0]['CREDIT_ALL']);
 print_r($request_array1['data'][0]['CREDIT_ALL']);
 //$val = "0";
 $jsonFlex = [
-  "type" => "flex",
-  "altText" => "ผลการเรียน",
-  "contents" => [
-    "type" => "bubble",
-    "direction" => "ltr",
-    "header" => [
-      "type" => "box",
-      "layout" => "vertical",
-      "contents" => [
-        [
-          "type" => "text",
-          "text" => "ระดับผลการเรียนเฉลี่ยรวม",
-          "size" => "lg",
-          "align" => "start",
-          "weight" => "regular",
-          "color" => "#000000"
+  
+    "type"=> "flex",
+    "altText"=> "ผลการเรียน",
+    "contents"=> [
+      "type"=> "bubble",
+      "body"=> [
+        "type"=> "box",
+        "layout"=> "vertical",
+        "spacing"=> "md",
+        "action"=> [
+          "type"=> "uri",
+          "label"=> "Action",
+          "uri"=> "https://linecorp.com"
         ],
-        [
-          "type" => "text",
-          "text" => $val,
-          "flex"=> 0,
-          "margin"=> "lg",
-          "size"=> "xxl",
-          "align"=> "start",
-          "weight"=> "bold",
-          "color"=> "#009813",
-          "wrap"=> true
-        ],
-        [
-          "type" => "text",
-          "text" => "ชื่อ-นามสกุล".$val2,
-          "flex"=> 0,
-          "margin"=> "lg",
-          "size"=> "md",
-          "align"=> "start",
-          "weight"=> "regular",
-          "color"=> "#000000",
-          "wrap"=> true
-        ],
-
-      ]
-    ],
-
-    "body" => [
-      "type" => "box",
-      "layout" => "vertical",
-      "contents" => [
-        
-        [
-          "type" => "separator",
-          "margin" => "lg",
-          "color" => "#C3C3C3"
+        "contents"=> [
+          [
+            "type"=> "text",
+            "text"=> "ผลการเรียน",
+            "size"=> "xl",
+            "weight"=> "bold",
+            "color"=> "#080808"
+          ],
+          [
+            "type"=> "box",
+            "layout"=> "vertical",
+            "spacing"=> "sm",
+            "contents"=> [
+              [
+                "type"=> "box",
+                "layout"=> "baseline",
+                "contents"=> [
+                  [
+                    "type"=> "text",
+                    "text"=> "ผลการเรียนรวม",
+                    "flex"=> 0,
+                    "margin"=> "sm",
+                    "weight"=> "regular",
+                    "color"=> "#AAAAAA"
+                  ],
+                  [
+                    "type"=> "text",
+                    "text"=> $val,
+                    "size"=> "xl",
+                    "align"=> "end",
+                    "weight"=> "bold",
+                    "color"=> "#1084EA"
+                  ]
+                ]
+                  ],
+              [
+                "type"=> "separator",
+                "margin"=> "md"
+              ],
+              [
+                "type"=> "box",
+                "layout"=> "baseline",
+                "contents"=> [
+                  [
+                    "type"=> "text",
+                    "text"=> "รวมหน่วยกิจ ",
+                    "flex"=> 0,
+                    "margin"=> "sm",
+                    "weight"=> "regular",
+                    "color"=> "#AAAAAA"
+                  ],
+                  [
+                    "type"=> "text",
+                    "text"=> $val2."หน่วยกิจ",
+                    "size"=> "sm",
+                    "align"=> "end",
+                    "weight"=> "regular",
+                    "color"=> "#AAAAAA"
+                  ]
+                ]
+              ]
+            ]
+          ]
         ]
-      ]
-    ],
-
-    "footer" => [
-      "type" => "box",
-      "layout" => "horizontal",
-      "contents" => [
-        [
-          "type" => "text",
-          "text" => "ผลการเรียนร่วม",
-          "size" => "lg",
-          "align" => "start",
-          "color" => "#0084B6",
-          "action" => [
-            "type" => "uri",
-            "label" => "View Details",
-            "uri" => "https://google.co.th/"
+                  ],
+      "footer"=> [
+        "type"=> "box",
+        "layout"=> "vertical",
+        "contents"=> [
+          [
+            "type"=> "button",
+            "action"=> [
+              "type"=> "uri",
+              "label"=> "ผลการเรียนแต่ละเทอม",
+              "uri"=> "https://linecorp.com"
+            ],
+            "color"=> "#226068",
+            "style"=> "primary"
           ]
         ]
       ]
     ]
-  ]
-];
+          ];
+//   "type" => "flex",
+//   "altText" => "ผลการเรียน",
+//   "contents" => [
+//     "type" => "bubble",
+//     "direction" => "ltr",
+//     "header" => [
+//       "type" => "box",
+//       "layout" => "vertical",
+//       "contents" => [
+//         [
+//           "type" => "text",
+//           "text" => "ระดับผลการเรียนเฉลี่ยรวม",
+//           "size" => "lg",
+//           "align" => "start",
+//           "weight" => "regular",
+//           "color" => "#000000"
+//         ],
+//         [
+//           "type" => "text",
+//           "text" => $val,
+//           "flex"=> 0,
+//           "margin"=> "lg",
+//           "size"=> "xxl",
+//           "align"=> "start",
+//           "weight"=> "bold",
+//           "color"=> "#009813",
+//           "wrap"=> true
+//         ],
+//         [
+//           "type" => "text",
+//           "text" => "ชื่อ-นามสกุล".$val2,
+//           "flex"=> 0,
+//           "margin"=> "lg",
+//           "size"=> "md",
+//           "align"=> "start",
+//           "weight"=> "regular",
+//           "color"=> "#000000",
+//           "wrap"=> true
+//         ],
+
+//       ]
+//     ],
+
+//     "body" => [
+//       "type" => "box",
+//       "layout" => "vertical",
+//       "contents" => [
+        
+//         [
+//           "type" => "separator",
+//           "margin" => "lg",
+//           "color" => "#C3C3C3"
+//         ]
+//       ]
+//     ],
+
+//     "footer" => [
+//       "type" => "box",
+//       "layout" => "horizontal",
+//       "contents" => [
+//         [
+//           "type" => "text",
+//           "text" => "ผลการเรียนร่วม",
+//           "size" => "lg",
+//           "align" => "start",
+//           "color" => "#0084B6",
+//           "action" => [
+//             "type" => "uri",
+//             "label" => "View Details",
+//             "uri" => "https://google.co.th/"
+//           ]
+//         ]
+//       ]
+//     ]
+//   ]
+// ];
 
 if ($request_array ) {
     foreach ($request_array['events'] as $event) {
