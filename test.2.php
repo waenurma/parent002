@@ -20,74 +20,50 @@ print_r($request_array1['data'][0]['GPA_ALL']);
 //$val = "0";
 
 $jsonFlex = [
-  "type"=> "flex",
-  "altText"=> "เป๋าตังค์",
-  "contents"=> [
-    "type"=> "bubble",
-    "hero"=> [
-      "type"=> "image",
-      "url"=> "https://miro.medium.com/max/1200/1*vSlyXXDKQ8RSu1VC0HPbaA.png",
-      "size"=> "full",
-      "aspectRatio"=> "20:13",
-      "aspectMode"=> "cover",
-      "action"=> [
-        "type"=> "uri",
-        "label"=> "Line",
-        "uri"=> "https://linecorp.com/"
-    ]
-      ],
-    "body"=> [
-      "type"=> "box",
-      "layout"=> "vertical",
-      "contents"=> [
+  "type" => "flex",
+  "altText" => "ผลการเรียน",
+  "contents" => [
+    "type" => "bubble",
+    "direction" => "ltr",
+    "header" => [
+      "type" => "box",
+      "layout" => "vertical",
+      "contents" => [
         [
-          "type"=> "text",
-          "text"=> "เป๋าตังค์",
-          "size"=> "xl",
-          "align"=> "center",
-          "weight"=> "bold"
+          "type" => "text",
+          "text" => "เกรดเฉลี่ยรวม",
+          "size" => "lg",
+          "align" => "start",
+          "weight" => "regular",
+          "color" => "#009813"
         ],
+        
         [
-          "type"=> "separator",
-          "margin"=> "xl"
-        ],
-        [
-          "type"=> "box",
-          "layout"=> "vertical",
-          "spacing"=> "sm",
+          "type" => "text",
+          "text" => $val,
+          "flex"=> 0,
           "margin"=> "lg",
-          "contents"=> [
-            [
-              "type"=> "box",
-              "layout"=> "baseline",
-              "spacing"=> "sm",
-              "margin"=> "xs",
-              "contents"=> [
-                [
-                  "type"=> "text",
-                  "text"=> "ยอดเงินที่ใช้ได้  ",
-                  "flex"=> 1,
-                  "size"=> "md",
-                  "align"=> "start",
-                  "color"=> "#372E2E"
-                ],
-                [
-                  "type"=> "text",
-                  "text"=> "00.00 บาท",
-                  "size"=> "lg",
-                  "align"=> "end",
-                  "color"=> "#372E2E"
-                ]
-              ]
-                ],
-            [
-              "type"=> "separator",
-              "margin"=> "sm"
-            ]
-          ]
-        ]
+          "size"=> "xl",
+          "align"=> "start",
+          "weight"=> "bold",
+          "color"=> "#000000",
+          "wrap"=> true
+        ],
+        [
+          "type" => "text",
+          "text" => "ชื่อ-นามสกุล",
+          "flex"=> 0,
+          "margin"=> "lg",
+          "size"=> "md",
+          "align"=> "start",
+          "weight"=> "regular",
+          "color"=> "#000000",
+          "wrap"=> true
+        ],
+
       ]
-            ],
+    ],
+
     "footer"=> [
       "type"=> "box",
       "layout"=> "vertical",
@@ -98,24 +74,20 @@ $jsonFlex = [
           "type"=> "button",
           "action"=> [
             "type"=> "uri",
-            "label"=> "เช็ครายการใช้จ่าย",
-            "uri"=> "http://405965027.student.yru.ac.th/tes5line/paitang.php"
+            "label"=> "ผลการเรียนรวม",
+            "uri"=> "http://405965027.student.yru.ac.th/tes5line/grade1.php"
           ],
           "color"=> "#2E8FA5",
-          "height"=> "md",
+          "height"=> "sd",
           "style"=> "primary"
         ],
-        [
-          "type"=> "spacer",
-          "size"=> "sm"
-        ]
-      ]
+  ]
     ]
-]
-        ];
+  ]
+];
 
-if ( sizeof($request_array ['events']) > 0 ) {
-    foreach ($request_array ['events'] as $event) {
+if ($request_array ) {
+    foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
         $reply_message = '';
         $reply_token = $event['replyToken'];
@@ -126,7 +98,7 @@ if ( sizeof($request_array ['events']) > 0 ) {
             'messages' => [$jsonFlex]
         ];
 
-        print_r($data);
+        //print_r($data);
 
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
@@ -136,8 +108,8 @@ if ( sizeof($request_array ['events']) > 0 ) {
         
     }
 }
-echo "OK";
 
+echo "OK";
 
 function send_reply_message($url, $post_header, $post_body)
 {
