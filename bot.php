@@ -96,7 +96,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 }else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
     require "gpa2.php";
 
-// }else if($arrJson['events'][0]['message']['text'] == "a" ){
+}else if($arrJson['events'][0]['message']['text'] == "การมารเรียน" ){
 //     require "gpa2.php";
 
 
