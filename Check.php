@@ -59,7 +59,7 @@ $jsonFlex = [
                     "text"=> "มาเรียน",
                     "flex"=> 1,
                     "size"=> "sm",
-                    "color"=> "#AAAAAA"
+                    "color"=> "#666666"
                   ],
                   [
                     "type"=> "text",
@@ -82,7 +82,7 @@ $jsonFlex = [
                     "text"=> "มาสาย",
                     "flex"=> 1,
                     "size"=> "sm",
-                    "color"=> "#AAAAAA"
+                    "color"=> "#666666"
                   ],
                   [
                     "type"=> "text",
@@ -105,7 +105,7 @@ $jsonFlex = [
                     "text"=> "ขาดเรียน",
                     "flex"=> 0,
                     "size"=> "sm",
-                    "color"=> "#AAAAAA"
+                    "color"=> "#666666"
                   ],
                   [
                     "type"=> "text",

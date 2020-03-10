@@ -10,7 +10,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsonFlex = [
+// $jsonFlex = [
 
 
     if ( sizeof($request_array['events']) > 0 ) {
