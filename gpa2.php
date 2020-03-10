@@ -19,6 +19,7 @@ print_r($request_array1['data'][0]['GPA_ALL']);
 $val4 = strval($request_array1['data'][0]['CREDIT_ALL']);
 print_r($request_array1['data'][0]['CREDIT_ALL']);
 //$val = "0";
+
 $jsonFlex = [
         "type"=> "flex",
         "altText"=> "ผลการเรียน",
