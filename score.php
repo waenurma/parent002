@@ -1,4 +1,6 @@
+
 <?php
+/////////คะแนน
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
 $channelSecret = '157d1d03926e37e516f42f5e9a44af73';
@@ -9,6 +11,7 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
+
 
     if ( sizeof($request_array['events']) > 0 ) {
         foreach ($request_array['events'] as $event) {

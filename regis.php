@@ -29,17 +29,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   // $arrPostData['messages'][1]['text'] = "123456789";
   // strlen($data); การนับจำนวน
   
-// ---------------------------------------------เลขสมาชิก---------------------------------------------
-}else if($arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']   && strlen($arrJson['events'][0]['message']['text'])== "10"){
-  $data=$arrJson['events'][0]['message']['text'];
-  $T_data=substr($data, 0 ,3 ); //เป็นการตัดข้อความ เลือกใช้ตำเเหน่งไหนที่ต้องการ
-  $F_data=substr($data, 5 ,10 ); 
-  
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "เลขสมาชิกของคุณ คือ".  $T_data.$F_data;
-  
   
 // ---------------------------------------------ลงทะเบียน---------------------------------------------
 }else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){

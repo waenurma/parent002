@@ -10,45 +10,11 @@
     $arrHeader[] = "Content-Type: application/json";
     $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
     
-
 if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['message']['text'] == "id"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
-
-
-}else if($arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']  && strlen($arrJson['events'][0]['message']['text'])== "13"){
-    $data=$arrJson['events'][0]['message']['text'];   
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "รหัสบัตรประชาชน คือ".  $data; 
-    // $arrPostData['messages'][1]['type'] = "text";
-    // $arrPostData['messages'][1]['text'] = "123456789";
-    // strlen($data); การนับจำนวน
-    
-  // ---------------------------------------------เลขสมาชิก---------------------------------------------
-  }else if($arrJson['events'][0]['message']['text'] == $arrJson['events'][0]['message']['text']   && strlen($arrJson['events'][0]['message']['text'])== "10"){
-    $data=$arrJson['events'][0]['message']['text'];
-    $T_data=substr($data, 0 ,3 ); //เป็นการตัดข้อความ เลือกใช้ตำเเหน่งไหนที่ต้องการ
-    $F_data=substr($data, 5 ,10 ); 
-    
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เลขสมาชิกของคุณ คือ".  $T_data.$F_data;
-    
-    
-  // ---------------------------------------------ลงทะเบียน---------------------------------------------
-  }else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){
-    $arrPostData = array();
-    $data=$arrJson['events'][0]['message']['text'];
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] ="กรุณากรอกข้อมูลเลขสมาชิก 10 หลัก 
-    หรือข้อมูลเลขบัตรประชาชน 13 หลัก ค่ะ";
-    //-------------------------------------------------------------------------------------------------
 
 }else if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ" || $arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
     $arrPostData = array();
