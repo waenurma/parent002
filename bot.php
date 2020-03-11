@@ -81,7 +81,7 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
     $arrPostData['messages'][1]['stickerId'] = "4"; 
 
         
-//-----------------------เมนู--------------------------
+//-----------------------เมนู-----------------------------------------------------------------
 }else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
     require "timetable.php";
 
@@ -98,7 +98,10 @@ if($arrJson['events'][0]['message']['text'] == "ID"||$arrJson['events'][0]['mess
 }else if($arrJson['events'][0]['message']['text'] == "การมาเรียน"||$arrJson['events'][0]['message']['text'] == "เช็ค" ){
     require "Check.php";
 
- /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ----------------------
+
+
+    
+ /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ---------------------------------------------
  //quick replay
 }else if($arrJson['events'][0]['message']['text'] == "อื่นๆ" ){
     require "quick.php";
