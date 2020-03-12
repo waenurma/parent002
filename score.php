@@ -28,7 +28,7 @@ $jsontemplate = [
             "action"=> [
               "type"=> "uri",
               "label"=> "Action",
-              "uri"=> "https://linecorp.com"
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/index.php"
             ]
           ]
         ]
