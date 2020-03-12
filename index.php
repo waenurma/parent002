@@ -1,7 +1,9 @@
 <?php session_start();?>
 <?php
 include 'h.php';
+$user_id= $_REQUEST["user_id"];
 ?>
+
 <style type="text/css">
 
 #btn{
@@ -39,17 +41,17 @@ width:100%;
       <h3 align="center">
       <span class="glyphicon glyphicon-lock"> </span>
       ลงชื่อเข้าใช้งาน </h3>
-      <form  name="formlogin" action="save.php" method="POST" id="login" class="form-horizontal">
+      <form  name="formlogin" action="connect.php?user_id=<?php echo $user_id; ?>" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
         <input type="hidden"  name="id_regis" class="form-control" required placeholder="บัตรประชาชน" />
         <div class="form-group">
         <div class="col-sm-12">
-            <input type="text"  name="entity" class="form-control" required placeholder="บัตรประชาชน" />
+            <input type="text"  name="id_card" class="form-control" required placeholder="บัตรประชาชน" />
           </div>
         </div>
         <div class="form-group">
         <div class="col-sm-12">
-            <input type="date"  name="bdate" class="form-control" required placeholder="วันเดือนปี" />
+            <input type="date"  name="Bdate" class="form-control" required placeholder="วันเดือนปี" />
           </div>
         </div>
         <div class="form-group">
