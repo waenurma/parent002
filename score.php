@@ -28,7 +28,7 @@ $jsontemplate = [
             "action"=> [
               "type"=> "uri",
               "label"=> "Action",
-              "uri"=> "https://parent002.herokuapp.com/user_id=$id_line"
+              "uri"=> "https://parent002.herokuapp.com/linebot/index.php/user_id=$id_line"
             ]
           ]
         ]
