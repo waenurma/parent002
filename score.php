@@ -9,7 +9,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
-
+$id_line =$arrJson['events'][0]['source']['userId'];
 $jsontemplate = [
     
         "type"=> "flex",
@@ -28,7 +28,7 @@ $jsontemplate = [
             "action"=> [
               "type"=> "uri",
               "label"=> "Action",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/index.php"
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/index.php/user_id=$id_line"
             ]
           ]
         ]
