@@ -40,9 +40,9 @@ width:100%;
       <span class="glyphicon glyphicon-lock"> </span>
       ลงชื่อเข้าใช้งาน </h3>
       <form  name="formlogin" action="save.php" method="POST" id="login" class="form-horizontal">
-        <div class="form-group">
+        <!-- <div class="form-group">
         <input type="hidden"  name="id_login" class="form-control" required placeholder="บัตรประชาชน" />
-        <div class="form-group">
+        <div class="form-group"> -->
         <div class="col-sm-12">
             <input type="text"  name="entity" class="form-control" required placeholder="บัตรประชาชน" />
           </div>
