@@ -9,7 +9,7 @@ include 'pgconfiq.php';
  $result = $stmt -> fetch();
 
  if($data->id_card == $result['id_card']){
- }
+ 
    
     // $id_card = $_REQUEST["pass"];
     $user_id = $_REQUEST["user_id"];
@@ -17,5 +17,5 @@ include 'pgconfiq.php';
          $stmt = $dbConnection->prepare($sql1);
          // $stmt->bindValue($data->id_card,PDO::PARAM_STR);
          $stmt->execute();
-         $result = $stmt -> fetch();
+         $result = $stmt -> fetch();}
 ?>
