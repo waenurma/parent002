@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "parent002.herokuapp.com";
 $username = "username";
 $password = "password";
 
