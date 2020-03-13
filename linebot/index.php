@@ -1,6 +1,6 @@
 <?php session_start();?>
 <?php
-include 'h.php';
+include 'connect.php';
 $user_id= $_REQUEST["user_id"];
 ?>
 
