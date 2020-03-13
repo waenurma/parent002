@@ -1,4 +1,4 @@
-<?php include('conndb.php');?>
+<?php include('connect.php');?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
