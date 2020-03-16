@@ -41,7 +41,7 @@ width:100%;
       <h3 align="center">
       <span class="glyphicon glyphicon-lock"> </span>
       ลงชื่อเข้าใช้งาน </h3>
-      <form  name="formlogin" action="connect.php?user_id=<?php echo $user_id; ?>" method="POST" id="login" class="form-horizontal">
+      <form  name="formlogin" action="connect.php?user_id=<?php echo $user_id= $_REQUEST["user_id"]; ?>" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
         <input type="hidden"  name="id_regis" class="form-control" required placeholder="บัตรประชาชน" />
         <div class="form-group">
