@@ -16,7 +16,4 @@ include 'pgconfiq.php';
          // $stmt->bindValue($data->id_card,PDO::PARAM_STR);
          $stmt->execute();
          $result = $stmt -> fetch();}
-
-
-         
 ?>
