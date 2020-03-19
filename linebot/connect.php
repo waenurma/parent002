@@ -7,7 +7,6 @@ include 'pgconfiq.php';
  $stmt->execute();
  $result = $stmt -> fetch();
  
-
  if($data->id_card == $result['id_card']){
  
     // $id_card = $_REQUEST["pass"];
@@ -17,6 +16,4 @@ include 'pgconfiq.php';
          // $stmt->bindValue($data->id_card,PDO::PARAM_STR);
          $stmt->execute();
          $result = $stmt -> fetch();}
-
-
 ?>
