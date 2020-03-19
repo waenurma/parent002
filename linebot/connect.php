@@ -1,7 +1,6 @@
 <?php 
 include 'pgconfiq.php';
 
-
  $strSQL=('SELECT * FROM public.login WHERE id_card=:id_card' );
  $stmt = $dbConnection->prepare($strSQL);
  $stmt->bindValue(":id_card", $data->id_card,PDO::PARAM_STR);
