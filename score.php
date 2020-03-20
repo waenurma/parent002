@@ -19,7 +19,7 @@ $jsontemplate = [
           "direction"=> "ltr",
           "hero"=> [
             "type"=> "image",
-            "url"=> "https://lh3.googleusercontent.com/proxy/3iD3QBmCpSyiJto3Pvug7w3Kimx5up9IpkpNqRME1LcETLtdep6HqoIqdlnRmEcXWNBaIz44DXudcmuko9Bd8j51smZAVL_RPhDDIU9JlZBbOtj3nQ",
+            "url"=> "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJ1_La1SgQZV823X0_D6k7EB0kq7doHeeGriTMM6auKa8v8L-5",
             "align"=> "center",
             "size"=> "full",
             "aspectRatio"=> "20:13",
