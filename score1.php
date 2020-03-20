@@ -13,7 +13,7 @@ $id_line =$arrJson['events'][0]['source']['userId'];
 $jsontemplate = [
     
   "type"=> "flex",
-  "altText"=> "Flex Message",
+  "altText"=> "คะแนน",
   "contents"=> [
     "type"=> "bubble",
     "hero"=> [
