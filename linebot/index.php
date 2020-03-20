@@ -43,7 +43,7 @@ width:100%;
       ลงชื่อเข้าใช้งาน </h3>
       <form  name="formlogin" action="connect.php?user_id=<?php echo $user_id; ?>" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
-        <input type="hidden"  name="id_regis" class="form-control" required placeholder="บัตรประชาชน" />
+        <input type="hidden"  name="id_card" class="form-control" required placeholder="บัตรประชาชน" />
         <div class="form-group">
         <div class="col-sm-12">
             <input type="text"  name="id_card" class="form-control" required placeholder="บัตรประชาชน" />
