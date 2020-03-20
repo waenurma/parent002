@@ -101,7 +101,8 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
 
 }else if($arrJson['events'][0]['message']['text'] == "การมาเรียน"||$arrJson['events'][0]['message']['text'] == "เช็ค" ){
     require "Check.php";
-
+}else if($arrJson['events'][0]['message']['text'] == "คะแนน"){
+    require "score1.php";   
 
 
     
