@@ -9,7 +9,7 @@ include 'pgconfiq.php';
  
  if($data->id_card == $result['id_card']){
  
-    // $id_card = $_REQUEST["pass"];
+    $id_card = $_REQUEST["id_card"];
     $user_id = $_REQUEST["user_id"];
          $sql1="INSERT INTO public.linebot(user_id,id_card)values('$user_id','$data->id_card')";
          $stmt = $dbConnection->prepare($sql1);
