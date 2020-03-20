@@ -23,12 +23,12 @@ $jsontemplate = [
             [
               "type"=> "uri",
               "label"=> "คลิกดูการบ้านที่ค้าง",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/hw2.php"
             ],
             [
               "type"=> "uri",
               "label"=> "คลิกดูการบ้านที่ส่ง",
-              "uri"=> "http://405965027.student.yru.ac.th/tes5line/homework.php"
+              "uri"=> "http://405965027.student.yru.ac.th/tes5line/hw1.php"
             ]
           ],
           "thumbnailImageUrl"=> "https://onlinedegrees.sandiego.edu/wp-content/uploads/2017/12/education_inequity_and_homework.jpg",
