@@ -11,7 +11,6 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 $id_line =$arrJson['events'][0]['source']['userId'];
 $jsontemplate = [
-    
         "type"=> "flex",
         "altText"=> "Flex Message",
         "contents"=> [
