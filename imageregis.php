@@ -10,25 +10,26 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonimagemap = [
-        "type"=> "imagemap",
-        "baseUrl"=> "https://parent002.herokuapp.com/linebot/Register.png",
-        "altText"=> "ลงทะเบียน",
-        "baseSize"=> [
-          "width"=> 1040,
-          "height"=> 622
-        ],
-        "actions"=> [
-          [
-            "type"=> "uri",
-            "area"=> [
-              "x"=> 2,
-              "y"=> 0,
-              "width"=> 1038,
-              "height"=> 615
-            ],
-            "linkUri"=> "https://parent002.herokuapp.com/linebot/index.php"
-          ]
+    "type"=> "flex",
+    "altText"=> "ลงทะเบียน",
+    "contents"=> [
+      "type"=> "bubble",
+      "direction"=> "ltr",
+      "hero"=> [
+        "type"=> "image",
+        "url"=> "https://parent002.herokuapp.com/linebot/regis.jpg",
+        "align"=> "center",
+        "size"=> "full",
+        "aspectRatio"=> "20:13",
+        "aspectMode"=> "cover",
+        "backgroundColor"=> "#B10A0A",
+        "action"=> [
+          "type"=> "uri",
+          "label"=> "Action",
+          "uri"=> "https://parent002.herokuapp.com/linebot/index.php"
         ]
+      ]
+    ]
         ];
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
