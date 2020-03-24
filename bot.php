@@ -16,7 +16,7 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
 
-}else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){
+}else if($arrJson['events'][0]['message']['text'] == "คลิกลงทะเบียน"){
     require "imageregis.php";   
 
  
