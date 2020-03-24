@@ -9,7 +9,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
-$jsonFlex = [
+$jsonimagemap = [
         "type"=> "imagemap",
         "baseUrl"=> "http://405965027.student.yru.ac.th/tes5line/img/regis.jpg",
         "altText"=> "ลงทะเบียน",
@@ -38,7 +38,7 @@ $jsonFlex = [
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => [$jsonFlex]
+            'messages' => [$jsonimagemap ]
         ];
         print_r($data);
 
