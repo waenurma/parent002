@@ -11,7 +11,7 @@ $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonimagemap = [
         "type"=> "imagemap",
-        "baseUrl"=> "https://parent002.herokuapp.com/linebot/regis.jpg",
+        "baseUrl"=> "https://parent002.herokuapp.com/linebot/Register.png",
         "altText"=> "ลงทะเบียน",
         "baseSize"=> [
           "width"=> 1040,
