@@ -123,7 +123,7 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
 
 
 }else if($arrJson['events'][0]['message']['text'] == "a"){
-    require "Regis.php";   
+    require "noregis.php";   
 
 
    //////////////////////////////////////ดักคำแปลกๆ/////////////////////////////////////////////////

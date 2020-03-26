@@ -10,27 +10,22 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 $id_line =$arrJson['events'][0]['source']['userId'];
 $jsontemplate = [
-        "type"=> "flex",
-        "altText"=> "Flex Message",
-        "contents"=> [
-          "type"=> "bubble",
-          "direction"=> "ltr",
-          "hero"=> [
-            "type"=> "image",
-            "url"=> "https://www.thaitobacco.or.th/th/wp-content/uploads/2017/06/Register.png",
-            "align"=> "center",
-            "size"=> "full",
-            "aspectRatio"=> "20:13",
-            "aspectMode"=> "cover",
-            "backgroundColor"=> "#B10A0A",
-            "action"=> [
-              "type"=> "uri",
-              "label"=> "Action",
-              "uri"=> "https://parent002.herokuapp.com/linebot/index.php?user_id=$id_line"
-            ]
-          ]
+    "type"=> "template",
+    "altText"=> "คุณยังไม่ลงทะเบียน",
+    "template"=> [
+      "type"=> "buttons",
+      "actions"=> [
+        [
+          "type"=> "uri",
+          "label"=> "ลงทะเบียน",
+          "uri"=> "https://parent002.herokuapp.com/linebot/index.php"
         ]
-            ];
+      ],
+      "thumbnailImageUrl"=> "https://parent002.herokuapp.com/linebot/regis.jpg",
+      "title"=>"คุณยังไม่ลงทะเบียน",
+      "text"=>"กรุณาคลิกลงทะเบียน"
+    ]
+    ];
 if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
