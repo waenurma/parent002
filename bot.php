@@ -122,7 +122,7 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     require "weather.php";   
 
 
-}else if($arrJson['events'][0]['message']['text'] == "a"){
+}else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){
     require "noregis.php";   
 
 
