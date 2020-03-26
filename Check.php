@@ -11,140 +11,83 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 
 $jsonFlex = [
-    "type"=> "flex",
-    "altText"=> "เช็คการมาเรียน",
-    "contents"=> [
-      "type"=> "bubble",
-      "body"=> [
-        "type"=> "box",
-        "layout"=> "vertical",
-        "spacing"=> "md",
-        "contents"=> [
-          [
-            "type"=> "text",
-            "text"=> "การมาเรียน",
-            "size"=> "xl",
-            "gravity"=> "center",
-            "weight"=> "bold",
-            "wrap"=> true
-          ],
-          [
-            "type"=> "box",
-            "layout"=> "baseline",
-            "margin"=> "md",
-            "contents"=> [
-              [
-                "type"=> "text",
-                "text"=> "คลิกตรวจสอบเพิ่มเติมได้ที่เมนูด้านล่าง",
-                "flex"=> 0,
-                "margin"=> "md",
-                "size"=> "sm",
-                "color"=> "#999999"
-              ]
-            ]
-              ],
-          [
-            "type"=> "box",
-            "layout"=>"vertical",
-            "spacing"=> "sm",
-            "margin"=> "lg",
-            "contents"=> [
-              [
-                "type"=> "box",
-                "layout"=> "baseline",
-                "spacing"=> "sm",
-                "contents"=> [
-                  [
-                    "type"=> "text",
-                    "text"=> "มาเรียน",
-                    "flex"=> 1,
-                    "size"=> "sm",
-                    "color"=> "#666666"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "45 ครั้ง",
-                    "flex"=> 4,
-                    "size"=> "sm",
-                    "align"=> "end",
-                    "color"=> "#666666",
-                    "wrap"=> true
-                  ]
-                ]
-                  ],
-              [
-                "type"=> "box",
-                "layout"=> "baseline",
-                "spacing"=> "sm",
-                "contents"=> [
-                  [
-                    "type"=> "text",
-                    "text"=> "มาสาย",
-                    "flex"=> 1,
-                    "size"=> "sm",
-                    "color"=> "#666666"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "5 ครั้ง",
-                    "flex"=> 4,
-                    "size"=> "sm",
-                    "align"=> "end",
-                    "color"=> "#666666",
-                    "wrap"=> true
-                  ]
-                ]
-                  ],
-              [
-                "type"=> "box",
-                "layout"=> "baseline",
-                "spacing"=> "sm",
-                "contents"=> [
-                  [
-                    "type"=> "text",
-                    "text"=> "ขาดเรียน",
-                    "flex"=> 0,
-                    "size"=> "sm",
-                    "color"=> "#666666"
-                  ],
-                  [
-                    "type"=> "text",
-                    "text"=> "- ครั้ง",
-                    "flex"=> 4,
-                    "size"=> "sm",
-                    "align"=> "end",
-                    "color"=> "#666666",
-                    "wrap"=> true
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
+  "type"=> "flex",
+  "altText"=> "เช็คการมาเรียน",
+  "contents"=> [
+    "type"=> "bubble",
+    "hero"=> [
+      "type"=> "image",
+      "url"=> "https://m4piriyalai.files.wordpress.com/2016/03/come.png?w=714",
+      "size"=> "full",
+      "aspectRatio"=> "20:13",
+      "aspectMode"=> "cover",
+      "action"=> [
+        "type"=> "uri",
+        "label"=> "Line",
+        "uri"=> "https://linecorp.com/"
+      ]
+      ],
+    "body"=> [
+      "type"=> "box",
+      "layout"=> "vertical",
+      "contents"=> [
+        [
+          "type"=> "text",
+          "text"=> "การมาเรียน",
+          "size"=> "xl",
+          "weight"=> "bold"
         ],
-      "footer"=> [
-        "type"=> "box",
-        "layout"=> "horizontal",
-        "flex"=> 1,
-        "contents"=> [
-          [
-            "type"=> "button",
-            "action"=> [
-              "type"=> "uri",
-              "label"=> "ตรวจสอบเพิ่มเติม",
-              "uri"=> "https://linecorp.com"
-            ],
-            "margin"=> "xxl"
+        [
+          "type"=> "box",
+          "layout"=> "vertical",
+          "spacing"=> "sm",
+          "margin"=> "lg",
+          "contents"=> [
+            [
+              "type"=> "box",
+              "layout"=> "baseline",
+              "spacing"=> "sm",
+              "contents"=> [
+                [
+                  "type"=> "text",
+                  "text"=> "ตรวจเช็คการมาเรียน",
+                  "flex"=> 5,
+                  "size"=> "sm",
+                  "color"=> "#666666",
+                  "wrap"=> true
+                ]
+              ]
+            ]
           ]
         ]
-    ],
-      "styles"=> [
-        "footer"=> [
-          "separatorColor"=> "#FFFFFF"
+      ]
+                ],
+    "footer"=> [
+      "type"=> "box",
+      "layout"=> "vertical",
+      "flex"=> 0,
+      "spacing"=> "sm",
+      "contents"=> [
+        [
+          "type"=> "button",
+          "action"=> [
+            "type"=> "uri",
+            "label"=> "เช็คการมาเรียน",
+            "uri"=> "https://linecorp.com"
+          ],
+          "color"=> "#96638A",
+          "height"=> "sm",
+          "style"=> "primary"
+        ],
+        [
+          "type"=> "spacer",
+          "size"=> "sm"
         ]
       ]
     ]
-];
+  ]
+        ];
+    
     if ( sizeof($request_array['events']) > 0 ) {
         foreach ($request_array['events'] as $event) {
             error_log(json_encode($event));
