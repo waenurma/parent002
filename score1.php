@@ -11,9 +11,8 @@ $content = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($content , true);   // Decode JSON to Array
 $id_line =$arrJson['events'][0]['source']['userId'];
 $jsontemplate = [
-    
   "type"=> "flex",
-  "altText"=> "คะแนน",
+  "altText"=> "คะแนนแต่ละรายวิชา",
   "contents"=> [
     "type"=> "bubble",
     "hero"=> [
@@ -45,35 +44,6 @@ $jsontemplate = [
           "size"=> "xl",
           "weight"=> "bold"
         ],
-        [
-          "type"=> "box",
-          "layout"=> "vertical",
-          "spacing"=> "sm",
-          "contents"=> [
-            [
-              "type"=> "box",
-              "layout"=> "baseline",
-              "contents"=> [
-                [
-                  "type"=> "text",
-                  "text"=> "คะแนนทั้งหมด",
-                  "flex"=> 0,
-                  "margin"=> "sm",
-                  "weight"=> "regular",
-                  "color"=> "#000000"
-                ],
-                [
-                  "type"=> "text",
-                  "text"=> "00 คะแนน",
-                  "size"=> "sm",
-                  "align"=> "end",
-                  "weight"=> "bold",
-                  "color"=> "#000000"
-                ]
-              ]
-            ]
-          ]
-                ],
         [
           "type"=> "text",
           "text"=> "สามารถคลิกดูรายละเอียดเพิ่มเติมด้านล่าง",
