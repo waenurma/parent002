@@ -11,6 +11,11 @@
     $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
     
 
+
+
+
+
+ if($arrJson['events'][0]['message']['text'] != '')  { 
 if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['message']['text'] == "id"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -137,6 +142,7 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
 
 }
+ }
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$strUrl);
