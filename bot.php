@@ -15,7 +15,10 @@
 
 
 
- if($arrJson['events'][0]['message']['text'] != '')  { 
+if($arrJson['events'][0]['message']['text'] != '')  { 
+
+
+
 if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['message']['text'] == "id"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
