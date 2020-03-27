@@ -13,8 +13,6 @@
 
 
 
-
-
 if($arrJson['events'][0]['message']['text'] != '')  { 
 
 

@@ -62,7 +62,7 @@ $jsontemplate = [
           "action"=> [
             "type"=> "uri",
             "label"=> "รายละเอียดคะแนน",
-            "uri"=> "https://linecorp.com"
+            "uri"=> "http://localhost/tesline7/kn1.php"
           ],
           "color"=> "#A2A9AC",
           "style"=> "secondary"
