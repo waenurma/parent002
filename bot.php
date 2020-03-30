@@ -102,6 +102,7 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     
 }else if($arrJson['events'][0]['message']['text'] == "คะแนน"){
     require "score1.php";   
+  
     
  /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ---------------------------------------------
  //quick replay
@@ -136,7 +137,7 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
 
 }
- }
+}
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$strUrl);
