@@ -102,8 +102,7 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     
 }else if($arrJson['events'][0]['message']['text'] == "คะแนน"){
     require "score1.php";   
-  
-    
+     
  /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ---------------------------------------------
  //quick replay
 }else if($arrJson['events'][0]['message']['text'] == "อื่นๆ" ){
@@ -135,8 +134,8 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
-
 }
+
 }
 
     $ch = curl_init();
