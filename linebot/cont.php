@@ -6,6 +6,6 @@ include 'pgconfiq.php';
  $stmt->execute();
  $result = $stmt -> fetch();
  
- print_r($result);
+ print_r($stmt);
          
 ?>
