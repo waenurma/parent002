@@ -123,7 +123,6 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
 }else
    */
   
-if($arrJson['events'][0]['source']['userId'] ){
 //-----------------------เมนู-----------------------------------------------------------------
  if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
     require "timetable.php";
@@ -144,7 +143,7 @@ if($arrJson['events'][0]['source']['userId'] ){
 }else if($arrJson['events'][0]['message']['text'] == "คะแนน"){
     require "score1.php";   
      
-}
+
 
 }else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){
     require "noregis.php";   
