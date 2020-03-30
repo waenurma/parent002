@@ -35,7 +35,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         $data = [
             'replyToken' => $reply_token,
             'messages' => [$jsontemplate ],
-            'user_id' => $arrJson['events'][0]['source']['userId']
+            'user_id' => $request_array['events'][0]['source']['userId']
         ];
 
         print_r($data);
