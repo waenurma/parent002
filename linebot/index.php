@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php
 include 'h.php';
-$user_id= $_REQUEST["user_id"];
+echo $user_id= $_REQUEST["user_id"];
 ?>
 
 <style type="text/css">
@@ -41,7 +41,6 @@ width:100%;
       <h3 align="center">
       <span class="glyphicon glyphicon-lock"> </span>
       ลงชื่อเข้าใช้งาน </h3>
-      <?php echo $user_id;?>
       <form  name="formlogin" action="connect.php?user_id=<?php echo $user_id,$id_card; ?>" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
         <input type="hidden"  name="id_card" class="form-control" required placeholder="บัตรประชาชน" />
