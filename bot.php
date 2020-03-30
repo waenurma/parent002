@@ -10,15 +10,11 @@
     $arrHeader[] = "Content-Type: application/json";
     $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
     
-if($arrJson['events'][0]['message']['text'] != '')  { 
 
-if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['message']['text'] == "id"){
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
 
-}else if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ" || $arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
+
+/* General
+ if($arrJson['events'][0]['message']['text'] == "สวัสดี" ||$arrJson['events'][0]['message']['text'] == "สวัสดีค่ะ" || $arrJson['events'][0]['message']['text'] == "สวัสดีคะ"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
@@ -82,30 +78,9 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     $arrPostData['messages'][1]['packageId'] = "1";
     $arrPostData['messages'][1]['stickerId'] = "4"; 
 
-        
-//-----------------------เมนู-----------------------------------------------------------------
-}else if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
-    require "timetable.php";
-
-}else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
-    require "homework.php";
-
-}else if($arrJson['events'][0]['message']['text'] == "เป๋าตังค์" ||$arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย" ){
-    require "poatang.php";
-
-   ////ผลเรียนแบบflexตัวใหญ่
-}else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
-    require "gpa2.php";
-
-}else if($arrJson['events'][0]['message']['text'] == "การมาเรียน"||$arrJson['events'][0]['message']['text'] == "เช็ค" ){
-    require "Check.php";
-    
-}else if($arrJson['events'][0]['message']['text'] == "คะแนน"){
-    require "score1.php";   
-     
- /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ---------------------------------------------
- //quick replay
 }else if($arrJson['events'][0]['message']['text'] == "อื่นๆ" ){
+     /////--------------ทั่วไป ข่าว ทอง ราคาน้ำมัน   อากาศ---------------------------------------------
+ //quick replay
     require "quick.php";
 
 }else if($arrJson['events'][0]['message']['text'] == "ทอง"||$arrJson['events'][0]['message']['text'] == "ราคาทอง"  ){
@@ -134,9 +109,46 @@ if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['mess
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = $a[$random_keys[0]];
 }
+*/
+
+if($arrJson['events'][0]['message']['text'] != '')  {  // ข้อมูลที่ส่งเข้ามาต้องไม่ว่าง 
+
+/*    
+if($arrJson['events'][0]['message']['text'] == "Id"||$arrJson['events'][0]['message']['text'] == "id"){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+
+}else
+   */
+  
+if($arrJson['events'][0]['source']['userId'] == ){
+//-----------------------เมนู-----------------------------------------------------------------
+ if($arrJson['events'][0]['message']['text'] == "ตารางเรียน" ){
+    require "timetable.php";
+
+}else if($arrJson['events'][0]['message']['text'] == "การบ้าน" ){
+    require "homework.php";
+
+}else if($arrJson['events'][0]['message']['text'] == "เป๋าตังค์" ||$arrJson['events'][0]['message']['text'] == "ค่าใช้จ่าย" ){
+    require "poatang.php";
+
+   ////ผลเรียนแบบflexตัวใหญ่
+}else if($arrJson['events'][0]['message']['text'] == "เกรด"||$arrJson['events'][0]['message']['text'] == "ผลการเรียน" ){
+    require "gpa2.php";
+
+}else if($arrJson['events'][0]['message']['text'] == "การมาเรียน"||$arrJson['events'][0]['message']['text'] == "เช็ค" ){
+    require "Check.php";
+    
+}else if($arrJson['events'][0]['message']['text'] == "คะแนน"){
+    require "score1.php";   
+     
+
+}else
 
 }
-
+}
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$strUrl);
     curl_setopt($ch, CURLOPT_HEADER, false);
