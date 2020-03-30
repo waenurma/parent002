@@ -1,6 +1,7 @@
 <?php 
 include 'pgconfiq.php';
-echo 'SELECT * FROM public.linebot where user_id = "'.$_REQUEST["user_id"].'" ';
+$user_id = $_REQUEST["user_id"];
+echo "SELECT * FROM public.linebot where user_id = '$user_id' ";
  /*$strSQL=('SELECT * FROM public.linebot where user_id = "'.$_REQUEST["user_id"].'" ' );
  $stmt = $dbConnection->prepare($strSQL);
  $stmt->execute();
