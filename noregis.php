@@ -18,7 +18,7 @@ $jsontemplate = [
         [
           "type"=> "uri",
           "label"=> "ลงทะเบียน",
-          "uri"=> "https://parent002.herokuapp.com/linebot/index.php?user_id=".$id_line
+          "uri"=> "https://parent002.herokuapp.com/linebot/index.php"
         ]
       ],
       "thumbnailImageUrl"=> "https://parent002.herokuapp.com/linebot/regis.jpg",
