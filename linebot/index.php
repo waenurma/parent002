@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php
 include 'h.php';
-$user_id= $_REQUEST["user_id"];
+echo $user_id= $_REQUEST["user_id"];
 $id_card = $_REQUEST["id_card"];
 ?>
 
