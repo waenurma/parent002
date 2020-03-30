@@ -1,8 +1,7 @@
 <?php session_start();?>
 <?php
 include 'h.php';
-echo $user_id= $_REQUEST["user_id"];
-$id_card = $_REQUEST["id_card"];
+$user_id= $_REQUEST["user_id"];
 ?>
 
 <style type="text/css">
