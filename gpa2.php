@@ -13,6 +13,9 @@ $request_array1  = (json_decode($result1, true));
 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
+
+
+
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
 $val3 = strval($request_array1['data'][0]['GPA_ALL']);
 print_r($request_array1['data'][0]['GPA_ALL']);
@@ -74,7 +77,7 @@ $jsonFlex = [
                     ],
                       [
                         "type"=>  "text",
-                        "text"=>  $val3,
+                        "text"=>  "1",
                         "size"=>  "xl",
                         "align"=>  "end",
                         "weight"=>  "bold",
@@ -100,7 +103,7 @@ $jsonFlex = [
                     ],
                       [
                         "type"=>  "text",
-                        "text"=>  $val4."หน่วยกิจ",
+                        "text"=>  "หน่วยกิจ",
                         "size"=>  "sm",
                         "align"=>  "end",
                         "weight"=>  "regular",
