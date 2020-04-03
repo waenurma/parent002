@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include('config_apigrad.php');
 
 $API_URL = 'https://api.line.me/v2/bot/message';
 $ACCESS_TOKEN = '072ioqcw4uT17+qwjIDmsn4XlTguP6hRKZjWyJf2nu5tFaheu0baLx26OQ3K5II9RyHunNm6/KGAVw+uDgy6GQEAeKsAhLGAIpJCYMLvxVW4aCCAL4XClCPZUtKmZzjBM5mOHHi5w8jFzTfgnDVFc1GUYhWQfeY8sLGRXgo3xvw=';
@@ -95,7 +95,7 @@ $jsonFlex = [
                     "contents"=>  [
                       [
                         "type"=>  "text",
-                        "text"=>  $val1."รวมหน่วยกิจ",
+                        "text"=>  "รวมหน่วยกิจ",
                         "flex"=>  0,
                         "margin"=>  "sm",
                         "weight"=>  "regular",
@@ -103,7 +103,7 @@ $jsonFlex = [
                     ],
                       [
                         "type"=>  "text",
-                        "text"=>  "หน่วยกิจ",
+                        "text"=>  $val1."หน่วยกิจ",
                         "size"=>  "sm",
                         "align"=>  "end",
                         "weight"=>  "regular",
