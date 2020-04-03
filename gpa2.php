@@ -17,10 +17,10 @@ $request_array = json_decode($request, true);   // Decode JSON to Array
 
 
 //echo $request_array1[0]['data'][0]['GPA_ALL'];
-$val3 = strval($request_array1['data'][0]['GPA_ALL']);
+$val = strval($request_array1['data'][0]['GPA_ALL']);
 print_r($request_array1['data'][0]['GPA_ALL']);
 
-$val4 = strval($request_array1['data'][0]['CREDIT_ALL']);
+$val1 = strval($request_array1['data'][0]['CREDIT_ALL']);
 print_r($request_array1['data'][0]['CREDIT_ALL']);
 //$val = "0";
 
@@ -77,7 +77,7 @@ $jsonFlex = [
                     ],
                       [
                         "type"=>  "text",
-                        "text"=>  "1",
+                        "text"=>  $val,
                         "size"=>  "xl",
                         "align"=>  "end",
                         "weight"=>  "bold",
@@ -95,7 +95,7 @@ $jsonFlex = [
                     "contents"=>  [
                       [
                         "type"=>  "text",
-                        "text"=>  "รวมหน่วยกิจ",
+                        "text"=>  $val1."รวมหน่วยกิจ",
                         "flex"=>  0,
                         "margin"=>  "sm",
                         "weight"=>  "regular",
