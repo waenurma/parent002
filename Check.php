@@ -73,7 +73,7 @@ $jsonFlex = [
           "action"=> [
             "type"=> "uri",
             "label"=> "เช็คการมาเรียน",
-            "uri"=> "https://linecorp.com"
+            "uri"=> "http://405965027.student.yru.ac.th/tes5line/st2.php"
           ],
           "color"=> "#96638A",
           "height"=> "sm",
@@ -105,7 +105,7 @@ $jsonFlex = [
             
             echo "Result: ".$send_result."\r\n";
             
-        }
+          }
     }
     
     echo "OK";
